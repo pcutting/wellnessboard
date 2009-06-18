@@ -13,7 +13,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.xml
   def show
-    @user = User.find(params[:id])
+    #@user = User.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -44,12 +44,12 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        flash[:notice] = 'User was successfully created.'
-        format.html { redirect_to(@user) }
-        format.xml  { render :xml => @user, :status => :created, :location => @user }
+        flash[:notice] = 'Registration successful.'
+        format.html { redirect_to(root_url) }
+
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
+
       end
     end
   end
