@@ -1,0 +1,20 @@
+<h1>Editing offer_restriction</h1>
+
+<% form_for(@offer_restriction) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :promotion %><br />
+    <%= f.text_field :promotion %>
+  </p>
+  <p>
+    <%= f.label :user %><br />
+    <%= f.text_field :user %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @offer_restriction %> |
+<%= link_to 'Back', offer_restrictions_path %>

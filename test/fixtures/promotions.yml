@@ -1,0 +1,29 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  code: MyString
+  offer_sku: 
+  percent: 1
+  accumulative: false
+  all_access: false
+  offer_restriction: 
+  offer_access: 
+  start: 2009-06-18 23:15:56
+  end: 2009-06-18 23:15:56
+  description: MyText
+  sponsor: 
+  all_sponsors: false
+
+two:
+  code: MyString
+  offer_sku: 
+  percent: 1
+  accumulative: false
+  all_access: false
+  offer_restriction: 
+  offer_access: 
+  start: 2009-06-18 23:15:56
+  end: 2009-06-18 23:15:56
+  description: MyText
+  sponsor: 
+  all_sponsors: false

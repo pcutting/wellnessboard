@@ -1,0 +1,27 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  user: 
+  weight: 9.99
+  chest: 9.99
+  belly_upper: 9.99
+  belly_lower: 9.99
+  hips: 9.99
+  thigh: 9.99
+  arm: 9.99
+  water: 1
+  steps_daily: 1
+  daily_calories: 1
+
+two:
+  user: 
+  weight: 9.99
+  chest: 9.99
+  belly_upper: 9.99
+  belly_lower: 9.99
+  hips: 9.99
+  thigh: 9.99
+  arm: 9.99
+  water: 1
+  steps_daily: 1
+  daily_calories: 1

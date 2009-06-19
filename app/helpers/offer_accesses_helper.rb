@@ -1,0 +1,2 @@
+module OfferAccessesHelper
+end

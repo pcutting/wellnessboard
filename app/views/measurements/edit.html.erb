@@ -1,0 +1,40 @@
+<h1>Editing measurement</h1>
+
+<% form_for(@measurement) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :user %><br />
+    <%= f.text_field :user %>
+  </p>
+  <p>
+    <%= f.label :chest %><br />
+    <%= f.text_field :chest %>
+  </p>
+  <p>
+    <%= f.label :belly_upper %><br />
+    <%= f.text_field :belly_upper %>
+  </p>
+  <p>
+    <%= f.label :belly_lower %><br />
+    <%= f.text_field :belly_lower %>
+  </p>
+  <p>
+    <%= f.label :hips %><br />
+    <%= f.text_field :hips %>
+  </p>
+  <p>
+    <%= f.label :thigh %><br />
+    <%= f.text_field :thigh %>
+  </p>
+  <p>
+    <%= f.label :arm %><br />
+    <%= f.text_field :arm %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @measurement %> |
+<%= link_to 'Back', measurements_path %>

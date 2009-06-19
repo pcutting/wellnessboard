@@ -19,7 +19,15 @@ script/generate scaffold User login:string email:string crypted_password:string 
 
 script/generate scaffold profile user:references shipping_address:text physical_address:text sponsor:string coach:string referred_by:string phone:string alt_phone:string hight:integer time_zone:string 
 
+
+
+
 script/generate scaffold sponsor code:string name:string email:string phone:string address:string city:string state:string zip:string motto:string summary:text 
+
+
+
+
+
 
 script/generate scaffold weight user:references date:datetime weight:decimal
 
@@ -27,7 +35,7 @@ script/generate scaffold water user:references date:date onces:integer
 
 script/generate scaffold quickSupport user:references priority:integer title:string details:text status:string
 
-script/generator scaffold shakeRecipe name:string description:text calories:integer protein:string
+script/generate scaffold shakeRecipe name:string description:text calories:integer protein:string
 
 script/generate scaffold goals user:references weight:decimal chest:decimal belly_upper:decimal belly_lower:decimal hips:decimal thigh:decimal arm:decimal water:integer steps_daily:integer daily_calories:integer
 
@@ -48,6 +56,12 @@ script/generate scaffold quickFact category:string title:string summary:text ref
 
 script/generate scaffold promotion code:string offer_sku:references percent:integer accumulative:boolean all_access:boolean offer_restriction:references offer_access:references start:datetime end:datetime description:text  sponsor:references  all_sponsors:boolean
 
+
+
+
+
+
+
 script/generate scaffold offerRestriction promotion:references user:references
 
 script/generate scaffold offerAccess promotion:references user:references
@@ -56,9 +70,15 @@ script/generate scaffold offerSku promotion:references sku:string
 
 script/generate scaffold coupon order:references code:string 
 
+
+
+
 script/generate scaffold order user:references 
 
 script/generate scaffold item order:references sku:string quantity:integer
+
+
+--------
 
 script/generate scaffold catalog sku:string item:string description:string picture:string price:string category:string 
 

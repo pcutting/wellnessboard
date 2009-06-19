@@ -1,4 +1,52 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :offer_restrictions
+
+  map.resources :offer_accesses
+
+  map.resources :offer_skus
+
+  map.resources :coupons
+
+  map.resources :items
+
+  map.resources :orders
+
+  map.resources :comments
+
+  map.resources :blogs
+
+  map.resources :catalogs
+
+  map.resources :promotions
+
+  map.resources :quick_facts
+
+  map.resources :my_foods
+
+  map.resources :foods
+
+  map.resources :my_exercises
+
+  map.resources :exercises
+
+  map.resources :body_scans
+
+  map.resources :measurements
+
+  map.resources :goals
+
+  map.resources :shake_recipes
+
+  map.resources :quick_supports
+
+  map.resources :waters
+
+  map.resources :weights
+
+  map.resources :sponsors
+
+  map.resources :profiles
+
   
   map.login "login", :controller => "user_sessions", :action => "new"
   map.logout "logout", :controller => "user_sessions", :action => "destroy"  

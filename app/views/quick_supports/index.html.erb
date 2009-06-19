@@ -1,0 +1,28 @@
+<h1>Listing quick_supports</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Title</th>
+    <th>Details</th>
+    <th>Status</th>
+  </tr>
+
+<% @quick_supports.each do |quick_support| %>
+  <tr>
+    <td><%=h quick_support.user %></td>
+    <td><%=h quick_support.priority %></td>
+    <td><%=h quick_support.title %></td>
+    <td><%=h quick_support.details %></td>
+    <td><%=h quick_support.status %></td>
+    <td><%= link_to 'Show', quick_support %></td>
+    <td><%= link_to 'Edit', edit_quick_support_path(quick_support) %></td>
+    <td><%= link_to 'Destroy', quick_support, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New quick_support', new_quick_support_path %>

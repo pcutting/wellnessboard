@@ -1,0 +1,23 @@
+<p>
+  <b>Name:</b>
+  <%=h @shake_recipe.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @shake_recipe.description %>
+</p>
+
+<p>
+  <b>Calories:</b>
+  <%=h @shake_recipe.calories %>
+</p>
+
+<p>
+  <b>Protein:</b>
+  <%=h @shake_recipe.protein %>
+</p>
+
+
+<%= link_to 'Edit', edit_shake_recipe_path(@shake_recipe) %> |
+<%= link_to 'Back', shake_recipes_path %>

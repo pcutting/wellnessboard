@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  sku: MyString
+  item: MyString
+  description: MyString
+  picture: MyString
+  price: MyString
+  category: MyString
+
+two:
+  sku: MyString
+  item: MyString
+  description: MyString
+  picture: MyString
+  price: MyString
+  category: MyString

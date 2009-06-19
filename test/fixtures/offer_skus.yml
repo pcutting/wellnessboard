@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  promotion: 
+  sku: MyString
+
+two:
+  promotion: 
+  sku: MyString

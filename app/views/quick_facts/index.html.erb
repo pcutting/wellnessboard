@@ -1,0 +1,30 @@
+<h1>Listing quick_facts</h1>
+
+<table>
+  <tr>
+    <th>Category</th>
+    <th>Title</th>
+    <th>Summary</th>
+    <th>Reference</th>
+    <th>Total score</th>
+    <th>Votes</th>
+  </tr>
+
+<% @quick_facts.each do |quick_fact| %>
+  <tr>
+    <td><%=h quick_fact.category %></td>
+    <td><%=h quick_fact.title %></td>
+    <td><%=h quick_fact.summary %></td>
+    <td><%=h quick_fact.reference %></td>
+    <td><%=h quick_fact.total_score %></td>
+    <td><%=h quick_fact.votes %></td>
+    <td><%= link_to 'Show', quick_fact %></td>
+    <td><%= link_to 'Edit', edit_quick_fact_path(quick_fact) %></td>
+    <td><%= link_to 'Destroy', quick_fact, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New quick_fact', new_quick_fact_path %>

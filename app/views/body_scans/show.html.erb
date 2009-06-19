@@ -1,0 +1,33 @@
+<p>
+  <b>User:</b>
+  <%=h @body_scan.user %>
+</p>
+
+<p>
+  <b>Water:</b>
+  <%=h @body_scan.water %>
+</p>
+
+<p>
+  <b>Metabolism:</b>
+  <%=h @body_scan.metabolism %>
+</p>
+
+<p>
+  <b>Visc:</b>
+  <%=h @body_scan.visc %>
+</p>
+
+<p>
+  <b>Fat:</b>
+  <%=h @body_scan.fat %>
+</p>
+
+<p>
+  <b>Muscle:</b>
+  <%=h @body_scan.muscle %>
+</p>
+
+
+<%= link_to 'Edit', edit_body_scan_path(@body_scan) %> |
+<%= link_to 'Back', body_scans_path %>

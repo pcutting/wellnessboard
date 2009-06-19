@@ -1,0 +1,25 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  user: 
+  shipping_address: MyText
+  physical_address: MyText
+  sponsor: MyString
+  coach: MyString
+  referred_by: MyString
+  phone: MyString
+  alt_phone: MyString
+  hight: 1
+  time_zone: MyString
+
+two:
+  user: 
+  shipping_address: MyText
+  physical_address: MyText
+  sponsor: MyString
+  coach: MyString
+  referred_by: MyString
+  phone: MyString
+  alt_phone: MyString
+  hight: 1
+  time_zone: MyString

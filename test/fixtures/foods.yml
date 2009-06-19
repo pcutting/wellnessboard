@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  user: 
+  name: MyString
+  calories: 1
+  protein: 1
+  date: 2009-06-18 23:14:56
+
+two:
+  user: 
+  name: MyString
+  calories: 1
+  protein: 1
+  date: 2009-06-18 23:14:56

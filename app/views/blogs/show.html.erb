@@ -1,0 +1,28 @@
+<p>
+  <b>User:</b>
+  <%=h @blog.user %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%=h @blog.title %>
+</p>
+
+<p>
+  <b>Post:</b>
+  <%=h @blog.post %>
+</p>
+
+<p>
+  <b>Total score:</b>
+  <%=h @blog.total_score %>
+</p>
+
+<p>
+  <b>Votes:</b>
+  <%=h @blog.votes %>
+</p>
+
+
+<%= link_to 'Edit', edit_blog_path(@blog) %> |
+<%= link_to 'Back', blogs_path %>

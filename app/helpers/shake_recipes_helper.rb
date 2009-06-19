@@ -1,0 +1,2 @@
+module ShakeRecipesHelper
+end

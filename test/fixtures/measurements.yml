@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  user: 
+  chest: 9.99
+  belly_upper: 9.99
+  belly_lower: 9.99
+  hips: 9.99
+  thigh: 9.99
+  arm: 9.99
+
+two:
+  user: 
+  chest: 9.99
+  belly_upper: 9.99
+  belly_lower: 9.99
+  hips: 9.99
+  thigh: 9.99
+  arm: 9.99

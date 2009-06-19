@@ -1,0 +1,13 @@
+<p>
+  <b>Promotion:</b>
+  <%=h @offer_sku.promotion %>
+</p>
+
+<p>
+  <b>Sku:</b>
+  <%=h @offer_sku.sku %>
+</p>
+
+
+<%= link_to 'Edit', edit_offer_sku_path(@offer_sku) %> |
+<%= link_to 'Back', offer_skus_path %>
