@@ -41,8 +41,7 @@ production:
   adapter: mysql
   encoding: utf8
   reconnect: false
-  database: wellnessboard_production
+  database: wellnessboard
   pool: 5
-  username: root
-  password: 
-  socket: /var/run/mysqld/mysqld.sock
+  username: railsapps
+  password: sprint1
