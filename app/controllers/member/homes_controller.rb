@@ -7,6 +7,8 @@ class Member::HomesController  < Member::BaseController
     if @recent_goal.nil? then @recent_goal =  Goal.new end
     @goal = @recent_goal
     @fact = QuickFact.find(:first, :offset=>(rand(QuickFact.all.size - 1)) )
+    if @fact.nil? then @fact = QuickFact.new end
+    
     @quick_support = QuickSupport.new
     
     @week_water_sum = @current_user.waters.sum(:ounces, :conditions => ['date >= ?', Time.now - 7.days])
