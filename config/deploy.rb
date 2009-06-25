@@ -1,5 +1,6 @@
-set :ip_adress, "68.233.8.61"
-set :user, "railsapp"
+set :ip_address, "68.233.8.61"
+set :user, "railsapps"
+#set :scm_user, "railsapps"
 set :password, "sprint1"
 set :server, "freemyrealestate.com"
 set :application, "wellnessboard"
@@ -37,6 +38,6 @@ end
 namespace :deploy do
 desc "restart passenger"
   run "touch #{current_path}/tmp/restart.txt"
-  end
+  #end
 end
 
