@@ -1,0 +1,63 @@
+<p>
+  <b>Code:</b>
+  <%=h @promotion.code %>
+</p>
+
+<p>
+  <b>Offer sku:</b>
+  <%=h @promotion.offer_sku %>
+</p>
+
+<p>
+  <b>Percent:</b>
+  <%=h @promotion.percent %>
+</p>
+
+<p>
+  <b>Accumulative:</b>
+  <%=h @promotion.accumulative %>
+</p>
+
+<p>
+  <b>All access:</b>
+  <%=h @promotion.all_access %>
+</p>
+
+<p>
+  <b>Offer restriction:</b>
+  <%=h @promotion.offer_restriction %>
+</p>
+
+<p>
+  <b>Offer access:</b>
+  <%=h @promotion.offer_access %>
+</p>
+
+<p>
+  <b>Start:</b>
+  <%=h @promotion.start %>
+</p>
+
+<p>
+  <b>End:</b>
+  <%=h @promotion.end %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @promotion.description %>
+</p>
+
+<p>
+  <b>Sponsor:</b>
+  <%=h @promotion.sponsor %>
+</p>
+
+<p>
+  <b>All sponsors:</b>
+  <%=h @promotion.all_sponsors %>
+</p>
+
+
+<%= link_to 'Edit', edit_promotion_path(@promotion) %> |
+<%= link_to 'Back', promotions_path %>

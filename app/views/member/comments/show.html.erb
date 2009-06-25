@@ -1,0 +1,23 @@
+<p>
+  <b>User:</b>
+  <%=h @comment.user %>
+</p>
+
+<p>
+  <b>Response:</b>
+  <%=h @comment.response %>
+</p>
+
+<p>
+  <b>Total score:</b>
+  <%=h @comment.total_score %>
+</p>
+
+<p>
+  <b>Votes:</b>
+  <%=h @comment.votes %>
+</p>
+
+
+<%= link_to 'Edit', edit_comment_path(@comment) %> |
+<%= link_to 'Back', comments_path %>

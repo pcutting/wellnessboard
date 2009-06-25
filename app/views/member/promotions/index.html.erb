@@ -1,0 +1,42 @@
+<h1>Listing promotions</h1>
+
+<table>
+  <tr>
+    <th>Code</th>
+    <th>Offer sku</th>
+    <th>Percent</th>
+    <th>Accumulative</th>
+    <th>All access</th>
+    <th>Offer restriction</th>
+    <th>Offer access</th>
+    <th>Start</th>
+    <th>End</th>
+    <th>Description</th>
+    <th>Sponsor</th>
+    <th>All sponsors</th>
+  </tr>
+
+<% @promotions.each do |promotion| %>
+  <tr>
+    <td><%=h promotion.code %></td>
+    <td><%=h promotion.offer_sku %></td>
+    <td><%=h promotion.percent %></td>
+    <td><%=h promotion.accumulative %></td>
+    <td><%=h promotion.all_access %></td>
+    <td><%=h promotion.offer_restriction %></td>
+    <td><%=h promotion.offer_access %></td>
+    <td><%=h promotion.start %></td>
+    <td><%=h promotion.end %></td>
+    <td><%=h promotion.description %></td>
+    <td><%=h promotion.sponsor %></td>
+    <td><%=h promotion.all_sponsors %></td>
+    <td><%= link_to 'Show', promotion %></td>
+    <td><%= link_to 'Edit', edit_promotion_path(promotion) %></td>
+    <td><%= link_to 'Destroy', promotion, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New promotion', new_promotion_path %>

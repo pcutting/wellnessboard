@@ -7,6 +7,7 @@ class CreateBodyScans < ActiveRecord::Migration
       t.integer :visc
       t.integer :fat
       t.integer :muscle
+      t.datetime :date
 
       t.timestamps
     end

@@ -1,0 +1,31 @@
+<h1>New food</h1>
+
+<% form_for(@food) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :user %><br />
+    <%= f.text_field :user %>
+  </p>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :calories %><br />
+    <%= f.text_field :calories %>
+  </p>
+  <p>
+    <%= f.label :protein %><br />
+    <%= f.text_field :protein %>
+  </p>
+  <p>
+    <%= f.label :date %><br />
+    <%= f.datetime_select :date %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', foods_path %>

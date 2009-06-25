@@ -9,17 +9,17 @@
 </head>
 <body>
 
+<div id="container">
+<div id="masthead">
+
 <div id="user_nav">
-<% if current_user %>
-  <%= link_to "Edit Profile", edit_user_path(:current) %> |
-  <%= link_to "Logout",    logout_path %>
-<% else %>
+
   <%= link_to "login", login_url %> |
   <%= link_to "register" , new_user_path %> 
-<% end %>
 
-</div>
 
+</div> <%# close id=user_nav %>
+</div> <%# close id=masthead %>
 
 <p style="color: green"><%= flash[:notice] %></p>
 
@@ -27,5 +27,7 @@
 
 <%= yield %>
 
+
+</div> <%# close id=container %> 
 </body>
 </html>

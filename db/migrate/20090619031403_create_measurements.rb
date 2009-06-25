@@ -8,6 +8,7 @@ class CreateMeasurements < ActiveRecord::Migration
       t.decimal :hips
       t.decimal :thigh
       t.decimal :arm
+      t.datetime :date, :default => Date.current
 
       t.timestamps
     end

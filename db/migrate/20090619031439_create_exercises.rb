@@ -5,7 +5,7 @@ class CreateExercises < ActiveRecord::Migration
       t.string :title
       t.decimal :length
       t.integer :calories
-      t.date :date
+      t.datetime :date
 
       t.timestamps
     end

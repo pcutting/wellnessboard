@@ -1,0 +1,30 @@
+<h1>Listing body_scans</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Water</th>
+    <th>Metabolism</th>
+    <th>Visc</th>
+    <th>Fat</th>
+    <th>Muscle</th>
+  </tr>
+
+<% @body_scans.each do |body_scan| %>
+  <tr>
+    <td><%=h body_scan.user %></td>
+    <td><%=h body_scan.water %></td>
+    <td><%=h body_scan.metabolism %></td>
+    <td><%=h body_scan.visc %></td>
+    <td><%=h body_scan.fat %></td>
+    <td><%=h body_scan.muscle %></td>
+    <td><%= link_to 'Show', body_scan %></td>
+    <td><%= link_to 'Edit', edit_body_scan_path(body_scan) %></td>
+    <td><%= link_to 'Destroy', body_scan, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New body_scan', new_body_scan_path %>

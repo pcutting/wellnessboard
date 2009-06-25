@@ -52,8 +52,64 @@ a:hover { color: #fff; background-color:#000; }
   list-style: square;
 }
 
+#container {
 
-#user_nav { 
+  background-color: #F0FFFF;
+}
+
+#masthead {
+  background-color: lightBlue;
+  color: black;
+}
+
+#footer {
+  background-color: black;
+  color: yellow;
+  }
+  
+
+
+.quick_form {
+  background-color: cyan;
+  }
+
+.right {
+  float:right;
+  }
+
+.user_nav { 
   float:right; 
   font-size: 12px;
   }
+  
+.panel_left {
+  float:left ;
+  font-size:10px;
+  width:200px;
+  
+  }
+
+.last {
+  clear:both;
+  }  
+
+.left {
+  float:left;
+  }
+
+input { 
+  font-size:10px;
+  }
+    
+.recent_goals {
+  font-size:10px;
+  }
+  
+.recent_goals table, td, th {
+  border:1px solid;
+  border-collapse: collapse;
+ }
+  
+.water_calories { 
+  font-size:10px;
+}
