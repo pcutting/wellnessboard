@@ -1,16 +1,16 @@
+
 <h1>Login </h1>
-<% form_for @user_session do |f| %>
-  <%= f.error_messages %>
-  
-  <p>
-    <%= f.label :login %><br/>
-    <%= f.text_field :login %>
-  </p>
-  
-  <p>
-    <%= f.label :password %><br/>
-    <%= f.password_field :password %>
-  </p>
-  
-  <p><%= f.submit "Submit" %></p>
-<% end %>
+<table>
+<tr><th>
+<%= render :partial=>"login" %>
+</th>
+<th>
+<%= render :partial=>"mission" %>
+</th>
+</tr>
+<tr>
+<th colspan = 2>
+<h2>Herbalife Successes</h2>
+</th>
+</tr>
+</table>

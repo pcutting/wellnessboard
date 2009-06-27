@@ -3,7 +3,7 @@ Current Goal
 <% form_for([:member, @home]) do |form| %>
 <% fields_for :goal do |f| %>
 <table><tr>
-<th>Weight</th><th>Chest</th><th>Upper Belly</th><th>Lower Belly</th><th>Hip</th><th>Thigh</th><th>Arm</th><th>Daily Water</th><th>Daily Steps</th><th>Daily Calories</th></tr>
+<th>Weight</th><th>Daily Water</th><th>Daily Steps</th><th>Daily Calories</th></tr>
 <tr>
   <td><%= f.text_field :weight , :size=>3 %></td>
   <td><%= f.text_field :water, :size=>3 %></td>
