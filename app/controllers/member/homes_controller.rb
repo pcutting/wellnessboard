@@ -2,7 +2,7 @@ class Member::HomesController  < Member::BaseController
 
   # GET /homes
   def index
-    @home = Home.new
+    @home = @current_user.home.first
     @recent_goal = @current_user.goals.last
     if @recent_goal.nil? then @recent_goal =  Goal.new end
     @goal = @recent_goal
@@ -13,6 +13,9 @@ class Member::HomesController  < Member::BaseController
       @fact.category = "Test"
       @fact.summary = "Please submit interesting facts"
     end
+    
+    @chart_type = @home.chart_type
+    if @chart_type.nil? then @chart_type='all' end
     
     @quick_support = QuickSupport.new
     
@@ -92,6 +95,29 @@ class Member::HomesController  < Member::BaseController
     elsif commit=="Support" then
       support = @current_user.quick_supports.new(params[:quick_support])
       success = support.save
+      
+      
+    elsif commit="All Charts" then
+      @current_user.home.first.chart_type = 'all' 
+      success = 
+      
+    elsif commit="Water" then
+      @chart_type='water'  
+      success = true
+    elsif commit="Exercise" then
+      @chart_type='exercise'  
+      success = true
+    elsif commit="Weight" then
+      @chart_type='weight'  
+      success = true
+    elsif commit="Food" then
+      @chart_type='food'
+      success = true
+      
+    elsif commit="Measurements" then
+      @chart_type='measurement'  
+      success = true  
+      
     end
     
     respond_to do |format|

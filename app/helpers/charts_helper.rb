@@ -257,6 +257,8 @@ end #def makeCharts(options)
 
 
 def myPlots(options='all')
+
+#raise options.inspect
 #pass "all" or specific option
 
 @chartable = Chartable.new
@@ -265,7 +267,7 @@ def myPlots(options='all')
 
 #if it's a specific option then go with it, otherwise show 
 #  all components of that model that are chartable.
-if options == "all" 
+#if options == "all" 
   @chartoptions=Hash[
      :measurement=>[true,true,true],
      :weight=>[true,true,true],
@@ -279,10 +281,7 @@ if options == "all"
      :measurement_thigh=>[true,true,true],
      ]
      #raise @chartoptions.to_yaml
-   else
-   #@chartoptions =@current_user.profile.myChartOptions
-   # raise @chartoptions.to_yaml  
-end
+#end
 
 
   if options == "all" || options == "water"

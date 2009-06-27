@@ -4911,3 +4911,1665 @@ Rendered member/homes/_quick_fact (0.1ms)
 Rendered member/homes/_goals (1.3ms)
 Rendered member/homes/_support (2.8ms)
 Completed in 237ms (View: 23, DB: 21) | 200 OK [http://localhost/member]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::HomesController#index (for 127.0.0.1 at 2009-06-27 11:02:17) [GET]
+  [4;35;1mUser Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-06-27 15:02:17', `last_request_at` = '2009-06-27 15:02:17' WHERE `id` = 1[0m
+  [4;35;1mSQL (5.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mHome Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `homes`[0m
+  [4;35;1mGoal Load (0.1ms)[0m   [0mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;36;1mGoal Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `goals`[0m
+  [4;35;1mQuickFact Load (0.1ms)[0m   [0mSELECT * FROM `quick_facts` [0m
+  [4;36;1mQuickFact Load (0.0ms)[0m   [0;1mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;35;1mQuickFact Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `quick_facts`[0m
+  [4;36;1mQuickSupport Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `quick_supports`[0m
+  [4;35;1mWater Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `waters`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-20 11:02:17') AND (`waters`.user_id = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-27 11:02:17') AND (`waters`.user_id = 1) [0m
+  [4;36;1mFood Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `foods`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-20 11:02:17') AND (`foods`.user_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-27 11:02:17') AND (`foods`.user_id = 1) [0m
+  [4;35;1mWeight Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `weights`[0m
+  [4;36;1mMeasurement Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `measurements`[0m
+  [4;35;1mExercise Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `exercises`[0m
+  [4;36;1mBodyScan Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within member/layouts/member
+Rendering member/homes/index
+Rendered member/homes/_quick_form (12.4ms)
+Rendered member/homes/_water_calories (0.2ms)
+  [4;35;1mWeight Load (0.1ms)[0m   [0mSELECT * FROM `weights` WHERE (`weights`.user_id = 1) ORDER BY date asc[0m
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.[]) on line #8 of app/views/member/homes/_charts.html.erb:
+5: 
+6: <%- @plot_data = [] -%>
+7: <%# @chartoptions = current_user.profile.chart_options %>
+8: <% myPlots("weight") %>
+9: <%= makeChart %>
+10: 
+11: 
+
+    app/helpers/charts_helper.rb:448:in `getWeight'
+    app/helpers/charts_helper.rb:310:in `myPlots'
+    app/views/member/homes/_charts.html.erb:8
+    app/views/member/homes/index.html.erb:13
+    app/controllers/member/homes_controller.rb:42:in `index'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (43.6ms)
+Rendered rescues/_request_and_response (11.8ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::HomesController#index (for 127.0.0.1 at 2009-06-27 11:04:18) [GET]
+  [4;36;1mUser Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2009-06-27 15:04:18', `last_request_at` = '2009-06-27 15:04:18' WHERE `id` = 1[0m
+  [4;36;1mSQL (8.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mHome Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `homes`[0m
+  [4;36;1mGoal Load (0.1ms)[0m   [0;1mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;35;1mGoal Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `goals`[0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` [0m
+  [4;35;1mQuickFact Load (0.1ms)[0m   [0mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;36;1mQuickFact Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `quick_facts`[0m
+  [4;35;1mQuickSupport Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `quick_supports`[0m
+  [4;36;1mWater Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `waters`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-20 11:04:18') AND (`waters`.user_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-27 11:04:18') AND (`waters`.user_id = 1) [0m
+  [4;35;1mFood Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `foods`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-20 11:04:18') AND (`foods`.user_id = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-27 11:04:18') AND (`foods`.user_id = 1) [0m
+  [4;36;1mWeight Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `weights`[0m
+  [4;35;1mMeasurement Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `measurements`[0m
+  [4;36;1mExercise Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `exercises`[0m
+  [4;35;1mBodyScan Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within member/layouts/member
+Rendering member/homes/index
+Rendered member/homes/_quick_form (13.7ms)
+Rendered member/homes/_water_calories (0.3ms)
+  [4;36;1mWeight Load (0.1ms)[0m   [0;1mSELECT * FROM `weights` WHERE (`weights`.user_id = 1) ORDER BY date asc[0m
+Rendered member/homes/_charts (1.3ms)
+Rendered member/homes/_quick_fact (0.2ms)
+Rendered member/homes/_goals (1.3ms)
+Rendered member/homes/_support (2.6ms)
+Completed in 223ms (View: 22, DB: 21) | 200 OK [http://localhost/member]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::HomesController#create (for 127.0.0.1 at 2009-06-27 11:04:40) [POST]
+  Parameters: {"commit"=>"8oz Glass", "water"=>{"ounces"=>"8"}, "authenticity_token"=>"6ZXRcWItuYAdlrbKHaZiJI24oG/sBq/P3Xwou6MToSc=", "weight"=>{"weight"=>""}, "exersize"=>{"title"=>"", "length"=>"", "calories"=>""}, "measurement"=>{"belly_upper"=>"", "chest"=>"", "thigh"=>"", "hips"=>"", "belly_lower"=>"", "arm"=>""}, "body_scan"=>{"metabolism"=>"", "fat"=>"", "water"=>"", "visc"=>"", "muscle"=>""}, "food"=>{"name"=>"", "protein"=>"", "calories"=>""}}
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-06-27 15:04:40', `last_request_at` = '2009-06-27 15:04:40' WHERE `id` = 1[0m
+  [4;35;1mSQL (10.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mWater Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `waters`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mWater Create (0.4ms)[0m   [0;1mINSERT INTO `waters` (`created_at`, `ounces`, `updated_at`, `date`, `user_id`) VALUES('2009-06-27 15:04:41', 8, '2009-06-27 15:04:41', '2009-06-27 15:04:41', 1)[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/member
+Completed in 56ms (DB: 15) | 302 Found [http://localhost/member/homes]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::HomesController#index (for 127.0.0.1 at 2009-06-27 11:04:41) [GET]
+  [4;36;1mUser Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE `users` SET `updated_at` = '2009-06-27 15:04:41', `last_request_at` = '2009-06-27 15:04:41' WHERE `id` = 1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mHome Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `homes`[0m
+  [4;36;1mGoal Load (0.1ms)[0m   [0;1mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;35;1mGoal Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `goals`[0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` [0m
+  [4;35;1mQuickFact Load (0.0ms)[0m   [0mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;36;1mQuickFact Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `quick_facts`[0m
+  [4;35;1mQuickSupport Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `quick_supports`[0m
+  [4;36;1mWater Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `waters`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-20 11:04:41') AND (`waters`.user_id = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-27 11:04:41') AND (`waters`.user_id = 1) [0m
+  [4;35;1mFood Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `foods`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-20 11:04:41') AND (`foods`.user_id = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-27 11:04:41') AND (`foods`.user_id = 1) [0m
+  [4;36;1mWeight Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `weights`[0m
+  [4;35;1mMeasurement Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `measurements`[0m
+  [4;36;1mExercise Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `exercises`[0m
+  [4;35;1mBodyScan Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within member/layouts/member
+Rendering member/homes/index
+Rendered member/homes/_quick_form (12.8ms)
+Rendered member/homes/_water_calories (0.2ms)
+  [4;36;1mWeight Load (0.1ms)[0m   [0;1mSELECT * FROM `weights` WHERE (`weights`.user_id = 1) ORDER BY date asc[0m
+Rendered member/homes/_charts (1.2ms)
+Rendered member/homes/_quick_fact (0.1ms)
+Rendered member/homes/_goals (1.2ms)
+Rendered member/homes/_support (2.2ms)
+Completed in 111ms (View: 21, DB: 10) | 200 OK [http://localhost/member]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::HomesController#create (for 127.0.0.1 at 2009-06-27 11:04:45) [POST]
+  Parameters: {"commit"=>"8oz Glass", "water"=>{"ounces"=>""}, "authenticity_token"=>"6ZXRcWItuYAdlrbKHaZiJI24oG/sBq/P3Xwou6MToSc=", "weight"=>{"weight"=>""}, "exersize"=>{"title"=>"", "length"=>"", "calories"=>""}, "measurement"=>{"belly_upper"=>"", "chest"=>"", "thigh"=>"", "hips"=>"", "belly_lower"=>"", "arm"=>""}, "body_scan"=>{"metabolism"=>"", "fat"=>"", "water"=>"", "visc"=>"", "muscle"=>""}, "food"=>{"name"=>"", "protein"=>"", "calories"=>""}}
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-06-27 15:04:45', `last_request_at` = '2009-06-27 15:04:45' WHERE `id` = 1[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mWater Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `waters`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mWater Create (0.2ms)[0m   [0;1mINSERT INTO `waters` (`created_at`, `ounces`, `updated_at`, `date`, `user_id`) VALUES('2009-06-27 15:04:46', 8, '2009-06-27 15:04:46', '2009-06-27 15:04:46', 1)[0m
+  [4;35;1mSQL (28.3ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/member
+Completed in 71ms (DB: 33) | 302 Found [http://localhost/member/homes]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::HomesController#index (for 127.0.0.1 at 2009-06-27 11:04:46) [GET]
+  [4;36;1mUser Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2009-06-27 15:04:46', `last_request_at` = '2009-06-27 15:04:46' WHERE `id` = 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mHome Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `homes`[0m
+  [4;36;1mGoal Load (0.1ms)[0m   [0;1mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;35;1mGoal Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `goals`[0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` [0m
+  [4;35;1mQuickFact Load (0.0ms)[0m   [0mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;36;1mQuickFact Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `quick_facts`[0m
+  [4;35;1mQuickSupport Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `quick_supports`[0m
+  [4;36;1mWater Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `waters`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-20 11:04:46') AND (`waters`.user_id = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-27 11:04:46') AND (`waters`.user_id = 1) [0m
+  [4;35;1mFood Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `foods`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-20 11:04:46') AND (`foods`.user_id = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-27 11:04:46') AND (`foods`.user_id = 1) [0m
+  [4;36;1mWeight Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `weights`[0m
+  [4;35;1mMeasurement Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `measurements`[0m
+  [4;36;1mExercise Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `exercises`[0m
+  [4;35;1mBodyScan Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within member/layouts/member
+Rendering member/homes/index
+Rendered member/homes/_quick_form (14.1ms)
+Rendered member/homes/_water_calories (0.3ms)
+  [4;36;1mWeight Load (0.1ms)[0m   [0;1mSELECT * FROM `weights` WHERE (`weights`.user_id = 1) ORDER BY date asc[0m
+Rendered member/homes/_charts (1.4ms)
+Rendered member/homes/_quick_fact (0.1ms)
+Rendered member/homes/_goals (1.3ms)
+Rendered member/homes/_support (2.5ms)
+Completed in 172ms (View: 23, DB: 10) | 200 OK [http://localhost/member]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::HomesController#index (for 127.0.0.1 at 2009-06-27 11:05:00) [GET]
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-06-27 15:05:00', `last_request_at` = '2009-06-27 15:05:00' WHERE `id` = 1[0m
+  [4;35;1mSQL (11.8ms)[0m   [0mCOMMIT[0m
+  [4;36;1mHome Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `homes`[0m
+  [4;35;1mGoal Load (0.1ms)[0m   [0mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;36;1mGoal Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `goals`[0m
+  [4;35;1mQuickFact Load (0.1ms)[0m   [0mSELECT * FROM `quick_facts` [0m
+  [4;36;1mQuickFact Load (0.0ms)[0m   [0;1mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;35;1mQuickFact Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `quick_facts`[0m
+  [4;36;1mQuickSupport Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `quick_supports`[0m
+  [4;35;1mWater Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `waters`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-20 11:05:00') AND (`waters`.user_id = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-27 11:05:00') AND (`waters`.user_id = 1) [0m
+  [4;36;1mFood Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `foods`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-20 11:05:00') AND (`foods`.user_id = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-27 11:05:00') AND (`foods`.user_id = 1) [0m
+  [4;35;1mWeight Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `weights`[0m
+  [4;36;1mMeasurement Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `measurements`[0m
+  [4;35;1mExercise Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `exercises`[0m
+  [4;36;1mBodyScan Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within member/layouts/member
+Rendering member/homes/index
+Rendered member/homes/_quick_form (12.8ms)
+Rendered member/homes/_water_calories (0.3ms)
+  [4;35;1mWater Load (0.3ms)[0m   [0mSELECT * FROM `waters` WHERE (`waters`.user_id = 1) ORDER BY date asc[0m
+Rendered member/homes/_charts (1.9ms)
+Rendered member/homes/_quick_fact (0.1ms)
+Rendered member/homes/_goals (1.3ms)
+Rendered member/homes/_support (2.3ms)
+Completed in 201ms (View: 23, DB: 23) | 200 OK [http://localhost/member]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::HomesController#index (for 127.0.0.1 at 2009-06-27 11:05:12) [GET]
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE `users` SET `updated_at` = '2009-06-27 15:05:12', `last_request_at` = '2009-06-27 15:05:12' WHERE `id` = 1[0m
+  [4;36;1mSQL (5.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mHome Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `homes`[0m
+  [4;36;1mGoal Load (0.1ms)[0m   [0;1mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;35;1mGoal Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `goals`[0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` [0m
+  [4;35;1mQuickFact Load (0.0ms)[0m   [0mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;36;1mQuickFact Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `quick_facts`[0m
+  [4;35;1mQuickSupport Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `quick_supports`[0m
+  [4;36;1mWater Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `waters`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-20 11:05:13') AND (`waters`.user_id = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-27 11:05:13') AND (`waters`.user_id = 1) [0m
+  [4;35;1mFood Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `foods`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-20 11:05:13') AND (`foods`.user_id = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-27 11:05:13') AND (`foods`.user_id = 1) [0m
+  [4;36;1mWeight Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `weights`[0m
+  [4;35;1mMeasurement Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `measurements`[0m
+  [4;36;1mExercise Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `exercises`[0m
+  [4;35;1mBodyScan Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within member/layouts/member
+Rendering member/homes/index
+Rendered member/homes/_quick_form (14.4ms)
+Rendered member/homes/_water_calories (0.3ms)
+  [4;36;1mWater Load (0.1ms)[0m   [0;1mSELECT * FROM `waters` WHERE (`waters`.user_id = 1) ORDER BY date asc[0m
+Rendered member/homes/_charts (1.2ms)
+Rendered member/homes/_quick_fact (0.1ms)
+Rendered member/homes/_goals (1.3ms)
+Rendered member/homes/_support (2.5ms)
+Completed in 189ms (View: 23, DB: 16) | 200 OK [http://localhost/member]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::HomesController#create (for 127.0.0.1 at 2009-06-27 11:05:15) [POST]
+  Parameters: {"commit"=>"8oz Glass", "water"=>{"ounces"=>""}, "authenticity_token"=>"6ZXRcWItuYAdlrbKHaZiJI24oG/sBq/P3Xwou6MToSc=", "weight"=>{"weight"=>""}, "exersize"=>{"title"=>"", "length"=>"", "calories"=>""}, "measurement"=>{"belly_upper"=>"", "chest"=>"", "thigh"=>"", "hips"=>"", "belly_lower"=>"", "arm"=>""}, "body_scan"=>{"metabolism"=>"", "fat"=>"", "water"=>"", "visc"=>"", "muscle"=>""}, "food"=>{"name"=>"", "protein"=>"", "calories"=>""}}
+  [4;35;1mUser Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-06-27 15:05:15', `last_request_at` = '2009-06-27 15:05:15' WHERE `id` = 1[0m
+  [4;35;1mSQL (4.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mWater Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `waters`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mWater Create (0.2ms)[0m   [0;1mINSERT INTO `waters` (`created_at`, `ounces`, `updated_at`, `date`, `user_id`) VALUES('2009-06-27 15:05:15', 8, '2009-06-27 15:05:15', '2009-06-27 15:05:15', 1)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/member
+Completed in 121ms (DB: 8) | 302 Found [http://localhost/member/homes]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::HomesController#index (for 127.0.0.1 at 2009-06-27 11:05:15) [GET]
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE `users` SET `updated_at` = '2009-06-27 15:05:15', `last_request_at` = '2009-06-27 15:05:15' WHERE `id` = 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mHome Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `homes`[0m
+  [4;36;1mGoal Load (0.1ms)[0m   [0;1mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;35;1mGoal Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `goals`[0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` [0m
+  [4;35;1mQuickFact Load (0.1ms)[0m   [0mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;36;1mQuickFact Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `quick_facts`[0m
+  [4;35;1mQuickSupport Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `quick_supports`[0m
+  [4;36;1mWater Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `waters`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-20 11:05:15') AND (`waters`.user_id = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-27 11:05:15') AND (`waters`.user_id = 1) [0m
+  [4;35;1mFood Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `foods`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-20 11:05:15') AND (`foods`.user_id = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-27 11:05:15') AND (`foods`.user_id = 1) [0m
+  [4;36;1mWeight Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `weights`[0m
+  [4;35;1mMeasurement Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `measurements`[0m
+  [4;36;1mExercise Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `exercises`[0m
+  [4;35;1mBodyScan Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within member/layouts/member
+Rendering member/homes/index
+Rendered member/homes/_quick_form (12.4ms)
+Rendered member/homes/_water_calories (0.3ms)
+  [4;36;1mWater Load (0.4ms)[0m   [0;1mSELECT * FROM `waters` WHERE (`waters`.user_id = 1) ORDER BY date asc[0m
+Rendered member/homes/_charts (1.7ms)
+Rendered member/homes/_quick_fact (0.1ms)
+Rendered member/homes/_goals (1.2ms)
+Rendered member/homes/_support (2.4ms)
+Completed in 177ms (View: 20, DB: 10) | 200 OK [http://localhost/member]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::HomesController#create (for 127.0.0.1 at 2009-06-27 11:06:07) [POST]
+  Parameters: {"goal"=>{"water"=>"64", "weight"=>"180", "daily_calories"=>"1250", "steps_daily"=>"3000"}, "commit"=>"New Goal", "authenticity_token"=>"6ZXRcWItuYAdlrbKHaZiJI24oG/sBq/P3Xwou6MToSc="}
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-06-27 15:06:07', `last_request_at` = '2009-06-27 15:06:07' WHERE `id` = 1[0m
+  [4;35;1mSQL (6.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mGoal Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `goals`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mGoal Create (0.3ms)[0m   [0;1mINSERT INTO `goals` (`created_at`, `chest`, `belly_upper`, `water`, `updated_at`, `weight`, `belly_lower`, `hips`, `thigh`, `steps_daily`, `daily_calories`, `date`, `user_id`, `arm`) VALUES('2009-06-27 15:06:07', 0, 0, 64, '2009-06-27 15:06:07', 180, 0, 0, 0, 3000, 1250, '2009-06-27 00:00:00', 1, 0)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/member
+Completed in 53ms (DB: 9) | 302 Found [http://localhost/member/homes]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::HomesController#index (for 127.0.0.1 at 2009-06-27 11:06:07) [GET]
+  [4;36;1mUser Columns (2.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE `users` SET `updated_at` = '2009-06-27 15:06:07', `last_request_at` = '2009-06-27 15:06:07' WHERE `id` = 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mHome Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `homes`[0m
+  [4;36;1mGoal Load (0.6ms)[0m   [0;1mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;35;1mQuickFact Load (0.2ms)[0m   [0mSELECT * FROM `quick_facts` [0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;35;1mQuickFact Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `quick_facts`[0m
+  [4;36;1mQuickSupport Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `quick_supports`[0m
+  [4;35;1mWater Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `waters`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-20 11:06:07') AND (`waters`.user_id = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-27 11:06:07') AND (`waters`.user_id = 1) [0m
+  [4;36;1mFood Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `foods`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-20 11:06:07') AND (`foods`.user_id = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-27 11:06:07') AND (`foods`.user_id = 1) [0m
+  [4;35;1mGoal Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `goals`[0m
+  [4;36;1mWeight Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `weights`[0m
+  [4;35;1mMeasurement Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `measurements`[0m
+  [4;36;1mExercise Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `exercises`[0m
+  [4;35;1mBodyScan Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within member/layouts/member
+Rendering member/homes/index
+Rendered member/homes/_quick_form (76.9ms)
+Rendered member/homes/_water_calories (0.3ms)
+  [4;36;1mWater Load (0.1ms)[0m   [0;1mSELECT * FROM `waters` WHERE (`waters`.user_id = 1) ORDER BY date asc[0m
+Rendered member/homes/_charts (2.1ms)
+Rendered member/homes/_quick_fact (0.1ms)
+Rendered member/homes/_goals (1.5ms)
+Rendered member/homes/_support (2.8ms)
+Completed in 256ms (View: 87, DB: 16) | 200 OK [http://localhost/member]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::HomesController#index (for 127.0.0.1 at 2009-06-27 11:15:53) [GET]
+  [4;35;1mUser Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.6ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-06-27 15:15:53', `last_request_at` = '2009-06-27 15:15:53' WHERE `id` = 1[0m
+  [4;35;1mSQL (6.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mHome Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `homes`[0m
+  [4;35;1mGoal Load (0.1ms)[0m   [0mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` [0m
+  [4;35;1mQuickFact Load (0.0ms)[0m   [0mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;36;1mQuickFact Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `quick_facts`[0m
+  [4;35;1mQuickSupport Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `quick_supports`[0m
+  [4;36;1mWater Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `waters`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-20 11:15:54') AND (`waters`.user_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-27 11:15:54') AND (`waters`.user_id = 1) [0m
+  [4;35;1mFood Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `foods`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-20 11:15:54') AND (`foods`.user_id = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-27 11:15:54') AND (`foods`.user_id = 1) [0m
+  [4;36;1mGoal Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `goals`[0m
+  [4;35;1mWeight Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `weights`[0m
+  [4;36;1mMeasurement Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `measurements`[0m
+  [4;35;1mExercise Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `exercises`[0m
+  [4;36;1mBodyScan Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within member/layouts/member
+Rendering member/homes/index
+Rendered member/homes/_quick_form (13.2ms)
+Rendered member/homes/_water_calories (0.3ms)
+
+ActionView::TemplateError (wrong number of arguments (0 for 1)) on line #4 of app/views/member/homes/_charts.html.erb:
+1: 
+2: <fieldset>
+3: 
+4: <%= form.submit "All Charts" %>
+5: 
+6: Chart
+7: 
+
+    app/views/member/homes/_charts.html.erb:4:in `form'
+    app/views/member/homes/_charts.html.erb:4
+    app/views/member/homes/index.html.erb:13
+    app/controllers/member/homes_controller.rb:42:in `index'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (42.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::HomesController#index (for 127.0.0.1 at 2009-06-27 11:18:16) [GET]
+  [4;35;1mUser Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-06-27 15:18:16', `last_request_at` = '2009-06-27 15:18:16' WHERE `id` = 1[0m
+  [4;35;1mSQL (19.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mHome Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `homes`[0m
+  [4;35;1mGoal Load (0.1ms)[0m   [0mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` [0m
+  [4;35;1mQuickFact Load (0.0ms)[0m   [0mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;36;1mQuickFact Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `quick_facts`[0m
+  [4;35;1mQuickSupport Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `quick_supports`[0m
+  [4;36;1mWater Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `waters`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-20 11:18:16') AND (`waters`.user_id = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-27 11:18:16') AND (`waters`.user_id = 1) [0m
+  [4;35;1mFood Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `foods`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-20 11:18:16') AND (`foods`.user_id = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-27 11:18:16') AND (`foods`.user_id = 1) [0m
+  [4;36;1mGoal Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `goals`[0m
+  [4;35;1mWeight Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `weights`[0m
+  [4;36;1mMeasurement Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `measurements`[0m
+  [4;35;1mExercise Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `exercises`[0m
+  [4;36;1mBodyScan Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within member/layouts/member
+Rendering member/homes/index
+Rendered member/homes/_quick_form (14.0ms)
+Rendered member/homes/_water_calories (0.3ms)
+  [4;35;1mWater Load (0.1ms)[0m   [0mSELECT * FROM `waters` WHERE (`waters`.user_id = 1) ORDER BY date asc[0m
+Rendered member/homes/_charts (2.6ms)
+Rendered member/homes/_quick_fact (0.1ms)
+Rendered member/homes/_goals (1.1ms)
+Rendered member/homes/_support (2.4ms)
+Completed in 194ms (View: 25, DB: 30) | 200 OK [http://localhost/member]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::HomesController#index (for 127.0.0.1 at 2009-06-27 11:29:26) [GET]
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2009-06-27 15:29:26', `last_request_at` = '2009-06-27 15:29:26' WHERE `id` = 1[0m
+  [4;36;1mSQL (32.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mHome Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `homes`[0m
+  [4;36;1mGoal Load (0.1ms)[0m   [0;1mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;35;1mQuickFact Load (0.1ms)[0m   [0mSELECT * FROM `quick_facts` [0m
+  [4;36;1mQuickFact Load (0.0ms)[0m   [0;1mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;35;1mQuickFact Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `quick_facts`[0m
+  [4;36;1mQuickSupport Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `quick_supports`[0m
+  [4;35;1mWater Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `waters`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-20 11:29:26') AND (`waters`.user_id = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-27 11:29:26') AND (`waters`.user_id = 1) [0m
+  [4;36;1mFood Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `foods`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-20 11:29:26') AND (`foods`.user_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-27 11:29:26') AND (`foods`.user_id = 1) [0m
+  [4;35;1mGoal Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `goals`[0m
+  [4;36;1mWeight Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `weights`[0m
+  [4;35;1mMeasurement Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `measurements`[0m
+  [4;36;1mExercise Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `exercises`[0m
+  [4;35;1mBodyScan Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within member/layouts/member
+Rendering member/homes/index
+Rendered member/homes/_quick_form (12.3ms)
+Rendered member/homes/_water_calories (0.2ms)
+Rendered member/homes/_charts (1.7ms)
+Rendered member/homes/_quick_fact (0.1ms)
+Rendered member/homes/_goals (1.1ms)
+Rendered member/homes/_support (64.0ms)
+Completed in 204ms (View: 84, DB: 42) | 200 OK [http://localhost/member]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::HomesController#create (for 127.0.0.1 at 2009-06-27 11:29:29) [POST]
+  Parameters: {"commit"=>"All Charts", "authenticity_token"=>"6ZXRcWItuYAdlrbKHaZiJI24oG/sBq/P3Xwou6MToSc="}
+  [4;36;1mUser Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE `users` SET `updated_at` = '2009-06-27 15:29:29', `last_request_at` = '2009-06-27 15:29:29' WHERE `id` = 1[0m
+  [4;36;1mSQL (10.2ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/member
+Completed in 122ms (DB: 12) | 302 Found [http://localhost/member/homes]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::HomesController#index (for 127.0.0.1 at 2009-06-27 11:29:29) [GET]
+  [4;35;1mUser Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-06-27 15:29:29', `last_request_at` = '2009-06-27 15:29:29' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mHome Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `homes`[0m
+  [4;35;1mGoal Load (0.1ms)[0m   [0mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` [0m
+  [4;35;1mQuickFact Load (0.0ms)[0m   [0mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;36;1mQuickFact Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `quick_facts`[0m
+  [4;35;1mQuickSupport Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `quick_supports`[0m
+  [4;36;1mWater Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `waters`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-20 11:29:29') AND (`waters`.user_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-27 11:29:29') AND (`waters`.user_id = 1) [0m
+  [4;35;1mFood Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `foods`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-20 11:29:29') AND (`foods`.user_id = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-27 11:29:29') AND (`foods`.user_id = 1) [0m
+  [4;36;1mGoal Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `goals`[0m
+  [4;35;1mWeight Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `weights`[0m
+  [4;36;1mMeasurement Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `measurements`[0m
+  [4;35;1mExercise Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `exercises`[0m
+  [4;36;1mBodyScan Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within member/layouts/member
+Rendering member/homes/index
+Rendered member/homes/_quick_form (13.4ms)
+Rendered member/homes/_water_calories (0.3ms)
+Rendered member/homes/_charts (0.8ms)
+Rendered member/homes/_quick_fact (0.1ms)
+Rendered member/homes/_goals (1.1ms)
+Rendered member/homes/_support (2.3ms)
+Completed in 180ms (View: 21, DB: 10) | 200 OK [http://localhost/member]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::HomesController#create (for 127.0.0.1 at 2009-06-27 11:29:40) [POST]
+  Parameters: {"commit"=>"Weight", "authenticity_token"=>"6ZXRcWItuYAdlrbKHaZiJI24oG/sBq/P3Xwou6MToSc="}
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-06-27 15:29:40', `last_request_at` = '2009-06-27 15:29:40' WHERE `id` = 1[0m
+  [4;35;1mSQL (14.3ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/member
+Completed in 123ms (DB: 16) | 302 Found [http://localhost/member/homes]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::HomesController#index (for 127.0.0.1 at 2009-06-27 11:29:40) [GET]
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE `users` SET `updated_at` = '2009-06-27 15:29:40', `last_request_at` = '2009-06-27 15:29:40' WHERE `id` = 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mHome Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `homes`[0m
+  [4;36;1mGoal Load (0.1ms)[0m   [0;1mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;35;1mQuickFact Load (0.1ms)[0m   [0mSELECT * FROM `quick_facts` [0m
+  [4;36;1mQuickFact Load (0.0ms)[0m   [0;1mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;35;1mQuickFact Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `quick_facts`[0m
+  [4;36;1mQuickSupport Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `quick_supports`[0m
+  [4;35;1mWater Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `waters`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-20 11:29:40') AND (`waters`.user_id = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-27 11:29:40') AND (`waters`.user_id = 1) [0m
+  [4;36;1mFood Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `foods`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-20 11:29:40') AND (`foods`.user_id = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-27 11:29:40') AND (`foods`.user_id = 1) [0m
+  [4;35;1mGoal Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `goals`[0m
+  [4;36;1mWeight Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `weights`[0m
+  [4;35;1mMeasurement Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `measurements`[0m
+  [4;36;1mExercise Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `exercises`[0m
+  [4;35;1mBodyScan Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within member/layouts/member
+Rendering member/homes/index
+Rendered member/homes/_quick_form (12.6ms)
+Rendered member/homes/_water_calories (0.2ms)
+Rendered member/homes/_charts (0.8ms)
+Rendered member/homes/_quick_fact (0.1ms)
+Rendered member/homes/_goals (1.1ms)
+Rendered member/homes/_support (2.3ms)
+Completed in 280ms (View: 20, DB: 10) | 200 OK [http://localhost/member]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::HomesController#create (for 127.0.0.1 at 2009-06-27 11:29:43) [POST]
+  Parameters: {"commit"=>"Water", "authenticity_token"=>"6ZXRcWItuYAdlrbKHaZiJI24oG/sBq/P3Xwou6MToSc="}
+  [4;36;1mUser Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE `users` SET `updated_at` = '2009-06-27 15:29:43', `last_request_at` = '2009-06-27 15:29:43' WHERE `id` = 1[0m
+  [4;36;1mSQL (3.1ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/member
+Completed in 37ms (DB: 5) | 302 Found [http://localhost/member/homes]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::HomesController#index (for 127.0.0.1 at 2009-06-27 11:29:43) [GET]
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-06-27 15:29:43', `last_request_at` = '2009-06-27 15:29:43' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mHome Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `homes`[0m
+  [4;35;1mGoal Load (0.1ms)[0m   [0mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` [0m
+  [4;35;1mQuickFact Load (0.0ms)[0m   [0mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;36;1mQuickFact Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `quick_facts`[0m
+  [4;35;1mQuickSupport Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `quick_supports`[0m
+  [4;36;1mWater Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `waters`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-20 11:29:43') AND (`waters`.user_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-27 11:29:43') AND (`waters`.user_id = 1) [0m
+  [4;35;1mFood Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `foods`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-20 11:29:43') AND (`foods`.user_id = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-27 11:29:43') AND (`foods`.user_id = 1) [0m
+  [4;36;1mGoal Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `goals`[0m
+  [4;35;1mWeight Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `weights`[0m
+  [4;36;1mMeasurement Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `measurements`[0m
+  [4;35;1mExercise Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `exercises`[0m
+  [4;36;1mBodyScan Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within member/layouts/member
+Rendering member/homes/index
+Rendered member/homes/_quick_form (12.3ms)
+Rendered member/homes/_water_calories (0.3ms)
+Rendered member/homes/_charts (0.9ms)
+Rendered member/homes/_quick_fact (0.1ms)
+Rendered member/homes/_goals (1.7ms)
+Rendered member/homes/_support (65.6ms)
+Completed in 177ms (View: 84, DB: 10) | 200 OK [http://localhost/member]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::HomesController#create (for 127.0.0.1 at 2009-06-27 11:29:46) [POST]
+  Parameters: {"commit"=>"All Charts", "authenticity_token"=>"6ZXRcWItuYAdlrbKHaZiJI24oG/sBq/P3Xwou6MToSc="}
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-06-27 15:29:46', `last_request_at` = '2009-06-27 15:29:46' WHERE `id` = 1[0m
+  [4;35;1mSQL (21.6ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/member
+Completed in 53ms (DB: 23) | 302 Found [http://localhost/member/homes]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::HomesController#index (for 127.0.0.1 at 2009-06-27 11:29:47) [GET]
+  [4;36;1mUser Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE `users` SET `updated_at` = '2009-06-27 15:29:47', `last_request_at` = '2009-06-27 15:29:47' WHERE `id` = 1[0m
+  [4;36;1mSQL (5.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mHome Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `homes`[0m
+  [4;36;1mGoal Load (0.1ms)[0m   [0;1mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;35;1mQuickFact Load (0.1ms)[0m   [0mSELECT * FROM `quick_facts` [0m
+  [4;36;1mQuickFact Load (0.0ms)[0m   [0;1mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;35;1mQuickFact Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `quick_facts`[0m
+  [4;36;1mQuickSupport Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `quick_supports`[0m
+  [4;35;1mWater Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `waters`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-20 11:29:47') AND (`waters`.user_id = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-27 11:29:47') AND (`waters`.user_id = 1) [0m
+  [4;36;1mFood Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `foods`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-20 11:29:47') AND (`foods`.user_id = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-27 11:29:47') AND (`foods`.user_id = 1) [0m
+  [4;35;1mGoal Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `goals`[0m
+  [4;36;1mWeight Columns (8.5ms)[0m   [0;1mSHOW FIELDS FROM `weights`[0m
+  [4;35;1mMeasurement Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `measurements`[0m
+  [4;36;1mExercise Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `exercises`[0m
+  [4;35;1mBodyScan Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within member/layouts/member
+Rendering member/homes/index
+Rendered member/homes/_quick_form (14.7ms)
+Rendered member/homes/_water_calories (0.3ms)
+Rendered member/homes/_charts (1.0ms)
+Rendered member/homes/_quick_fact (0.1ms)
+Rendered member/homes/_goals (1.2ms)
+Rendered member/homes/_support (2.4ms)
+Completed in 214ms (View: 23, DB: 24) | 200 OK [http://localhost/member]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::HomesController#index (for 127.0.0.1 at 2009-06-27 11:30:34) [GET]
+  [4;36;1mUser Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2009-06-27 15:30:34', `last_request_at` = '2009-06-27 15:30:34' WHERE `id` = 1[0m
+  [4;36;1mSQL (10.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mHome Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `homes`[0m
+  [4;36;1mGoal Load (0.1ms)[0m   [0;1mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;35;1mQuickFact Load (0.1ms)[0m   [0mSELECT * FROM `quick_facts` [0m
+  [4;36;1mQuickFact Load (0.0ms)[0m   [0;1mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;35;1mQuickFact Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `quick_facts`[0m
+  [4;36;1mQuickSupport Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `quick_supports`[0m
+  [4;35;1mWater Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `waters`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-20 11:30:35') AND (`waters`.user_id = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-27 11:30:35') AND (`waters`.user_id = 1) [0m
+  [4;36;1mFood Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `foods`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-20 11:30:35') AND (`foods`.user_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-27 11:30:35') AND (`foods`.user_id = 1) [0m
+  [4;35;1mGoal Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `goals`[0m
+  [4;36;1mWeight Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `weights`[0m
+  [4;35;1mMeasurement Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `measurements`[0m
+  [4;36;1mExercise Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `exercises`[0m
+  [4;35;1mBodyScan Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within member/layouts/member
+Rendering member/homes/index
+Rendered member/homes/_quick_form (12.7ms)
+Rendered member/homes/_water_calories (0.3ms)
+Rendered member/homes/_charts (0.8ms)
+Rendered member/homes/_quick_fact (0.1ms)
+Rendered member/homes/_goals (1.1ms)
+Rendered member/homes/_support (2.4ms)
+Completed in 248ms (View: 20, DB: 21) | 200 OK [http://localhost/member]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::HomesController#create (for 127.0.0.1 at 2009-06-27 11:30:39) [POST]
+  Parameters: {"commit"=>"Weight", "authenticity_token"=>"6ZXRcWItuYAdlrbKHaZiJI24oG/sBq/P3Xwou6MToSc="}
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2009-06-27 15:30:39', `last_request_at` = '2009-06-27 15:30:39' WHERE `id` = 1[0m
+  [4;36;1mSQL (8.7ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/member
+Completed in 42ms (DB: 11) | 302 Found [http://localhost/member/homes]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::HomesController#index (for 127.0.0.1 at 2009-06-27 11:30:39) [GET]
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-06-27 15:30:39', `last_request_at` = '2009-06-27 15:30:39' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mHome Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `homes`[0m
+  [4;35;1mGoal Load (0.1ms)[0m   [0mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` [0m
+  [4;35;1mQuickFact Load (0.0ms)[0m   [0mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;36;1mQuickFact Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `quick_facts`[0m
+  [4;35;1mQuickSupport Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `quick_supports`[0m
+  [4;36;1mWater Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `waters`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-20 11:30:39') AND (`waters`.user_id = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-27 11:30:39') AND (`waters`.user_id = 1) [0m
+  [4;35;1mFood Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `foods`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-20 11:30:39') AND (`foods`.user_id = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-27 11:30:39') AND (`foods`.user_id = 1) [0m
+  [4;36;1mGoal Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `goals`[0m
+  [4;35;1mWeight Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `weights`[0m
+  [4;36;1mMeasurement Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `measurements`[0m
+  [4;35;1mExercise Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `exercises`[0m
+  [4;36;1mBodyScan Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within member/layouts/member
+Rendering member/homes/index
+Rendered member/homes/_quick_form (77.0ms)
+Rendered member/homes/_water_calories (0.3ms)
+Rendered member/homes/_charts (0.9ms)
+Rendered member/homes/_quick_fact (0.1ms)
+Rendered member/homes/_goals (1.4ms)
+Rendered member/homes/_support (2.8ms)
+Completed in 170ms (View: 86, DB: 10) | 200 OK [http://localhost/member]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::HomesController#create (for 127.0.0.1 at 2009-06-27 11:30:52) [POST]
+  Parameters: {"commit"=>"All Charts", "authenticity_token"=>"6ZXRcWItuYAdlrbKHaZiJI24oG/sBq/P3Xwou6MToSc="}
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-06-27 15:30:52', `last_request_at` = '2009-06-27 15:30:52' WHERE `id` = 1[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/member
+Completed in 104ms (DB: 4) | 302 Found [http://localhost/member/homes]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::HomesController#index (for 127.0.0.1 at 2009-06-27 11:30:53) [GET]
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE `users` SET `updated_at` = '2009-06-27 15:30:53', `last_request_at` = '2009-06-27 15:30:53' WHERE `id` = 1[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mHome Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `homes`[0m
+  [4;36;1mGoal Load (0.1ms)[0m   [0;1mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;35;1mQuickFact Load (0.1ms)[0m   [0mSELECT * FROM `quick_facts` [0m
+  [4;36;1mQuickFact Load (0.0ms)[0m   [0;1mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;35;1mQuickFact Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `quick_facts`[0m
+  [4;36;1mQuickSupport Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `quick_supports`[0m
+  [4;35;1mWater Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `waters`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-20 11:30:53') AND (`waters`.user_id = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-27 11:30:53') AND (`waters`.user_id = 1) [0m
+  [4;36;1mFood Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `foods`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-20 11:30:53') AND (`foods`.user_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-27 11:30:53') AND (`foods`.user_id = 1) [0m
+  [4;35;1mGoal Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `goals`[0m
+  [4;36;1mWeight Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `weights`[0m
+  [4;35;1mMeasurement Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `measurements`[0m
+  [4;36;1mExercise Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `exercises`[0m
+  [4;35;1mBodyScan Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within member/layouts/member
+Rendering member/homes/index
+Rendered member/homes/_quick_form (14.8ms)
+Rendered member/homes/_water_calories (0.3ms)
+Rendered member/homes/_charts (0.9ms)
+Rendered member/homes/_quick_fact (0.1ms)
+Rendered member/homes/_goals (1.3ms)
+Rendered member/homes/_support (2.4ms)
+Completed in 181ms (View: 23, DB: 12) | 200 OK [http://localhost/member]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::HomesController#index (for 127.0.0.1 at 2009-06-27 11:32:10) [GET]
+  [4;36;1mUser Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE `users` SET `updated_at` = '2009-06-27 15:32:10', `last_request_at` = '2009-06-27 15:32:10' WHERE `id` = 1[0m
+  [4;36;1mSQL (3.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mHome Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `homes`[0m
+  [4;36;1mGoal Load (0.1ms)[0m   [0;1mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;35;1mQuickFact Load (0.1ms)[0m   [0mSELECT * FROM `quick_facts` [0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;35;1mQuickFact Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `quick_facts`[0m
+  [4;36;1mQuickSupport Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `quick_supports`[0m
+  [4;35;1mWater Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `waters`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-20 11:32:10') AND (`waters`.user_id = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-27 11:32:10') AND (`waters`.user_id = 1) [0m
+  [4;36;1mFood Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `foods`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-20 11:32:10') AND (`foods`.user_id = 1) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-27 11:32:10') AND (`foods`.user_id = 1) [0m
+  [4;35;1mGoal Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `goals`[0m
+  [4;36;1mWeight Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `weights`[0m
+  [4;35;1mMeasurement Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `measurements`[0m
+  [4;36;1mExercise Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `exercises`[0m
+  [4;35;1mBodyScan Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within member/layouts/member
+Rendering member/homes/index
+Rendered member/homes/_quick_form (13.3ms)
+Rendered member/homes/_water_calories (0.3ms)
+Rendered member/homes/_charts (0.9ms)
+Rendered member/homes/_quick_fact (0.1ms)
+Rendered member/homes/_goals (1.2ms)
+Rendered member/homes/_support (2.3ms)
+Completed in 188ms (View: 21, DB: 14) | 200 OK [http://localhost/member]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::HomesController#create (for 127.0.0.1 at 2009-06-27 11:32:23) [POST]
+  Parameters: {"commit"=>"All Charts", "authenticity_token"=>"6ZXRcWItuYAdlrbKHaZiJI24oG/sBq/P3Xwou6MToSc="}
+  [4;36;1mUser Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2009-06-27 15:32:23', `last_request_at` = '2009-06-27 15:32:23' WHERE `id` = 1[0m
+  [4;36;1mSQL (8.7ms)[0m   [0;1mCOMMIT[0m
+
+RuntimeError (--- All Charts
+):
+  app/controllers/member/homes_controller.rb:103:in `create'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (96.4ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::HomesController#create (for 127.0.0.1 at 2009-06-27 11:34:27) [POST]
+  Parameters: {"commit"=>"All Charts", "authenticity_token"=>"6ZXRcWItuYAdlrbKHaZiJI24oG/sBq/P3Xwou6MToSc="}
+  [4;35;1mUser Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-06-27 15:34:27', `last_request_at` = '2009-06-27 15:34:27' WHERE `id` = 1[0m
+  [4;35;1mSQL (11.8ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/member
+Completed in 74ms (DB: 15) | 302 Found [http://localhost/member/homes]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::HomesController#index (for 127.0.0.1 at 2009-06-27 11:34:28) [GET]
+  [4;36;1mUser Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE `users` SET `updated_at` = '2009-06-27 15:34:28', `last_request_at` = '2009-06-27 15:34:28' WHERE `id` = 1[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mHome Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `homes`[0m
+  [4;36;1mGoal Load (0.1ms)[0m   [0;1mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;35;1mQuickFact Load (0.1ms)[0m   [0mSELECT * FROM `quick_facts` [0m
+  [4;36;1mQuickFact Load (0.0ms)[0m   [0;1mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;35;1mQuickFact Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `quick_facts`[0m
+  [4;36;1mQuickSupport Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `quick_supports`[0m
+  [4;35;1mWater Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `waters`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-20 11:34:28') AND (`waters`.user_id = 1) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-27 11:34:28') AND (`waters`.user_id = 1) [0m
+  [4;36;1mFood Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `foods`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-20 11:34:28') AND (`foods`.user_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-27 11:34:28') AND (`foods`.user_id = 1) [0m
+  [4;35;1mGoal Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `goals`[0m
+  [4;36;1mWeight Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `weights`[0m
+  [4;35;1mMeasurement Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `measurements`[0m
+  [4;36;1mExercise Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `exercises`[0m
+  [4;35;1mBodyScan Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within member/layouts/member
+Rendering member/homes/index
+Rendered member/homes/_quick_form (13.7ms)
+Rendered member/homes/_water_calories (0.3ms)
+Rendered member/homes/_charts (0.9ms)
+Rendered member/homes/_quick_fact (0.1ms)
+Rendered member/homes/_goals (1.2ms)
+Rendered member/homes/_support (2.5ms)
+Completed in 175ms (View: 21, DB: 12) | 200 OK [http://localhost/member]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::HomesController#create (for 127.0.0.1 at 2009-06-27 11:34:31) [POST]
+  Parameters: {"commit"=>"All Charts", "authenticity_token"=>"6ZXRcWItuYAdlrbKHaZiJI24oG/sBq/P3Xwou6MToSc="}
+  [4;36;1mUser Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2009-06-27 15:34:31', `last_request_at` = '2009-06-27 15:34:31' WHERE `id` = 1[0m
+  [4;36;1mSQL (8.4ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/member
+Completed in 47ms (DB: 10) | 302 Found [http://localhost/member/homes]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::HomesController#index (for 127.0.0.1 at 2009-06-27 11:34:31) [GET]
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-06-27 15:34:31', `last_request_at` = '2009-06-27 15:34:31' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mHome Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `homes`[0m
+  [4;35;1mGoal Load (0.1ms)[0m   [0mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` [0m
+  [4;35;1mQuickFact Load (0.1ms)[0m   [0mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;36;1mQuickFact Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `quick_facts`[0m
+  [4;35;1mQuickSupport Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `quick_supports`[0m
+  [4;36;1mWater Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `waters`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-20 11:34:31') AND (`waters`.user_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-27 11:34:31') AND (`waters`.user_id = 1) [0m
+  [4;35;1mFood Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `foods`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-20 11:34:31') AND (`foods`.user_id = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-27 11:34:31') AND (`foods`.user_id = 1) [0m
+  [4;36;1mGoal Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `goals`[0m
+  [4;35;1mWeight Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `weights`[0m
+  [4;36;1mMeasurement Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `measurements`[0m
+  [4;35;1mExercise Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `exercises`[0m
+  [4;36;1mBodyScan Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within member/layouts/member
+Rendering member/homes/index
+Rendered member/homes/_quick_form (15.1ms)
+Rendered member/homes/_water_calories (0.3ms)
+Rendered member/homes/_charts (1.0ms)
+Rendered member/homes/_quick_fact (0.2ms)
+Rendered member/homes/_goals (2.8ms)
+Rendered member/homes/_support (2.8ms)
+Completed in 197ms (View: 32, DB: 11) | 200 OK [http://localhost/member]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::HomesController#create (for 127.0.0.1 at 2009-06-27 11:34:31) [POST]
+  Parameters: {"commit"=>"All Charts", "authenticity_token"=>"6ZXRcWItuYAdlrbKHaZiJI24oG/sBq/P3Xwou6MToSc="}
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-06-27 15:34:31', `last_request_at` = '2009-06-27 15:34:31' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/member
+Completed in 34ms (DB: 2) | 302 Found [http://localhost/member/homes]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::HomesController#index (for 127.0.0.1 at 2009-06-27 11:34:32) [GET]
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE `users` SET `updated_at` = '2009-06-27 15:34:32', `last_request_at` = '2009-06-27 15:34:32' WHERE `id` = 1[0m
+  [4;36;1mSQL (3.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mHome Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `homes`[0m
+  [4;36;1mGoal Load (0.4ms)[0m   [0;1mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;35;1mQuickFact Load (0.1ms)[0m   [0mSELECT * FROM `quick_facts` [0m
+  [4;36;1mQuickFact Load (0.0ms)[0m   [0;1mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;35;1mQuickFact Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `quick_facts`[0m
+  [4;36;1mQuickSupport Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `quick_supports`[0m
+  [4;35;1mWater Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `waters`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-20 11:34:32') AND (`waters`.user_id = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-27 11:34:32') AND (`waters`.user_id = 1) [0m
+  [4;36;1mFood Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `foods`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-20 11:34:32') AND (`foods`.user_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-27 11:34:32') AND (`foods`.user_id = 1) [0m
+  [4;35;1mGoal Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `goals`[0m
+  [4;36;1mWeight Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `weights`[0m
+  [4;35;1mMeasurement Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `measurements`[0m
+  [4;36;1mExercise Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `exercises`[0m
+  [4;35;1mBodyScan Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within member/layouts/member
+Rendering member/homes/index
+Rendered member/homes/_quick_form (76.8ms)
+Rendered member/homes/_water_calories (0.3ms)
+Rendered member/homes/_charts (0.9ms)
+Rendered member/homes/_quick_fact (0.1ms)
+Rendered member/homes/_goals (1.3ms)
+Rendered member/homes/_support (3.8ms)
+Completed in 179ms (View: 87, DB: 14) | 200 OK [http://localhost/member]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::HomesController#create (for 127.0.0.1 at 2009-06-27 11:34:34) [POST]
+  Parameters: {"commit"=>"Weight", "authenticity_token"=>"6ZXRcWItuYAdlrbKHaZiJI24oG/sBq/P3Xwou6MToSc="}
+  [4;36;1mUser Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2009-06-27 15:34:34', `last_request_at` = '2009-06-27 15:34:34' WHERE `id` = 1[0m
+  [4;36;1mSQL (3.4ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/member
+Completed in 58ms (DB: 7) | 302 Found [http://localhost/member/homes]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::HomesController#index (for 127.0.0.1 at 2009-06-27 11:34:34) [GET]
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-06-27 15:34:34', `last_request_at` = '2009-06-27 15:34:34' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mHome Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `homes`[0m
+  [4;35;1mGoal Load (0.1ms)[0m   [0mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` [0m
+  [4;35;1mQuickFact Load (0.0ms)[0m   [0mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;36;1mQuickFact Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `quick_facts`[0m
+  [4;35;1mQuickSupport Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `quick_supports`[0m
+  [4;36;1mWater Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `waters`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-20 11:34:34') AND (`waters`.user_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-27 11:34:34') AND (`waters`.user_id = 1) [0m
+  [4;35;1mFood Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `foods`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-20 11:34:34') AND (`foods`.user_id = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-27 11:34:34') AND (`foods`.user_id = 1) [0m
+  [4;36;1mGoal Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `goals`[0m
+  [4;35;1mWeight Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `weights`[0m
+  [4;36;1mMeasurement Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `measurements`[0m
+  [4;35;1mExercise Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `exercises`[0m
+  [4;36;1mBodyScan Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within member/layouts/member
+Rendering member/homes/index
+Rendered member/homes/_quick_form (13.4ms)
+Rendered member/homes/_water_calories (0.3ms)
+Rendered member/homes/_charts (0.8ms)
+Rendered member/homes/_quick_fact (0.1ms)
+Rendered member/homes/_goals (1.3ms)
+Rendered member/homes/_support (2.7ms)
+Completed in 173ms (View: 22, DB: 10) | 200 OK [http://localhost/member]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::HomesController#create (for 127.0.0.1 at 2009-06-27 11:34:38) [POST]
+  Parameters: {"commit"=>"Water", "authenticity_token"=>"6ZXRcWItuYAdlrbKHaZiJI24oG/sBq/P3Xwou6MToSc="}
+  [4;35;1mUser Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.6ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-06-27 15:34:38', `last_request_at` = '2009-06-27 15:34:38' WHERE `id` = 1[0m
+  [4;35;1mSQL (9.6ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/member
+Completed in 130ms (DB: 13) | 302 Found [http://localhost/member/homes]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::HomesController#index (for 127.0.0.1 at 2009-06-27 11:34:38) [GET]
+  [4;36;1mUser Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE `users` SET `updated_at` = '2009-06-27 15:34:38', `last_request_at` = '2009-06-27 15:34:38' WHERE `id` = 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mHome Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `homes`[0m
+  [4;36;1mGoal Load (0.1ms)[0m   [0;1mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;35;1mQuickFact Load (0.1ms)[0m   [0mSELECT * FROM `quick_facts` [0m
+  [4;36;1mQuickFact Load (0.0ms)[0m   [0;1mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;35;1mQuickFact Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `quick_facts`[0m
+  [4;36;1mQuickSupport Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `quick_supports`[0m
+  [4;35;1mWater Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `waters`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-20 11:34:38') AND (`waters`.user_id = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-27 11:34:38') AND (`waters`.user_id = 1) [0m
+  [4;36;1mFood Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `foods`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-20 11:34:38') AND (`foods`.user_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-27 11:34:38') AND (`foods`.user_id = 1) [0m
+  [4;35;1mGoal Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `goals`[0m
+  [4;36;1mWeight Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `weights`[0m
+  [4;35;1mMeasurement Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `measurements`[0m
+  [4;36;1mExercise Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `exercises`[0m
+  [4;35;1mBodyScan Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within member/layouts/member
+Rendering member/homes/index
+Rendered member/homes/_quick_form (13.6ms)
+Rendered member/homes/_water_calories (0.3ms)
+Rendered member/homes/_charts (0.8ms)
+Rendered member/homes/_quick_fact (0.1ms)
+Rendered member/homes/_goals (1.1ms)
+Rendered member/homes/_support (2.3ms)
+Completed in 178ms (View: 21, DB: 10) | 200 OK [http://localhost/member]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::HomesController#index (for 127.0.0.1 at 2009-06-27 11:34:55) [GET]
+  [4;36;1mUser Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2009-06-27 15:34:55', `last_request_at` = '2009-06-27 15:34:55' WHERE `id` = 1[0m
+  [4;36;1mSQL (3.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mHome Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `homes`[0m
+  [4;36;1mGoal Load (0.1ms)[0m   [0;1mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;35;1mQuickFact Load (0.1ms)[0m   [0mSELECT * FROM `quick_facts` [0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;35;1mQuickFact Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `quick_facts`[0m
+  [4;36;1mQuickSupport Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `quick_supports`[0m
+  [4;35;1mWater Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `waters`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-20 11:34:55') AND (`waters`.user_id = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-27 11:34:55') AND (`waters`.user_id = 1) [0m
+  [4;36;1mFood Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `foods`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-20 11:34:55') AND (`foods`.user_id = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-27 11:34:55') AND (`foods`.user_id = 1) [0m
+  [4;35;1mGoal Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `goals`[0m
+  [4;36;1mWeight Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `weights`[0m
+  [4;35;1mMeasurement Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `measurements`[0m
+  [4;36;1mExercise Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `exercises`[0m
+  [4;35;1mBodyScan Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within member/layouts/member
+Rendering member/homes/index
+Rendered member/homes/_quick_form (12.1ms)
+Rendered member/homes/_water_calories (0.3ms)
+Rendered member/homes/_charts (1.6ms)
+Rendered member/homes/_quick_fact (0.1ms)
+Rendered member/homes/_goals (1.2ms)
+Rendered member/homes/_support (66.3ms)
+Completed in 178ms (View: 86, DB: 14) | 200 OK [http://localhost/member]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::HomesController#create (for 127.0.0.1 at 2009-06-27 11:34:58) [POST]
+  Parameters: {"commit"=>"All Charts", "authenticity_token"=>"6ZXRcWItuYAdlrbKHaZiJI24oG/sBq/P3Xwou6MToSc="}
+  [4;36;1mUser Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (2.7ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE `users` SET `updated_at` = '2009-06-27 15:34:59', `last_request_at` = '2009-06-27 15:34:59' WHERE `id` = 1[0m
+  [4;36;1mSQL (9.8ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/member
+Completed in 116ms (DB: 15) | 302 Found [http://localhost/member/homes]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::HomesController#index (for 127.0.0.1 at 2009-06-27 11:34:59) [GET]
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-06-27 15:34:59', `last_request_at` = '2009-06-27 15:34:59' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mHome Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `homes`[0m
+  [4;35;1mGoal Load (0.1ms)[0m   [0mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` [0m
+  [4;35;1mQuickFact Load (0.1ms)[0m   [0mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;36;1mQuickFact Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `quick_facts`[0m
+  [4;35;1mQuickSupport Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `quick_supports`[0m
+  [4;36;1mWater Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `waters`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-20 11:34:59') AND (`waters`.user_id = 1) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-27 11:34:59') AND (`waters`.user_id = 1) [0m
+  [4;35;1mFood Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `foods`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-20 11:34:59') AND (`foods`.user_id = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-27 11:34:59') AND (`foods`.user_id = 1) [0m
+  [4;36;1mGoal Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `goals`[0m
+  [4;35;1mWeight Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `weights`[0m
+  [4;36;1mMeasurement Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `measurements`[0m
+  [4;35;1mExercise Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `exercises`[0m
+  [4;36;1mBodyScan Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within member/layouts/member
+Rendering member/homes/index
+Rendered member/homes/_quick_form (12.9ms)
+Rendered member/homes/_water_calories (0.3ms)
+Rendered member/homes/_charts (0.8ms)
+Rendered member/homes/_quick_fact (0.1ms)
+Rendered member/homes/_goals (1.2ms)
+Rendered member/homes/_support (2.4ms)
+Completed in 175ms (View: 21, DB: 10) | 200 OK [http://localhost/member]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::HomesController#create (for 127.0.0.1 at 2009-06-27 11:35:01) [POST]
+  Parameters: {"commit"=>"Weight", "authenticity_token"=>"6ZXRcWItuYAdlrbKHaZiJI24oG/sBq/P3Xwou6MToSc="}
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-06-27 15:35:01', `last_request_at` = '2009-06-27 15:35:01' WHERE `id` = 1[0m
+  [4;35;1mSQL (2.6ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/member
+Completed in 114ms (DB: 4) | 302 Found [http://localhost/member/homes]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::HomesController#index (for 127.0.0.1 at 2009-06-27 11:35:01) [GET]
+  [4;36;1mUser Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE `users` SET `updated_at` = '2009-06-27 15:35:01', `last_request_at` = '2009-06-27 15:35:01' WHERE `id` = 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mHome Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `homes`[0m
+  [4;36;1mGoal Load (0.1ms)[0m   [0;1mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;35;1mQuickFact Load (0.1ms)[0m   [0mSELECT * FROM `quick_facts` [0m
+  [4;36;1mQuickFact Load (0.0ms)[0m   [0;1mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;35;1mQuickFact Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `quick_facts`[0m
+  [4;36;1mQuickSupport Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `quick_supports`[0m
+  [4;35;1mWater Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `waters`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-20 11:35:01') AND (`waters`.user_id = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-27 11:35:01') AND (`waters`.user_id = 1) [0m
+  [4;36;1mFood Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `foods`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-20 11:35:01') AND (`foods`.user_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-27 11:35:01') AND (`foods`.user_id = 1) [0m
+  [4;35;1mGoal Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `goals`[0m
+  [4;36;1mWeight Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `weights`[0m
+  [4;35;1mMeasurement Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `measurements`[0m
+  [4;36;1mExercise Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `exercises`[0m
+  [4;35;1mBodyScan Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within member/layouts/member
+Rendering member/homes/index
+Rendered member/homes/_quick_form (12.7ms)
+Rendered member/homes/_water_calories (0.3ms)
+Rendered member/homes/_charts (0.9ms)
+Rendered member/homes/_quick_fact (0.1ms)
+Rendered member/homes/_goals (1.2ms)
+Rendered member/homes/_support (2.4ms)
+Completed in 181ms (View: 21, DB: 11) | 200 OK [http://localhost/member]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::HomesController#create (for 127.0.0.1 at 2009-06-27 11:35:04) [POST]
+  Parameters: {"commit"=>"Water", "authenticity_token"=>"6ZXRcWItuYAdlrbKHaZiJI24oG/sBq/P3Xwou6MToSc="}
+  [4;36;1mUser Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2009-06-27 15:35:04', `last_request_at` = '2009-06-27 15:35:04' WHERE `id` = 1[0m
+  [4;36;1mSQL (3.7ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/member
+Completed in 38ms (DB: 5) | 302 Found [http://localhost/member/homes]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::HomesController#index (for 127.0.0.1 at 2009-06-27 11:35:04) [GET]
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-06-27 15:35:04', `last_request_at` = '2009-06-27 15:35:04' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mHome Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `homes`[0m
+  [4;35;1mGoal Load (0.1ms)[0m   [0mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` [0m
+  [4;35;1mQuickFact Load (0.0ms)[0m   [0mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;36;1mQuickFact Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `quick_facts`[0m
+  [4;35;1mQuickSupport Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `quick_supports`[0m
+  [4;36;1mWater Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `waters`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-20 11:35:04') AND (`waters`.user_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-27 11:35:04') AND (`waters`.user_id = 1) [0m
+  [4;35;1mFood Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `foods`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-20 11:35:04') AND (`foods`.user_id = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-27 11:35:04') AND (`foods`.user_id = 1) [0m
+  [4;36;1mGoal Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `goals`[0m
+  [4;35;1mWeight Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `weights`[0m
+  [4;36;1mMeasurement Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `measurements`[0m
+  [4;35;1mExercise Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `exercises`[0m
+  [4;36;1mBodyScan Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within member/layouts/member
+Rendering member/homes/index
+Rendered member/homes/_quick_form (11.9ms)
+Rendered member/homes/_water_calories (0.3ms)
+Rendered member/homes/_charts (0.8ms)
+Rendered member/homes/_quick_fact (0.1ms)
+Rendered member/homes/_goals (1.1ms)
+Rendered member/homes/_support (65.1ms)
+Completed in 168ms (View: 82, DB: 10) | 200 OK [http://localhost/member]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::HomesController#index (for 127.0.0.1 at 2009-06-27 11:35:43) [GET]
+  [4;35;1mUser Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-06-27 15:35:43', `last_request_at` = '2009-06-27 15:35:43' WHERE `id` = 1[0m
+  [4;35;1mSQL (13.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mHome Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `homes`[0m
+  [4;35;1mGoal Load (0.1ms)[0m   [0mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` [0m
+  [4;35;1mQuickFact Load (0.0ms)[0m   [0mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;36;1mQuickFact Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `quick_facts`[0m
+  [4;35;1mQuickSupport Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `quick_supports`[0m
+  [4;36;1mWater Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `waters`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-20 11:35:43') AND (`waters`.user_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-27 11:35:43') AND (`waters`.user_id = 1) [0m
+  [4;35;1mFood Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `foods`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-20 11:35:43') AND (`foods`.user_id = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-27 11:35:43') AND (`foods`.user_id = 1) [0m
+  [4;36;1mGoal Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `goals`[0m
+  [4;35;1mWeight Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `weights`[0m
+  [4;36;1mMeasurement Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `measurements`[0m
+  [4;35;1mExercise Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `exercises`[0m
+  [4;36;1mBodyScan Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within member/layouts/member
+Rendering member/homes/index
+Rendered member/homes/_quick_form (13.1ms)
+Rendered member/homes/_water_calories (0.3ms)
+
+ActionView::TemplateError ("all") on line #14 of app/views/member/homes/_charts.html.erb:
+11: 
+12: <%- @plot_data = [] -%>
+13: <%# @chartoptions = current_user.profile.chart_options %>
+14: <% myPlots(@chart_type) %>
+15: <%= makeChart %>
+16: 
+17: 
+
+    app/helpers/charts_helper.rb:261:in `myPlots'
+    app/views/member/homes/_charts.html.erb:14
+    app/views/member/homes/index.html.erb:13
+    app/controllers/member/homes_controller.rb:45:in `index'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (43.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::HomesController#index (for 127.0.0.1 at 2009-06-27 11:36:06) [GET]
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-06-27 15:36:06', `last_request_at` = '2009-06-27 15:36:06' WHERE `id` = 1[0m
+  [4;35;1mSQL (8.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mHome Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `homes`[0m
+  [4;35;1mGoal Load (0.1ms)[0m   [0mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` [0m
+  [4;35;1mQuickFact Load (0.0ms)[0m   [0mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;36;1mQuickFact Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `quick_facts`[0m
+  [4;35;1mQuickSupport Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `quick_supports`[0m
+  [4;36;1mWater Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `waters`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-20 11:36:06') AND (`waters`.user_id = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-27 11:36:06') AND (`waters`.user_id = 1) [0m
+  [4;35;1mFood Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `foods`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-20 11:36:06') AND (`foods`.user_id = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-27 11:36:06') AND (`foods`.user_id = 1) [0m
+  [4;36;1mGoal Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `goals`[0m
+  [4;35;1mWeight Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `weights`[0m
+  [4;36;1mMeasurement Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `measurements`[0m
+  [4;35;1mExercise Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `exercises`[0m
+  [4;36;1mBodyScan Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within member/layouts/member
+Rendering member/homes/index
+Rendered member/homes/_quick_form (14.8ms)
+Rendered member/homes/_water_calories (0.3ms)
+  [4;35;1mWater Load (0.1ms)[0m   [0mSELECT * FROM `waters` WHERE (`waters`.user_id = 1) ORDER BY date asc[0m
+  [4;36;1mFood Load (0.1ms)[0m   [0;1mSELECT * FROM `foods` WHERE (`foods`.user_id = 1) ORDER BY date asc[0m
+  [4;35;1mExercise Load (0.1ms)[0m   [0mSELECT * FROM `exercises` WHERE (`exercises`.user_id = 1) ORDER BY date asc[0m
+  [4;36;1mMeasurement Load (0.1ms)[0m   [0;1mSELECT * FROM `measurements` WHERE (`measurements`.user_id = 1) ORDER BY date asc[0m
+  [4;35;1mWeight Load (0.0ms)[0m   [0mSELECT * FROM `weights` WHERE (`weights`.user_id = 1) ORDER BY date asc[0m
+Rendered member/homes/_charts (5.0ms)
+Rendered member/homes/_quick_fact (0.1ms)
+Rendered member/homes/_goals (1.3ms)
+Rendered member/homes/_support (2.6ms)
+Completed in 186ms (View: 27, DB: 19) | 200 OK [http://localhost/member]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::HomesController#create (for 127.0.0.1 at 2009-06-27 11:36:13) [POST]
+  Parameters: {"commit"=>"Weight", "authenticity_token"=>"6ZXRcWItuYAdlrbKHaZiJI24oG/sBq/P3Xwou6MToSc="}
+  [4;36;1mUser Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE `users` SET `updated_at` = '2009-06-27 15:36:13', `last_request_at` = '2009-06-27 15:36:13' WHERE `id` = 1[0m
+  [4;36;1mSQL (4.1ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/member
+Completed in 131ms (DB: 7) | 302 Found [http://localhost/member/homes]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::HomesController#index (for 127.0.0.1 at 2009-06-27 11:36:13) [GET]
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-06-27 15:36:13', `last_request_at` = '2009-06-27 15:36:13' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mHome Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `homes`[0m
+  [4;35;1mGoal Load (0.1ms)[0m   [0mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` [0m
+  [4;35;1mQuickFact Load (0.0ms)[0m   [0mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;36;1mQuickFact Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `quick_facts`[0m
+  [4;35;1mQuickSupport Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `quick_supports`[0m
+  [4;36;1mWater Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `waters`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-20 11:36:13') AND (`waters`.user_id = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-27 11:36:13') AND (`waters`.user_id = 1) [0m
+  [4;35;1mFood Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `foods`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-20 11:36:13') AND (`foods`.user_id = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-27 11:36:13') AND (`foods`.user_id = 1) [0m
+  [4;36;1mGoal Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `goals`[0m
+  [4;35;1mWeight Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `weights`[0m
+  [4;36;1mMeasurement Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `measurements`[0m
+  [4;35;1mExercise Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `exercises`[0m
+  [4;36;1mBodyScan Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within member/layouts/member
+Rendering member/homes/index
+Rendered member/homes/_quick_form (12.4ms)
+Rendered member/homes/_water_calories (0.3ms)
+  [4;35;1mWater Load (0.1ms)[0m   [0mSELECT * FROM `waters` WHERE (`waters`.user_id = 1) ORDER BY date asc[0m
+  [4;36;1mFood Load (0.1ms)[0m   [0;1mSELECT * FROM `foods` WHERE (`foods`.user_id = 1) ORDER BY date asc[0m
+  [4;35;1mExercise Load (0.1ms)[0m   [0mSELECT * FROM `exercises` WHERE (`exercises`.user_id = 1) ORDER BY date asc[0m
+  [4;36;1mMeasurement Load (0.1ms)[0m   [0;1mSELECT * FROM `measurements` WHERE (`measurements`.user_id = 1) ORDER BY date asc[0m
+  [4;35;1mWeight Load (0.0ms)[0m   [0mSELECT * FROM `weights` WHERE (`weights`.user_id = 1) ORDER BY date asc[0m
+Rendered member/homes/_charts (4.5ms)
+Rendered member/homes/_quick_fact (0.1ms)
+Rendered member/homes/_goals (1.2ms)
+Rendered member/homes/_support (2.5ms)
+Completed in 179ms (View: 23, DB: 10) | 200 OK [http://localhost/member]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::HomesController#create (for 127.0.0.1 at 2009-06-27 11:36:15) [POST]
+  Parameters: {"commit"=>"All Charts", "authenticity_token"=>"6ZXRcWItuYAdlrbKHaZiJI24oG/sBq/P3Xwou6MToSc="}
+  [4;36;1mUser Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE `users` SET `updated_at` = '2009-06-27 15:36:15', `last_request_at` = '2009-06-27 15:36:15' WHERE `id` = 1[0m
+  [4;36;1mSQL (11.1ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/member
+Completed in 46ms (DB: 13) | 302 Found [http://localhost/member/homes]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::HomesController#index (for 127.0.0.1 at 2009-06-27 11:36:16) [GET]
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-06-27 15:36:16', `last_request_at` = '2009-06-27 15:36:16' WHERE `id` = 1[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mCOMMIT[0m
+  [4;36;1mHome Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `homes`[0m
+  [4;35;1mGoal Load (0.1ms)[0m   [0mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` [0m
+  [4;35;1mQuickFact Load (0.0ms)[0m   [0mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;36;1mQuickFact Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `quick_facts`[0m
+  [4;35;1mQuickSupport Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `quick_supports`[0m
+  [4;36;1mWater Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `waters`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-20 11:36:16') AND (`waters`.user_id = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-27 11:36:16') AND (`waters`.user_id = 1) [0m
+  [4;35;1mFood Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `foods`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-20 11:36:16') AND (`foods`.user_id = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-27 11:36:16') AND (`foods`.user_id = 1) [0m
+  [4;36;1mGoal Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `goals`[0m
+  [4;35;1mWeight Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `weights`[0m
+  [4;36;1mMeasurement Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `measurements`[0m
+  [4;35;1mExercise Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `exercises`[0m
+  [4;36;1mBodyScan Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within member/layouts/member
+Rendering member/homes/index
+Rendered member/homes/_quick_form (12.3ms)
+Rendered member/homes/_water_calories (0.3ms)
+  [4;35;1mWater Load (0.1ms)[0m   [0mSELECT * FROM `waters` WHERE (`waters`.user_id = 1) ORDER BY date asc[0m
+  [4;36;1mFood Load (0.1ms)[0m   [0;1mSELECT * FROM `foods` WHERE (`foods`.user_id = 1) ORDER BY date asc[0m
+  [4;35;1mExercise Load (0.1ms)[0m   [0mSELECT * FROM `exercises` WHERE (`exercises`.user_id = 1) ORDER BY date asc[0m
+  [4;36;1mMeasurement Load (0.1ms)[0m   [0;1mSELECT * FROM `measurements` WHERE (`measurements`.user_id = 1) ORDER BY date asc[0m
+  [4;35;1mWeight Load (3.9ms)[0m   [0mSELECT * FROM `weights` WHERE (`weights`.user_id = 1) ORDER BY date asc[0m
+Rendered member/homes/_charts (69.0ms)
+Rendered member/homes/_quick_fact (0.2ms)
+Rendered member/homes/_goals (1.8ms)
+Rendered member/homes/_support (2.8ms)
+Completed in 179ms (View: 85, DB: 16) | 200 OK [http://localhost/member]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::HomesController#create (for 127.0.0.1 at 2009-06-27 11:36:19) [POST]
+  Parameters: {"commit"=>"Water", "authenticity_token"=>"6ZXRcWItuYAdlrbKHaZiJI24oG/sBq/P3Xwou6MToSc="}
+  [4;36;1mUser Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2009-06-27 15:36:19', `last_request_at` = '2009-06-27 15:36:19' WHERE `id` = 1[0m
+  [4;36;1mSQL (11.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/member
+Completed in 47ms (DB: 13) | 302 Found [http://localhost/member/homes]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::HomesController#index (for 127.0.0.1 at 2009-06-27 11:36:19) [GET]
+  [4;35;1mUser Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-06-27 15:36:19', `last_request_at` = '2009-06-27 15:36:19' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mHome Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `homes`[0m
+  [4;35;1mGoal Load (0.1ms)[0m   [0mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` [0m
+  [4;35;1mQuickFact Load (0.0ms)[0m   [0mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;36;1mQuickFact Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `quick_facts`[0m
+  [4;35;1mQuickSupport Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `quick_supports`[0m
+  [4;36;1mWater Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `waters`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-20 11:36:19') AND (`waters`.user_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-27 11:36:19') AND (`waters`.user_id = 1) [0m
+  [4;35;1mFood Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `foods`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-20 11:36:19') AND (`foods`.user_id = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-27 11:36:19') AND (`foods`.user_id = 1) [0m
+  [4;36;1mGoal Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `goals`[0m
+  [4;35;1mWeight Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `weights`[0m
+  [4;36;1mMeasurement Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `measurements`[0m
+  [4;35;1mExercise Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `exercises`[0m
+  [4;36;1mBodyScan Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within member/layouts/member
+Rendering member/homes/index
+Rendered member/homes/_quick_form (14.1ms)
+Rendered member/homes/_water_calories (0.3ms)
+  [4;35;1mWater Load (0.1ms)[0m   [0mSELECT * FROM `waters` WHERE (`waters`.user_id = 1) ORDER BY date asc[0m
+  [4;36;1mFood Load (0.1ms)[0m   [0;1mSELECT * FROM `foods` WHERE (`foods`.user_id = 1) ORDER BY date asc[0m
+  [4;35;1mExercise Load (0.1ms)[0m   [0mSELECT * FROM `exercises` WHERE (`exercises`.user_id = 1) ORDER BY date asc[0m
+  [4;36;1mMeasurement Load (0.1ms)[0m   [0;1mSELECT * FROM `measurements` WHERE (`measurements`.user_id = 1) ORDER BY date asc[0m
+  [4;35;1mWeight Load (0.1ms)[0m   [0mSELECT * FROM `weights` WHERE (`weights`.user_id = 1) ORDER BY date asc[0m
+Rendered member/homes/_charts (4.8ms)
+Rendered member/homes/_quick_fact (0.1ms)
+Rendered member/homes/_goals (1.3ms)
+Rendered member/homes/_support (2.5ms)
+Completed in 178ms (View: 26, DB: 10) | 200 OK [http://localhost/member]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::HomesController#create (for 127.0.0.1 at 2009-06-27 11:36:23) [POST]
+  Parameters: {"commit"=>"Water", "authenticity_token"=>"6ZXRcWItuYAdlrbKHaZiJI24oG/sBq/P3Xwou6MToSc="}
+  [4;36;1mUser Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2009-06-27 15:36:23', `last_request_at` = '2009-06-27 15:36:23' WHERE `id` = 1[0m
+  [4;36;1mSQL (6.6ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/member
+Completed in 116ms (DB: 9) | 302 Found [http://localhost/member/homes]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::HomesController#index (for 127.0.0.1 at 2009-06-27 11:36:23) [GET]
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-06-27 15:36:23', `last_request_at` = '2009-06-27 15:36:23' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mHome Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `homes`[0m
+  [4;35;1mGoal Load (0.1ms)[0m   [0mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` [0m
+  [4;35;1mQuickFact Load (0.0ms)[0m   [0mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;36;1mQuickFact Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `quick_facts`[0m
+  [4;35;1mQuickSupport Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `quick_supports`[0m
+  [4;36;1mWater Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `waters`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-20 11:36:23') AND (`waters`.user_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-27 11:36:23') AND (`waters`.user_id = 1) [0m
+  [4;35;1mFood Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `foods`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-20 11:36:23') AND (`foods`.user_id = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-27 11:36:23') AND (`foods`.user_id = 1) [0m
+  [4;36;1mGoal Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `goals`[0m
+  [4;35;1mWeight Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `weights`[0m
+  [4;36;1mMeasurement Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `measurements`[0m
+  [4;35;1mExercise Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `exercises`[0m
+  [4;36;1mBodyScan Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within member/layouts/member
+Rendering member/homes/index
+Rendered member/homes/_quick_form (13.1ms)
+Rendered member/homes/_water_calories (0.3ms)
+  [4;35;1mWater Load (0.1ms)[0m   [0mSELECT * FROM `waters` WHERE (`waters`.user_id = 1) ORDER BY date asc[0m
+  [4;36;1mFood Load (0.1ms)[0m   [0;1mSELECT * FROM `foods` WHERE (`foods`.user_id = 1) ORDER BY date asc[0m
+  [4;35;1mExercise Load (0.1ms)[0m   [0mSELECT * FROM `exercises` WHERE (`exercises`.user_id = 1) ORDER BY date asc[0m
+  [4;36;1mMeasurement Load (0.1ms)[0m   [0;1mSELECT * FROM `measurements` WHERE (`measurements`.user_id = 1) ORDER BY date asc[0m
+  [4;35;1mWeight Load (0.0ms)[0m   [0mSELECT * FROM `weights` WHERE (`weights`.user_id = 1) ORDER BY date asc[0m
+Rendered member/homes/_charts (4.5ms)
+Rendered member/homes/_quick_fact (0.1ms)
+Rendered member/homes/_goals (1.2ms)
+Rendered member/homes/_support (2.4ms)
+Completed in 184ms (View: 25, DB: 10) | 200 OK [http://localhost/member]
+  [4;36;1mHome Load (0.7ms)[0m   [0;1mSELECT * FROM `homes` WHERE (`homes`.user_id = 1) LIMIT 1[0m
