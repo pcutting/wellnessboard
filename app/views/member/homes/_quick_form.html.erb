@@ -1,8 +1,22 @@
 
 
-  <% form_for [:member, @home] do |form| %>
+  <% form_for ([:member, @home], :url => { :action => "create" } ) do |form| %>
 
 
+
+  <fieldset>
+  <legend>Water</legend>
+  <table>
+  <% fields_for   :water do |f| %>
+   <tr><th>
+    <%= f.label :ounces %></th><th>
+    <%= f.text_field :ounces  , :size => 4 %>
+  </th><th><%= f.submit 'Drank' %>
+  </th></tr></table>
+  <%= form.submit '8oz Glass' %><%= form.submit 'Herbal Tea 8oz' %>
+  <% end %>
+  </fieldset>
+  
 
   <fieldset>
   <legend>Weight</legend>
@@ -17,71 +31,24 @@
   <% end %>
   </fieldset>
 
-
-  <fieldset>
-  <legend>Water</legend>
-  <table>
-  <% fields_for   :water do |f| %>
-   <tr><th>
-    <%= f.label :ounces %></th><th>
-    <%= f.text_field :ounces  , :size => 4 %>
-  </th><th><%= f.submit 'Drank' %>
-  </th></tr></table>
-  <%= form.submit '8oz Glass' %>
-  <% end %>
-  </fieldset>
-  
   
 
-  <fieldset>
-  <legend>Measurements</legend>
-  <table>
-  <% fields_for   :measurement do |f| %>
-  <tr><th>
-    <%= f.label :chest %></th><th>
-    <%= f.text_field :chest  , :size => 4 %>
-  </th></tr>
-  <tr><th>
-    <%= f.label :belly_upper %></th><th>
-    <%= f.text_field :belly_upper  , :size => 4 %>
-  </th></tr>
-  <tr><th>
-    <%= f.label :belly_lower %></th><th>
-    <%= f.text_field :belly_lower  , :size => 4 %>
-  </th></tr>
-  <tr><th>
-    <%= f.label :hips %></th><th>
-    <%= f.text_field :hips  , :size => 4 %>
-  </th></tr>
-  <tr><th>
-    <%= f.label :thigh %></th><th>
-    <%= f.text_field :thigh  , :size => 4 %>
-  </th></tr>
-  <tr><th>
-    <%= f.label :arm %></th><th>
-    <%= f.text_field :arm  , :size => 4 %>
-   </th></tr></table>
-   
-    <%= f.submit 'Measurements' %>
-    
-  <% end %>
-  </fieldset>
+
   
   <fieldset>
-  <legend>Food</legend>
+  <legend><%= link_to 'Food', member_foods_path %></legend>
   <table>
   <% fields_for   :food do |f| %>
   <tr><th>
-    <%= f.label :name %></th><th>
-    <%= f.text_field :name , :size => 10 %>
-  </th></tr>
+    <%= f.label :name %></th><th><%= f.label :calories %></th><th> <%= f.label :protein %></th></tr>
   <tr><th>
-    <%= f.label :calories %></th><th>
-    <%= f.text_field :calories  , :size => 4 %>
-  </th></tr>
-  <tr><th>
-    <%= f.label :protein %></th><th>
-    <%= f.text_field :protein  , :size => 4 %>
+    <%= f.text_field :name , :size => 8 %>
+  </th><th>
+    
+    <%= f.text_field :calories  , :size => 3 %>
+  </th><th>
+   
+    <%= f.text_field :protein  , :size => 2 %>
   </th></tr></table>
 
 
@@ -92,27 +59,59 @@
   </fieldset>
 
 
+  <fieldset><legend>Instant Meal</legend>
+  <table>
+  <% fields_for :meal do |f| %>
+  <tr><th>
+   <%= select_tag "Meal", "<option>Shake w/ milk</option><option>Shake w/ water</option><option>Shake w/ Soy</option><option>Pie</option>" %> <%= f.submit 'Meal' %>
+
+  </th></tr>
+  
+  <% end %> 
+  </table>
+  </fieldset>
+
   <fieldset>
   <legend>Fitness</legend>
   <table>
   <% fields_for :exersize do |f| %>
-  <tr><th>
-    <%= f.label :title %></th><th>
-    <%= f.text_field :title  , :size => 4 %>
-  </th></tr>
-  <tr><th>
-    <%= f.label :length %></th><th>
-    <%= f.text_field :length  , :size => 4 %>
-  </th></tr>
-  <tr><th>
-    <%= f.label :calories %></th><th>
-    <%= f.text_field :calories  , :size => 4 %>
- </th></tr></table> 
-  
+  <tr><th><%= f.label :title %></th><th><%= f.label :length %></th><th><%= f.label :calories %></th></tr>
+  <tr>
+  <th>
+    <%= f.text_field :title  , :size => 4 %></th>
+    <th><%= f.text_field :length  , :size => 4 %></th>
+    <th><%= f.text_field :calories  , :size => 4 %></th>
+    </tr></table> 
     <%= f.submit 'Fitness' %>
- 
   <% end %>
   </fieldset>
+
+  <fieldset>
+  <legend>Measurements</legend>
+  <table>
+  <% fields_for   :measurement do |f| %>
+  
+  <tr><th>
+  <%= f.label :chest %></th><th><%= f.label :belly_upper %></th><th><%= f.label :belly_lower %></th></tr>
+   
+    
+  <tr>
+  <th><%= f.text_field :chest  , :size => 4 %></th>
+  <th><%= f.text_field :belly_upper  , :size => 4 %></th>
+  <th><%= f.text_field :belly_lower  , :size => 4 %></th></tr>
+  
+  <tr><th> <%= f.label :hips %></th><th><%= f.label :thigh %></th><th><%= f.label :arm %></th></tr>
+  
+  <tr><th><%= f.text_field :hips  , :size => 4 %></th>
+  <th><%= f.text_field :thigh  , :size => 4 %></th>
+  <th><%= f.text_field :arm  , :size => 4 %></th>
+  </tr></table>
+   
+    <%= f.submit 'Measurements' %>
+    
+  <% end %>
+  </fieldset>
+  
   
   <fieldset>
   <legend>Body Scan</legend>

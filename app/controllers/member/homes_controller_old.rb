@@ -17,6 +17,7 @@ class Member::HomesController  < Member::BaseController
     end
     
     @chart_type = @home.chart_type
+    if @chart_type.nil? then @chart_type='all' end
     
     @quick_support = QuickSupport.new
     
@@ -50,7 +51,7 @@ class Member::HomesController  < Member::BaseController
 
 
 
-  def update
+  def create
     #@home = Home.new(params[:home])
     success = false;
     #raise params.to_yaml
@@ -76,26 +77,6 @@ class Member::HomesController  < Member::BaseController
       aDrink.date = Time.now
       aDrink.ounces = 8
       success = aDrink.save
-    
-    elsif commit=='Herbal Tea 8oz' then
-      aDrink = @current_user.waters.new
-      aDrink.date = Time.now
-      aDrink.ounces = 8
-      success = aDrink.save
-      
-      aExercise = @current_user.exercises.new
-      aExercise.title = "Drink and Shrink"
-      aExercise.calories = 80
-      aExercise.length = 1
-      aExercise.date = Time.now
-      success = aExercise.save
-      
-      aFood = @current_user.foods.new
-      aFood.name = "Herbal Tea Concentrate"
-      aFood.calories = 5
-      aFood.date = Time.now
-      success = aFood.save
-      
       
     elsif commit == "Measurements" then
       aMeasure = @current_user.measurements.new(params[:measurement])
@@ -119,33 +100,26 @@ class Member::HomesController  < Member::BaseController
       success = support.save
       
       
-    elsif commit=="All Charts" then
+    elsif commit="All Charts" then
       @current_user.home.chart_type = 'all' 
       success =  @current_user.home.save   
-      
-    elsif commit=="Water" then     
+    elsif commit="Water" then     
       @current_user.home.chart_type = 'water' 
       success =  @current_user.home.save
-      
-    elsif commit=="Exercise" then
+    elsif commit="Exercise" then
       @current_user.home.chart_type = 'exercise' 
       success =  @current_user.home.save
-      
-    elsif commit=="Weight" then
+    elsif commit="Weight" then
       @current_user.home.chart_type = 'weight' 
       success =  @current_user.home.save
-      
-    elsif commit=="Food" then
+    elsif commit="Food" then
       @current_user.home.chart_type = 'food' 
       success =  @current_user.home.save     
-      
-    elsif commit=="Measurements" then 
+    elsif commit="Measurements" then 
       @current_user.home.chart_type = 'measurement' 
       success =  @current_user.home.save
       
     end
-    
-    
     
     respond_to do |format|
       if success then
@@ -155,6 +129,13 @@ class Member::HomesController  < Member::BaseController
       end
         format.html { redirect_to( member_root_path) }
     end
+  end
+
+  # PUT /homes/1
+  # PUT /homes/1.xml
+  def update
+  
+ 
   end
 
 

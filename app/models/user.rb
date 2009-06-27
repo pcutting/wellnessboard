@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
   has_many :blogs
   has_many :comments
   has_many :body_scans
-  has_many :homes
+  has_one :home
   
   
   

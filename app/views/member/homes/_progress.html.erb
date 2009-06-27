@@ -15,23 +15,23 @@
 Water and calaries
 <table>
 <tr>
-<th>Water Drank for today.</th>
-<th width=500><div id="watertodaybar"></div></th>
+<th>Water today</th>
+<th width=300><div id="watertodaybar"></div></th>
 <th> <%=  @today_water_sum %> of <%= @recent_goal.water %> Ounces:<%= @today_water_ratio %>%</th>
 </tr>
 <tr>
-<th>Water Drank for 7 days.</th>
-<th width=500><div id="waterweekbar"></div></th>
+<th>Water 7 days</th>
+<th width=300><div id="waterweekbar"></div></th>
 <th> <%= @week_water_sum %> of <%= @recent_goal.water * 7 %> Ounces:<%= @week_water_ratio %>%</th>
 </tr>
 <tr>
 <th>Calories today.</th>
-<th width=500><div id="caltodaybar"></div></th>
+<th width=300><div id="caltodaybar"></div></th>
 <th> <%= @today_calories_sum %> of <%= @recent_goal.daily_calories %> calories:<%= @today_calories_ratio %>%</th>
 </tr>
 <tr>
 <th>Calories past 7 days.</th>
-<th width=500><div id="calweekbar"></div></th>
+<th width=300><div id="calweekbar"></div></th>
 <th> <%= @week_calories_sum %> of <%= @recent_goal.daily_calories * 7 %> calories:<%= @week_calories_ratio %>%</th>
 </tr>
 </table>

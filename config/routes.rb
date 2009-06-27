@@ -13,8 +13,8 @@ ActionController::Routing::Routes.draw do |map|
 map.namespace :member do |member|
     #admin.root :controller => "home", :action => 'show'
     #admin.resource :home, :controller => "home"
-  member.root :controller => "homes" , :action => "index"
-  member.resources :homes
+  member.root :controller => "homes" , :action => "show"
+  member.resource :home
   member.resources :offer_restrictions
   member.resources :offer_accesses
   member.resources :offer_skus

@@ -36,7 +36,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     @profile = Profile.new(params[:profile])
-    
+    @home = Home.new
+    @home.chart_type = 'all'
     
     
     if (!(@profile.hight_feet.nil? && @profile.hight_inches.nil? )  && !@profile.dob.nil?) then
@@ -49,6 +50,7 @@ class UsersController < ApplicationController
     if (success) then
       success = @profile.save
       @user.profile = @profile
+      @user.home = @home
     end
 
     respond_to do |format|

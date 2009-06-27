@@ -145,11 +145,11 @@ display = "
 <div class='charts last'>
 
 <div class='left'>
-<div id='overview' style='width:600px;height:50px'></div>
+
+
+<div id='placeholder' style='width:400px;height:200px;'></div>
+<div id='overview' style='width:400px;height:50px'></div>
 <p> Try zooming. Click and drag to select a zone.</p>
-
-<div id='placeholder' style='width:600px;height:200px;'></div>
-
 </div>
 
 
@@ -274,6 +274,7 @@ def myPlots(options='all')
      :body_scan=>[true,true,true],
      :food=>[true, true, true],
      :water=>[true,true,true],
+     :exercise=>[true, true,true],
      :measurement_chest=>[true,true,true],
      :measurement_arm=>[true,true,true],
      :measurement_upper_belly=>[true,true,true],
@@ -410,28 +411,48 @@ end #def getFood
   
 def getExercise
 
-  exercise1, exercise2 , exercise1_avg , exercise2_avg = [], [], [], []  
-  sum_exercise1, sum_exercise2 , count = 0,0,0 
-  if ( @chartoptions[:exercise][0]|| @chartoptions[:exercise][1]) 
-  
-    @setExercise = ChartItem.new("Calories Burnt")
-     
-      
-    for exercises in chart_exercises
-      count += 1 
-      
-      @setExcercise.addPoint(exercises.date.to_i * 1000,exercises.calories)
-     
-      
-    
-    end  
-       
-    if @chartoptions[:exercise][0]      
-      @chartable.add(@setExercise)
-   
+##############################################
+
+  if ( @chartoptions[:exercise][0])  
+    oldDate = nil  
+    daily_calories_sum = 0
+    @set1 = ChartItem.new("Calories Burnt(Fitness)")   
+    for exercises in @exercise
+      if oldDate.nil?
+        daily_calories_sum = exercises.calories
+        oldDate = exercises.date.to_date
+        @set1.addPoint(exercises.date.to_time.to_i * 1000,  daily_calories_sum)
+      elsif oldDate != exercises.date.to_date
+        @set1.addPoint(exercises.date.to_time.to_i * 1000,  daily_calories_sum)
+        daily_calories_sum = exercises.calories
+        oldDate = exercises.date.to_date
+      else #must be same date as previous record (records should be ordered)
+        daily_calories_sum += exercises.calories
+        @set1.addPoint(exercises.date.to_time.to_i * 1000,  daily_calories_sum)
+      end
+    end    
+    if oldDate != exercises.date.to_date then
+      daily_calories_sum += exercises.calories
+      @set1.addPoint(exercises.date.to_time.to_i * 1000,  daily_calories_sum)
+    end   
+    if @chartoptions[:exercise][0]
+      @chartable.add(@set1)
     end 
+  end
+###############################################
+ # if ( @chartoptions[:exercise][0]|| @chartoptions[:exercise][1])  
+ #   @setExercise = ChartItem.new("Calories Burnt")     
+ #   for exercises in @exercise
+ #     count += 1  
+ #     @setExercise.addPoint(exercises.date.to_i * 1000,exercises.calories)  
+ #   end  
+       
+ #   if @chartoptions[:exercise][0]      
+ #     @chartable.add(@setExercise)
+   
+ #   end 
  
-  end #@options[:exercise] 
+ # end #@options[:exercise] 
 end # def getExercise
   
   

@@ -110,6 +110,18 @@ input {
   border-collapse: collapse;
  }
   
-.water_calories { 
+.progress { 
   font-size:10px;
+  border: none;
+}
+
+table .noborder  { 
+border-style:none;
+border-size: 0px;
+
+
+}
+
+select {
+font-size:9px;
 }

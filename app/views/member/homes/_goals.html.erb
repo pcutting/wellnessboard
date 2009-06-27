@@ -1,6 +1,6 @@
 <fieldset>
 Current Goal
-<% form_for([:member, @home]) do |form| %>
+<% form_for([:member, @home], :url => { :action => "create" }) do |form| %>
 <% fields_for :goal do |f| %>
 <table><tr>
 <th>Weight</th><th>Daily Water</th><th>Daily Steps</th><th>Daily Calories</th></tr>

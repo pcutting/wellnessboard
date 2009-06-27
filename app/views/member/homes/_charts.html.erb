@@ -1,7 +1,7 @@
 
 <fieldset>
 
-<% form_for([:member, @home]) do |form| %>
+<% form_for([:member, @home], :url => { :action => "create" }) do |form| %>
 <%= form.submit 'All Charts' %> <%= form.submit 'Weight' %><%= form.submit 'Water' %><%= form.submit 'Exercise' %><%= form.submit 'Food' %><%= form.submit 'Measurements' %>
 
 <% end %>
@@ -10,7 +10,6 @@ Chart
 
 
 <%- @plot_data = [] -%>
-<%# @chartoptions = current_user.profile.chart_options %>
 <% myPlots(@chart_type) %>
 <%= makeChart %>
 
