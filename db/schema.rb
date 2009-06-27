@@ -92,7 +92,7 @@ ActiveRecord::Schema.define(:version => 20090620165914) do
     t.integer  "water",                                                       :default => 64
     t.integer  "steps_daily",                                                 :default => 3000
     t.integer  "daily_calories",                                              :default => 1250
-    t.datetime "date",                                                        :default => '2009-06-21 00:00:00'
+    t.datetime "date",                                                        :default => '2009-06-27 00:00:00'
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -120,7 +120,7 @@ ActiveRecord::Schema.define(:version => 20090620165914) do
     t.integer  "hips",        :limit => 10, :precision => 10, :scale => 0
     t.integer  "thigh",       :limit => 10, :precision => 10, :scale => 0
     t.integer  "arm",         :limit => 10, :precision => 10, :scale => 0
-    t.datetime "date",                                                     :default => '2009-06-21 00:00:00'
+    t.datetime "date",                                                     :default => '2009-06-27 00:00:00'
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -172,15 +172,28 @@ ActiveRecord::Schema.define(:version => 20090620165914) do
 
   create_table "profiles", :force => true do |t|
     t.integer  "user_id"
-    t.text     "shipping_address"
-    t.text     "physical_address"
+    t.string   "shipping_address"
+    t.string   "shipping_city"
+    t.string   "shipping_state"
+    t.string   "shipping_zip"
+    t.string   "billing_address"
+    t.string   "billing_city"
+    t.string   "billing_state"
+    t.string   "billing_zip"
     t.string   "sponsor"
     t.string   "coach"
     t.string   "referred_by"
     t.string   "phone"
     t.string   "alt_phone"
-    t.integer  "hight"
+    t.integer  "hight_feet"
+    t.integer  "hight_inches"
     t.string   "time_zone"
+    t.string   "nick_name"
+    t.string   "name_first"
+    t.string   "middle_initial"
+    t.string   "name_last"
+    t.string   "sufix"
+    t.date     "dob"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -260,6 +273,7 @@ ActiveRecord::Schema.define(:version => 20090620165914) do
     t.datetime "last_login_at"
     t.string   "current_login_ip"
     t.string   "last_login_ip"
+    t.boolean  "admin"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

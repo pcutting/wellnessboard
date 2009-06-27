@@ -1,6 +1,6 @@
 <h1>Register</h1>
 
-<% form_for(@user) do |f| %>
+<% form_for([:member, @current_user]) do |f| %>
   <%= f.error_messages %>
 
   <p>
@@ -22,7 +22,7 @@
    
 
   <p>
-    <%= f.submit 'Create' %>
+    <%= f.submit 'Update' %>
   </p>
 <% end %>
 

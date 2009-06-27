@@ -20,6 +20,7 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
     @user = User.new
+    @profile = Profile.new
     respond_to do |format|
       format.html # new.html.erb
     end
@@ -34,11 +35,26 @@ class UsersController < ApplicationController
   # POST /users.xml
   def create
     @user = User.new(params[:user])
+    @profile = Profile.new(params[:profile])
+    
+    
+    
+    if (!(@profile.hight_feet.nil? && @profile.hight_inches.nil? )  && !@profile.dob.nil?) then
+      success = @user.save
+      flash[:notice] = "Please make sure you enter your hight and Date of Birth."
+    else 
+      success = false
+    end
+    
+    if (success) then
+      success = @profile.save
+      @user.profile = @profile
+    end
 
     respond_to do |format|
-      if @user.save
+      if success
         flash[:notice] = 'Registration successful.'
-        format.html { redirect_to(member_root_url) }
+        format.html { redirect_to(edit_member_profile_url) }
 
       else
         format.html { render :action => "new" }

@@ -38,7 +38,8 @@ map.namespace :member do |member|
   member.resources :waters
   member.resources :weights
   member.resources :sponsors
-  member.resources :profiles
+  member.resource :user
+  member.resource :profile
   
 end
 

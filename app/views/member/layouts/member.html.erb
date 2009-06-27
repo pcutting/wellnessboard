@@ -35,7 +35,9 @@ Welcome to your Wellness Board!
 </div>
 
 <div class="user_nav right">
-  <%= link_to "Edit Profile", edit_user_path(:current) %> |
+  <%= link_to "Home", member_root_url %> |
+  <%= link_to "Change Password", edit_member_user_path %> | 
+  <%= link_to "Edit Profile", edit_member_profile_path %> |
   <%= link_to "Logout",    logout_path %>
 </div> <%# close id=user_nav %>
 

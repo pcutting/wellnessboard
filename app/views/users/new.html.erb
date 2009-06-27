@@ -20,6 +20,59 @@
     <%= f.password_field :password_confirmation %>
   </p>
    
+   
+    <% fields_for :profile do |w| %>
+  <fieldset><legend>Required</legend>
+  <p>
+    <%= w.label "Date of birth" %><br />
+    <%= w.text_field :dob %>
+    DOB is used in calculating things like BMI and also for offering special birthday promotions.
+  </p>
+      
+  <p>
+    <%= w.label "Hight in feet and Inches" %><br />
+    <%= w.text_field :hight_feet %> FT <%= w.text_field :hight_inches %> inches.
+  </p>
+  </fieldset>
+
+
+  <p>
+    <%= w.label "Nick name (Preferred name)" %><br />
+    <%= w.text_field :name_first %>
+  </p>
+    
+    <p>
+    <%= w.label "First name" %><br />
+    <%= w.text_field :name_first %>
+  </p>
+    <p>
+    <%= w.label :Middle_initial %><br />
+    <%= w.text_field :middle_initial %>
+  </p>
+  
+    <p>
+    <%= w.label :Last_Name %><br />
+    <%= w.text_field :name_last %>
+  </p>
+    <p>
+    <%= w.label :sufix %><br />
+    <%= w.text_field :sufix %>
+  </p>
+      
+
+  <p>
+    <%= w.label "Sponsor code if you know it" %><br />
+    <%= w.text_field :sponsor %>
+  </p>
+
+  <p>
+    <%= w.label :referred_by %><br />
+    <%= w.text_field :referred_by %>
+  </p>
+
+
+  <% end %>
+  
 
   <p>
     <%= f.submit 'Create' %>
