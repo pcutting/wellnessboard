@@ -14261,3 +14261,596 @@ Rendered member/homes/_charts (2.2ms)
 Rendered member/homes/_quick_fact (0.1ms)
 Rendered member/homes/_support (3.2ms)
 Completed in 209ms (View: 24, DB: 12) | 200 OK [http://localhost/member]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::HomesController#show (for 127.0.0.1 at 2009-06-27 17:02:03) [GET]
+  [4;36;1mUser Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2009-06-27 21:02:03', `last_request_at` = '2009-06-27 21:02:03' WHERE `id` = 1[0m
+  [4;36;1mSQL (27.7ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mHome Load (0.2ms)[0m   [0mSELECT * FROM `homes` WHERE (`homes`.user_id = 1) LIMIT 1[0m
+  [4;36;1mGoal Load (0.1ms)[0m   [0;1mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;35;1mQuickFact Load (0.1ms)[0m   [0mSELECT * FROM `quick_facts` [0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;35;1mQuickFact Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `quick_facts`[0m
+  [4;36;1mHome Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `homes`[0m
+  [4;35;1mQuickSupport Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `quick_supports`[0m
+  [4;36;1mWater Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `waters`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-20 17:02:03') AND (`waters`.user_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-27 17:02:03') AND (`waters`.user_id = 1) [0m
+  [4;35;1mFood Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `foods`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-20 17:02:03') AND (`foods`.user_id = 1) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-27 17:02:03') AND (`foods`.user_id = 1) [0m
+  [4;36;1mGoal Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `goals`[0m
+  [4;35;1mWeight Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `weights`[0m
+  [4;36;1mMeasurement Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `measurements`[0m
+  [4;35;1mExercise Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `exercises`[0m
+  [4;36;1mBodyScan Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within member/layouts/member
+Rendering member/homes/show
+Rendered member/homes/_quick_form (31.2ms)
+Rendered member/homes/_progress (0.4ms)
+Rendered member/homes/_goals (14.2ms)
+  [4;35;1mWeight Load (0.1ms)[0m   [0mSELECT * FROM `weights` WHERE (`weights`.user_id = 1) ORDER BY date asc[0m
+Rendered member/homes/_charts (2.7ms)
+Rendered member/homes/_quick_fact (0.1ms)
+Rendered member/homes/_support (3.4ms)
+Completed in 298ms (View: 154, DB: 41) | 200 OK [http://localhost/member]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to AddChartTypeToHome (20090627153951)
+  [4;36;1mSQL (43.8ms)[0m   [0;1mALTER TABLE `homes` DROP `chart_type`[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20090627153951'[0m
+Migrating to CreateHomes (20090620165914)
+  [4;36;1mSQL (1.1ms)[0m   [0;1mDROP TABLE `homes`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20090620165914'[0m
+Migrating to CreateOfferRestrictions (20090619031838)
+  [4;36;1mSQL (3.6ms)[0m   [0;1mDROP TABLE `offer_restrictions`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20090619031838'[0m
+Migrating to CreateOfferAccesses (20090619031823)
+  [4;36;1mSQL (1.3ms)[0m   [0;1mDROP TABLE `offer_accesses`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20090619031823'[0m
+Migrating to CreateOfferSkus (20090619031812)
+  [4;36;1mSQL (20.1ms)[0m   [0;1mDROP TABLE `offer_skus`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20090619031812'[0m
+Migrating to CreateCoupons (20090619031759)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mDROP TABLE `coupons`[0m
+  [4;35;1mSQL (5.5ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20090619031759'[0m
+Migrating to CreateItems (20090619031754)
+  [4;36;1mSQL (1.1ms)[0m   [0;1mDROP TABLE `items`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20090619031754'[0m
+Migrating to CreateOrders (20090619031729)
+  [4;36;1mSQL (1.1ms)[0m   [0;1mDROP TABLE `orders`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20090619031729'[0m
+Migrating to CreateComments (20090619031704)
+  [4;36;1mSQL (10.0ms)[0m   [0;1mDROP TABLE `comments`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20090619031704'[0m
+Migrating to CreateBlogs (20090619031659)
+  [4;36;1mSQL (1.1ms)[0m   [0;1mDROP TABLE `blogs`[0m
+  [4;35;1mSQL (6.6ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20090619031659'[0m
+Migrating to CreateCatalogs (20090619031629)
+  [4;36;1mSQL (9.1ms)[0m   [0;1mDROP TABLE `catalogs`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20090619031629'[0m
+Migrating to CreatePromotions (20090619031556)
+  [4;36;1mSQL (5.9ms)[0m   [0;1mDROP TABLE `promotions`[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20090619031556'[0m
+Migrating to CreateQuickFacts (20090619031532)
+  [4;36;1mSQL (1.1ms)[0m   [0;1mDROP TABLE `quick_facts`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20090619031532'[0m
+Migrating to CreateMyFoods (20090619031519)
+  [4;36;1mSQL (13.5ms)[0m   [0;1mDROP TABLE `my_foods`[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20090619031519'[0m
+Migrating to CreateFoods (20090619031456)
+  [4;36;1mSQL (2.9ms)[0m   [0;1mDROP TABLE `foods`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20090619031456'[0m
+Migrating to CreateMyExercises (20090619031444)
+  [4;36;1mSQL (2.2ms)[0m   [0;1mDROP TABLE `my_exercises`[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20090619031444'[0m
+Migrating to CreateExercises (20090619031439)
+  [4;36;1mSQL (18.2ms)[0m   [0;1mDROP TABLE `exercises`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20090619031439'[0m
+Migrating to CreateBodyScans (20090619031414)
+  [4;36;1mSQL (2.5ms)[0m   [0;1mDROP TABLE `body_scans`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20090619031414'[0m
+Migrating to CreateMeasurements (20090619031403)
+  [4;36;1mSQL (2.3ms)[0m   [0;1mDROP TABLE `measurements`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20090619031403'[0m
+Migrating to CreateGoals (20090619031353)
+  [4;36;1mSQL (2.5ms)[0m   [0;1mDROP TABLE `goals`[0m
+  [4;35;1mSQL (21.2ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20090619031353'[0m
+Migrating to CreateShakeRecipes (20090619031340)
+  [4;36;1mSQL (2.2ms)[0m   [0;1mDROP TABLE `shake_recipes`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20090619031340'[0m
+Migrating to CreateQuickSupports (20090619031314)
+  [4;36;1mSQL (2.7ms)[0m   [0;1mDROP TABLE `quick_supports`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20090619031314'[0m
+Migrating to CreateWaters (20090619031308)
+  [4;36;1mSQL (2.9ms)[0m   [0;1mDROP TABLE `waters`[0m
+  [4;35;1mSQL (6.0ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20090619031308'[0m
+Migrating to CreateWeights (20090619031251)
+  [4;36;1mSQL (5.9ms)[0m   [0;1mDROP TABLE `weights`[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20090619031251'[0m
+Migrating to CreateSponsors (20090619031120)
+  [4;36;1mSQL (4.9ms)[0m   [0;1mDROP TABLE `sponsors`[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20090619031120'[0m
+Migrating to CreateProfiles (20090619030933)
+  [4;36;1mSQL (2.2ms)[0m   [0;1mDROP TABLE `profiles`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20090619030933'[0m
+Migrating to CreateUsers (20090618223409)
+  [4;36;1mSQL (8.3ms)[0m   [0;1mDROP TABLE `users`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20090618223409'[0m
+  [4;36;1mSQL (3.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW TABLES[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20090618223409)
+  [4;36;1mSQL (12.6ms)[0m   [0;1mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `login` varchar(255), `email` varchar(255), `crypted_password` varchar(255), `password_salt` varchar(255), `persistence_token` varchar(255), `login_count` int(11), `failed_login_count` int(11), `current_login_at` datetime, `last_request_at` datetime, `last_login_at` datetime, `current_login_ip` varchar(255), `last_login_ip` varchar(255), `admin` tinyint(1), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090618223409')[0m
+Migrating to CreateProfiles (20090619030933)
+  [4;36;1mSQL (3.1ms)[0m   [0;1mCREATE TABLE `profiles` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `shipping_address` varchar(255), `shipping_city` varchar(255), `shipping_state` varchar(255), `shipping_zip` varchar(255), `billing_address` varchar(255), `billing_city` varchar(255), `billing_state` varchar(255), `billing_zip` varchar(255), `sponsor` varchar(255), `coach` varchar(255), `referred_by` varchar(255), `phone` varchar(255), `alt_phone` varchar(255), `hight_feet` int(11), `hight_inches` int(11), `time_zone` varchar(255), `nick_name` varchar(255), `name_first` varchar(255), `middle_initial` varchar(255), `name_last` varchar(255), `sufix` varchar(255), `dob` date, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (2.8ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090619030933')[0m
+Migrating to CreateSponsors (20090619031120)
+  [4;36;1mSQL (18.4ms)[0m   [0;1mCREATE TABLE `sponsors` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `code` varchar(255), `name` varchar(255), `email` varchar(255), `phone` varchar(255), `address` varchar(255), `city` varchar(255), `state` varchar(255), `zip` varchar(255), `motto` varchar(255), `summary` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090619031120')[0m
+Migrating to CreateWeights (20090619031251)
+  [4;36;1mSQL (2.3ms)[0m   [0;1mCREATE TABLE `weights` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `date` datetime, `weight` decimal, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090619031251')[0m
+Migrating to CreateWaters (20090619031308)
+  [4;36;1mSQL (13.3ms)[0m   [0;1mCREATE TABLE `waters` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `date` datetime, `ounces` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (4.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090619031308')[0m
+Migrating to CreateQuickSupports (20090619031314)
+  [4;36;1mSQL (18.7ms)[0m   [0;1mCREATE TABLE `quick_supports` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `priority` int(11), `title` varchar(255), `details` text, `status` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090619031314')[0m
+Migrating to CreateShakeRecipes (20090619031340)
+  [4;36;1mSQL (7.2ms)[0m   [0;1mCREATE TABLE `shake_recipes` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `description` text, `calories` int(11), `protein` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090619031340')[0m
+Migrating to CreateGoals (20090619031353)
+  [4;36;1mSQL (3.3ms)[0m   [0;1mCREATE TABLE `goals` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `weight` decimal DEFAULT 0, `chest` decimal DEFAULT 0, `belly_upper` decimal DEFAULT 0, `belly_lower` decimal DEFAULT 0, `hips` decimal DEFAULT 0, `thigh` decimal DEFAULT 0, `arm` decimal DEFAULT 0, `water` int(11) DEFAULT 64, `steps_daily` int(11) DEFAULT 3000, `daily_calories` int(11) DEFAULT 1250, `date` datetime DEFAULT '2009-06-28', `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090619031353')[0m
+Migrating to CreateMeasurements (20090619031403)
+  [4;36;1mSQL (22.5ms)[0m   [0;1mCREATE TABLE `measurements` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `chest` decimal, `belly_upper` decimal, `belly_lower` decimal, `hips` decimal, `thigh` decimal, `arm` decimal, `date` datetime DEFAULT '2009-06-28', `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090619031403')[0m
+Migrating to CreateBodyScans (20090619031414)
+  [4;36;1mSQL (6.4ms)[0m   [0;1mCREATE TABLE `body_scans` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `water` int(11), `metabolism` int(11), `visc` int(11), `fat` int(11), `muscle` int(11), `date` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090619031414')[0m
+Migrating to CreateExercises (20090619031439)
+  [4;36;1mSQL (16.6ms)[0m   [0;1mCREATE TABLE `exercises` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `title` varchar(255), `length` decimal, `calories` int(11), `date` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090619031439')[0m
+Migrating to CreateMyExercises (20090619031444)
+  [4;36;1mSQL (10.8ms)[0m   [0;1mCREATE TABLE `my_exercises` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `title` varchar(255), `length` decimal, `calories` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090619031444')[0m
+Migrating to CreateFoods (20090619031456)
+  [4;36;1mSQL (19.1ms)[0m   [0;1mCREATE TABLE `foods` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `name` varchar(255), `calories` int(11), `protein` int(11), `date` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090619031456')[0m
+Migrating to CreateMyFoods (20090619031519)
+  [4;36;1mSQL (16.1ms)[0m   [0;1mCREATE TABLE `my_foods` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `name` varchar(255), `calories` int(11), `protein` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090619031519')[0m
+Migrating to CreateQuickFacts (20090619031532)
+  [4;36;1mSQL (6.5ms)[0m   [0;1mCREATE TABLE `quick_facts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `category` varchar(255), `title` varchar(255), `summary` text, `reference` varchar(255), `total_score` int(11), `votes` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090619031532')[0m
+Migrating to CreatePromotions (20090619031556)
+  [4;36;1mSQL (18.1ms)[0m   [0;1mCREATE TABLE `promotions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `code` varchar(255), `offer_sku_id` int(11), `percent` int(11), `accumulative` tinyint(1), `all_access` tinyint(1), `offer_restriction_id` int(11), `offer_access_id` int(11), `start` datetime, `end` datetime, `description` text, `sponsor_id` int(11), `all_sponsors` tinyint(1), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090619031556')[0m
+Migrating to CreateCatalogs (20090619031629)
+  [4;36;1mSQL (16.6ms)[0m   [0;1mCREATE TABLE `catalogs` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `sku` varchar(255), `item` varchar(255), `description` varchar(255), `picture` varchar(255), `price` varchar(255), `category` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (8.8ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090619031629')[0m
+Migrating to CreateBlogs (20090619031659)
+  [4;36;1mSQL (9.6ms)[0m   [0;1mCREATE TABLE `blogs` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `title` varchar(255), `post` text, `total_score` int(11), `votes` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090619031659')[0m
+Migrating to CreateComments (20090619031704)
+  [4;36;1mSQL (19.9ms)[0m   [0;1mCREATE TABLE `comments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `response` text, `total_score` int(11), `votes` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090619031704')[0m
+Migrating to CreateOrders (20090619031729)
+  [4;36;1mSQL (16.1ms)[0m   [0;1mCREATE TABLE `orders` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (10.7ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090619031729')[0m
+Migrating to CreateItems (20090619031754)
+  [4;36;1mSQL (30.1ms)[0m   [0;1mCREATE TABLE `items` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `order_id` int(11), `sku` varchar(255), `quantity` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090619031754')[0m
+Migrating to CreateCoupons (20090619031759)
+  [4;36;1mSQL (5.7ms)[0m   [0;1mCREATE TABLE `coupons` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `order_id` int(11), `code` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090619031759')[0m
+Migrating to CreateOfferSkus (20090619031812)
+  [4;36;1mSQL (2.4ms)[0m   [0;1mCREATE TABLE `offer_skus` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `promotion_id` int(11), `sku` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090619031812')[0m
+Migrating to CreateOfferAccesses (20090619031823)
+  [4;36;1mSQL (20.0ms)[0m   [0;1mCREATE TABLE `offer_accesses` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `promotion_id` int(11), `user_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090619031823')[0m
+Migrating to CreateOfferRestrictions (20090619031838)
+  [4;36;1mSQL (14.8ms)[0m   [0;1mCREATE TABLE `offer_restrictions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `promotion_id` int(11), `user_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (9.9ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090619031838')[0m
+Migrating to CreateHomes (20090620165914)
+  [4;36;1mSQL (15.9ms)[0m   [0;1mCREATE TABLE `homes` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `option` varchar(255), `user_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090620165914')[0m
+Migrating to AddChartTypeToHome (20090627153951)
+  [4;36;1mSQL (18.7ms)[0m   [0;1mALTER TABLE `homes` ADD `chart_type` varchar(255)[0m
+  [4;35;1mSQL (6.8ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090627153951')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mSHOW FIELDS FROM `blogs`[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mdescribe `blogs`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW KEYS FROM `blogs`[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mSHOW FIELDS FROM `body_scans`[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mdescribe `body_scans`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW KEYS FROM `body_scans`[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mSHOW FIELDS FROM `catalogs`[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mdescribe `catalogs`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW KEYS FROM `catalogs`[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mdescribe `comments`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW KEYS FROM `comments`[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSHOW FIELDS FROM `coupons`[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mdescribe `coupons`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW KEYS FROM `coupons`[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mSHOW FIELDS FROM `exercises`[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mdescribe `exercises`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW KEYS FROM `exercises`[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mSHOW FIELDS FROM `foods`[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mdescribe `foods`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW KEYS FROM `foods`[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mSHOW FIELDS FROM `goals`[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mdescribe `goals`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW KEYS FROM `goals`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW FIELDS FROM `homes`[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mdescribe `homes`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW KEYS FROM `homes`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW FIELDS FROM `items`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mdescribe `items`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `items`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW FIELDS FROM `measurements`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mdescribe `measurements`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `measurements`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW FIELDS FROM `my_exercises`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mdescribe `my_exercises`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `my_exercises`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW FIELDS FROM `my_foods`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mdescribe `my_foods`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `my_foods`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW FIELDS FROM `offer_accesses`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mdescribe `offer_accesses`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `offer_accesses`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW FIELDS FROM `offer_restrictions`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mdescribe `offer_restrictions`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `offer_restrictions`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW FIELDS FROM `offer_skus`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mdescribe `offer_skus`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `offer_skus`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW FIELDS FROM `orders`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mdescribe `orders`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `orders`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW FIELDS FROM `profiles`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mdescribe `profiles`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `profiles`[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW FIELDS FROM `promotions`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mdescribe `promotions`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `promotions`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW FIELDS FROM `quick_facts`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mdescribe `quick_facts`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `quick_facts`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW FIELDS FROM `quick_supports`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mdescribe `quick_supports`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `quick_supports`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW FIELDS FROM `shake_recipes`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mdescribe `shake_recipes`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `shake_recipes`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW FIELDS FROM `sponsors`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mdescribe `sponsors`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `sponsors`[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mdescribe `users`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `users`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW FIELDS FROM `waters`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mdescribe `waters`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `waters`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW FIELDS FROM `weights`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mdescribe `weights`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW KEYS FROM `weights`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-06-28 00:00:25) [GET]
+  [4;36;1mUser Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered user_sessions/_login (1.6ms)
+Rendered user_sessions/_mission (0.1ms)
+Completed in 148ms (View: 4, DB: 6) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-06-28 00:00:30) [GET]
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mProfile Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `profiles`[0m
+Rendering template within layouts/application
+Rendering users/new
+Completed in 43ms (View: 14, DB: 2) | 200 OK [http://localhost/users/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-06-28 00:00:31) [GET]
+  [4;35;1mUser Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mProfile Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `profiles`[0m
+Rendering template within layouts/application
+Rendering users/new
+Completed in 45ms (View: 14, DB: 3) | 200 OK [http://localhost/users/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-06-28 00:01:02) [POST]
+  Parameters: {"commit"=>"Create", "profile"=>{"referred_by"=>"Jame Smith", "sufix"=>"jr", "name_last"=>"Cutting", "dob"=>"6/12/1988", "hight_feet"=>"5", "sponsor"=>"2077754130", "hight_inches"=>"7", "middle_initial"=>"j", "name_first"=>"Phil"}, "authenticity_token"=>"6ZXRcWItuYAdlrbKHaZiJI24oG/sBq/P3Xwou6MToSc=", "user"=>{"password_confirmation"=>"test", "password"=>"test", "login"=>"test", "email"=>"test@test.com"}}
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mProfile Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `profiles`[0m
+  [4;35;1mHome Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `homes`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'test@test.com') LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`login`) = BINARY 'test') LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY 'db198249e2bf8718f4f4e5a61fd69c413c38813b305278bccc381524cf3d56403ed1d2efc082833b2cf4573a0d9d288e608b41ba47661b888594ef79b0cbefae') LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO `users` (`last_request_at`, `created_at`, `crypted_password`, `updated_at`, `admin`, `failed_login_count`, `current_login_ip`, `password_salt`, `current_login_at`, `persistence_token`, `login_count`, `last_login_ip`, `login`, `last_login_at`, `email`) VALUES('2009-06-28 04:01:02', '2009-06-28 04:01:02', '343d05285d05680d00e27bf8164acac2ee9f88519a7feb33f0920ec5546193a414dfc1c06fdb75a6991e2105f2370baede2d854916d202ba586c7130aa654bb6', '2009-06-28 04:01:02', NULL, 0, '127.0.0.1', 'Fu_Q3leOTYQZceQyFygr', '2009-06-28 04:01:02', 'db198249e2bf8718f4f4e5a61fd69c413c38813b305278bccc381524cf3d56403ed1d2efc082833b2cf4573a0d9d288e608b41ba47661b888594ef79b0cbefae', 1, NULL, 'test', NULL, 'test@test.com')[0m
+  [4;35;1mSQL (7.7ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProfile Create (0.3ms)[0m   [0mINSERT INTO `profiles` (`shipping_state`, `referred_by`, `name_last`, `sufix`, `dob`, `created_at`, `updated_at`, `billing_city`, `billing_state`, `shipping_address`, `shipping_zip`, `hight_feet`, `user_id`, `sponsor`, `coach`, `alt_phone`, `billing_address`, `billing_zip`, `phone`, `hight_inches`, `nick_name`, `shipping_city`, `time_zone`, `name_first`, `middle_initial`) VALUES(NULL, 'Jame Smith', 'Cutting', 'jr', '1988-06-12', '2009-06-28 04:01:02', '2009-06-28 04:01:02', NULL, NULL, NULL, NULL, 5, NULL, '2077754130', NULL, NULL, NULL, NULL, NULL, 7, NULL, NULL, NULL, 'Phil', 'j')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mProfile Load (0.3ms)[0m   [0mSELECT * FROM `profiles` WHERE (`profiles`.user_id = 1) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProfile Update (0.3ms)[0m   [0mUPDATE `profiles` SET `updated_at` = '2009-06-28 04:01:02', `user_id` = 1 WHERE `id` = 1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mHome Load (0.2ms)[0m   [0mSELECT * FROM `homes` WHERE (`homes`.user_id = 1) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mHome Create (0.2ms)[0m   [0mINSERT INTO `homes` (`option`, `created_at`, `updated_at`, `chart_type`, `user_id`) VALUES(NULL, '2009-06-28 04:01:02', '2009-06-28 04:01:02', 'all', 1)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/member/profile/edit
+Completed in 83ms (DB: 15) | 302 Found [http://localhost/users]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::ProfilesController#edit (for 127.0.0.1 at 2009-06-28 00:01:02) [GET]
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'db198249e2bf8718f4f4e5a61fd69c413c38813b305278bccc381524cf3d56403ed1d2efc082833b2cf4573a0d9d288e608b41ba47661b888594ef79b0cbefae') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-06-28 04:01:02', `last_request_at` = '2009-06-28 04:01:02' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mProfile Load (0.3ms)[0m   [0;1mSELECT * FROM `profiles` WHERE (`profiles`.user_id = 1) LIMIT 1[0m
+Rendering template within member/layouts/member
+Rendering member/profiles/edit
+  [4;35;1mProfile Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `profiles`[0m
+Completed in 57ms (View: 14, DB: 4) | 200 OK [http://localhost/member/profile/edit]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::HomesController#show (for 127.0.0.1 at 2009-06-28 00:01:07) [GET]
+  [4;36;1mUser Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'db198249e2bf8718f4f4e5a61fd69c413c38813b305278bccc381524cf3d56403ed1d2efc082833b2cf4573a0d9d288e608b41ba47661b888594ef79b0cbefae') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2009-06-28 04:01:07', `last_request_at` = '2009-06-28 04:01:07' WHERE `id` = 1[0m
+  [4;36;1mSQL (9.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mHome Load (0.3ms)[0m   [0mSELECT * FROM `homes` WHERE (`homes`.user_id = 1) LIMIT 1[0m
+  [4;36;1mGoal Load (0.3ms)[0m   [0;1mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;35;1mGoal Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `goals`[0m
+  [4;36;1mQuickFact Load (0.3ms)[0m   [0;1mSELECT * FROM `quick_facts` [0m
+  [4;35;1mQuickFact Load (0.2ms)[0m   [0mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;36;1mQuickFact Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `quick_facts`[0m
+  [4;35;1mHome Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `homes`[0m
+  [4;36;1mQuickSupport Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `quick_supports`[0m
+  [4;35;1mWater Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `waters`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-21 00:01:07') AND (`waters`.user_id = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-28 00:01:07') AND (`waters`.user_id = 1) [0m
+  [4;36;1mFood Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `foods`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-21 00:01:07') AND (`foods`.user_id = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-28 00:01:07') AND (`foods`.user_id = 1) [0m
+  [4;35;1mWeight Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `weights`[0m
+  [4;36;1mMeasurement Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `measurements`[0m
+  [4;35;1mExercise Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `exercises`[0m
+  [4;36;1mBodyScan Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within member/layouts/member
+Rendering member/homes/show
+Rendered member/homes/_quick_form (13.8ms)
+Rendered member/homes/_progress (0.2ms)
+Rendered member/homes/_goals (1.4ms)
+  [4;35;1mWater Load (0.3ms)[0m   [0mSELECT * FROM `waters` WHERE (`waters`.user_id = 1) ORDER BY date asc[0m
+  [4;36;1mFood Load (0.1ms)[0m   [0;1mSELECT * FROM `foods` WHERE (`foods`.user_id = 1) ORDER BY date asc[0m
+  [4;35;1mExercise Load (0.2ms)[0m   [0mSELECT * FROM `exercises` WHERE (`exercises`.user_id = 1) ORDER BY date asc[0m
+  [4;36;1mMeasurement Load (0.2ms)[0m   [0;1mSELECT * FROM `measurements` WHERE (`measurements`.user_id = 1) ORDER BY date asc[0m
+  [4;35;1mWeight Load (0.2ms)[0m   [0mSELECT * FROM `weights` WHERE (`weights`.user_id = 1) ORDER BY date asc[0m
+Rendered member/homes/_charts (4.3ms)
+Rendered member/homes/_quick_fact (0.1ms)
+Rendered member/homes/_support (86.9ms)
+Completed in 219ms (View: 109, DB: 22) | 200 OK [http://localhost/member]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::HomesController#update (for 127.0.0.1 at 2009-06-28 00:01:10) [PUT]
+  Parameters: {"commit"=>"Coffee 6oz", "water"=>{"ounces"=>""}, "Meal"=>"Shake w/ milk", "authenticity_token"=>"6ZXRcWItuYAdlrbKHaZiJI24oG/sBq/P3Xwou6MToSc=", "weight"=>{"weight"=>""}, "exersize"=>{"title"=>"", "length"=>"", "calories"=>""}, "measurement"=>{"belly_upper"=>"", "chest"=>"", "thigh"=>"", "hips"=>"", "belly_lower"=>"", "arm"=>""}, "body_scan"=>{"metabolism"=>"", "fat"=>"", "water"=>"", "visc"=>"", "muscle"=>""}, "food"=>{"name"=>"", "protein"=>"", "calories"=>""}}
+  [4;36;1mUser Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'db198249e2bf8718f4f4e5a61fd69c413c38813b305278bccc381524cf3d56403ed1d2efc082833b2cf4573a0d9d288e608b41ba47661b888594ef79b0cbefae') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE `users` SET `updated_at` = '2009-06-28 04:01:10', `last_request_at` = '2009-06-28 04:01:10' WHERE `id` = 1[0m
+  [4;36;1mSQL (5.4ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/member
+Completed in 40ms (DB: 7) | 302 Found [http://localhost/member/home]
+  [4;35;1mSQL (0.4ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::HomesController#show (for 127.0.0.1 at 2009-06-28 00:01:10) [GET]
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'db198249e2bf8718f4f4e5a61fd69c413c38813b305278bccc381524cf3d56403ed1d2efc082833b2cf4573a0d9d288e608b41ba47661b888594ef79b0cbefae') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-06-28 04:01:10', `last_request_at` = '2009-06-28 04:01:10' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mHome Load (0.2ms)[0m   [0;1mSELECT * FROM `homes` WHERE (`homes`.user_id = 1) LIMIT 1[0m
+  [4;35;1mGoal Load (0.1ms)[0m   [0mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;36;1mGoal Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `goals`[0m
+  [4;35;1mQuickFact Load (0.1ms)[0m   [0mSELECT * FROM `quick_facts` [0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;35;1mQuickFact Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `quick_facts`[0m
+  [4;36;1mHome Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `homes`[0m
+  [4;35;1mQuickSupport Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `quick_supports`[0m
+  [4;36;1mWater Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `waters`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-21 00:01:10') AND (`waters`.user_id = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-28 00:01:10') AND (`waters`.user_id = 1) [0m
+  [4;35;1mFood Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `foods`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-21 00:01:10') AND (`foods`.user_id = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-28 00:01:10') AND (`foods`.user_id = 1) [0m
+  [4;36;1mWeight Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `weights`[0m
+  [4;35;1mMeasurement Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `measurements`[0m
+  [4;36;1mExercise Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `exercises`[0m
+  [4;35;1mBodyScan Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within member/layouts/member
+Rendering member/homes/show
+Rendered member/homes/_quick_form (15.3ms)
+Rendered member/homes/_progress (0.3ms)
+Rendered member/homes/_goals (1.4ms)
+  [4;36;1mWater Load (0.1ms)[0m   [0;1mSELECT * FROM `waters` WHERE (`waters`.user_id = 1) ORDER BY date asc[0m
+  [4;35;1mFood Load (0.1ms)[0m   [0mSELECT * FROM `foods` WHERE (`foods`.user_id = 1) ORDER BY date asc[0m
+  [4;36;1mExercise Load (0.1ms)[0m   [0;1mSELECT * FROM `exercises` WHERE (`exercises`.user_id = 1) ORDER BY date asc[0m
+  [4;35;1mMeasurement Load (0.1ms)[0m   [0mSELECT * FROM `measurements` WHERE (`measurements`.user_id = 1) ORDER BY date asc[0m
+  [4;36;1mWeight Load (0.1ms)[0m   [0;1mSELECT * FROM `weights` WHERE (`weights`.user_id = 1) ORDER BY date asc[0m
+Rendered member/homes/_charts (4.0ms)
+Rendered member/homes/_quick_fact (0.1ms)
+Rendered member/homes/_support (3.6ms)
+Completed in 221ms (View: 27, DB: 11) | 200 OK [http://localhost/member]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::HomesController#update (for 127.0.0.1 at 2009-06-28 00:01:14) [PUT]
+  Parameters: {"commit"=>"8oz Glass", "water"=>{"ounces"=>""}, "Meal"=>"Shake w/ milk", "authenticity_token"=>"6ZXRcWItuYAdlrbKHaZiJI24oG/sBq/P3Xwou6MToSc=", "weight"=>{"weight"=>""}, "exersize"=>{"title"=>"", "length"=>"", "calories"=>""}, "measurement"=>{"belly_upper"=>"", "chest"=>"", "thigh"=>"", "hips"=>"", "belly_lower"=>"", "arm"=>""}, "body_scan"=>{"metabolism"=>"", "fat"=>"", "water"=>"", "visc"=>"", "muscle"=>""}, "food"=>{"name"=>"", "protein"=>"", "calories"=>""}}
+  [4;35;1mUser Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'db198249e2bf8718f4f4e5a61fd69c413c38813b305278bccc381524cf3d56403ed1d2efc082833b2cf4573a0d9d288e608b41ba47661b888594ef79b0cbefae') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-06-28 04:01:14', `last_request_at` = '2009-06-28 04:01:14' WHERE `id` = 1[0m
+  [4;35;1mSQL (8.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mWater Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `waters`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mWater Create (0.3ms)[0m   [0;1mINSERT INTO `waters` (`created_at`, `ounces`, `updated_at`, `date`, `user_id`) VALUES('2009-06-28 04:01:14', 8, '2009-06-28 04:01:14', '2009-06-28 04:01:14', 1)[0m
+  [4;35;1mSQL (5.8ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/member
+Completed in 166ms (DB: 17) | 302 Found [http://localhost/member/home]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::HomesController#show (for 127.0.0.1 at 2009-06-28 00:01:14) [GET]
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'db198249e2bf8718f4f4e5a61fd69c413c38813b305278bccc381524cf3d56403ed1d2efc082833b2cf4573a0d9d288e608b41ba47661b888594ef79b0cbefae') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE `users` SET `updated_at` = '2009-06-28 04:01:14', `last_request_at` = '2009-06-28 04:01:14' WHERE `id` = 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mHome Load (0.1ms)[0m   [0mSELECT * FROM `homes` WHERE (`homes`.user_id = 1) LIMIT 1[0m
+  [4;36;1mGoal Load (0.1ms)[0m   [0;1mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;35;1mGoal Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `goals`[0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` [0m
+  [4;35;1mQuickFact Load (0.1ms)[0m   [0mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;36;1mQuickFact Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `quick_facts`[0m
+  [4;35;1mHome Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `homes`[0m
+  [4;36;1mQuickSupport Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `quick_supports`[0m
+  [4;35;1mWater Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `waters`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-21 00:01:14') AND (`waters`.user_id = 1) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-28 00:01:14') AND (`waters`.user_id = 1) [0m
+  [4;36;1mFood Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `foods`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-21 00:01:14') AND (`foods`.user_id = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-28 00:01:14') AND (`foods`.user_id = 1) [0m
+  [4;35;1mWeight Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `weights`[0m
+  [4;36;1mMeasurement Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `measurements`[0m
+  [4;35;1mExercise Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `exercises`[0m
+  [4;36;1mBodyScan Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within member/layouts/member
+Rendering member/homes/show
+Rendered member/homes/_quick_form (15.4ms)
+Rendered member/homes/_progress (0.2ms)
+Rendered member/homes/_goals (1.6ms)
+  [4;35;1mWater Load (0.4ms)[0m   [0mSELECT * FROM `waters` WHERE (`waters`.user_id = 1) ORDER BY date asc[0m
+  [4;36;1mFood Load (0.1ms)[0m   [0;1mSELECT * FROM `foods` WHERE (`foods`.user_id = 1) ORDER BY date asc[0m
+  [4;35;1mExercise Load (0.1ms)[0m   [0mSELECT * FROM `exercises` WHERE (`exercises`.user_id = 1) ORDER BY date asc[0m
+  [4;36;1mMeasurement Load (0.1ms)[0m   [0;1mSELECT * FROM `measurements` WHERE (`measurements`.user_id = 1) ORDER BY date asc[0m
+  [4;35;1mWeight Load (0.1ms)[0m   [0mSELECT * FROM `weights` WHERE (`weights`.user_id = 1) ORDER BY date asc[0m
+Rendered member/homes/_charts (4.8ms)
+Rendered member/homes/_quick_fact (0.1ms)
+Rendered member/homes/_support (3.4ms)
+Completed in 225ms (View: 28, DB: 13) | 200 OK [http://localhost/member]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::HomesController#update (for 127.0.0.1 at 2009-06-28 00:01:18) [PUT]
+  Parameters: {"commit"=>"Herbal Tea 8oz", "water"=>{"ounces"=>""}, "Meal"=>"Shake w/ milk", "authenticity_token"=>"6ZXRcWItuYAdlrbKHaZiJI24oG/sBq/P3Xwou6MToSc=", "weight"=>{"weight"=>""}, "exersize"=>{"title"=>"", "length"=>"", "calories"=>""}, "measurement"=>{"belly_upper"=>"", "chest"=>"", "thigh"=>"", "hips"=>"", "belly_lower"=>"", "arm"=>""}, "body_scan"=>{"metabolism"=>"", "fat"=>"", "water"=>"", "visc"=>"", "muscle"=>""}, "food"=>{"name"=>"", "protein"=>"", "calories"=>""}}
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'db198249e2bf8718f4f4e5a61fd69c413c38813b305278bccc381524cf3d56403ed1d2efc082833b2cf4573a0d9d288e608b41ba47661b888594ef79b0cbefae') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2009-06-28 04:01:18', `last_request_at` = '2009-06-28 04:01:18' WHERE `id` = 1[0m
+  [4;36;1mSQL (4.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mWater Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `waters`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mWater Create (0.3ms)[0m   [0mINSERT INTO `waters` (`created_at`, `ounces`, `updated_at`, `date`, `user_id`) VALUES('2009-06-28 04:01:18', 8, '2009-06-28 04:01:18', '2009-06-28 04:01:18', 1)[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mExercise Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `exercises`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExercise Create (0.2ms)[0m   [0mINSERT INTO `exercises` (`created_at`, `title`, `updated_at`, `date`, `user_id`, `length`, `calories`) VALUES('2009-06-28 04:01:18', 'Drink and Shrink', '2009-06-28 04:01:18', '2009-06-28 04:01:18', 1, 1, 80)[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mFood Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `foods`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mFood Create (0.3ms)[0m   [0mINSERT INTO `foods` (`name`, `created_at`, `updated_at`, `protein`, `date`, `user_id`, `calories`) VALUES('Herbal Tea Concentrate', '2009-06-28 04:01:18', '2009-06-28 04:01:18', NULL, '2009-06-28 04:01:18', 1, 5)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/member
+Completed in 72ms (DB: 11) | 302 Found [http://localhost/member/home]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Member::HomesController#show (for 127.0.0.1 at 2009-06-28 00:01:18) [GET]
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = 'db198249e2bf8718f4f4e5a61fd69c413c38813b305278bccc381524cf3d56403ed1d2efc082833b2cf4573a0d9d288e608b41ba47661b888594ef79b0cbefae') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-06-28 04:01:18', `last_request_at` = '2009-06-28 04:01:18' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mHome Load (0.1ms)[0m   [0;1mSELECT * FROM `homes` WHERE (`homes`.user_id = 1) LIMIT 1[0m
+  [4;35;1mGoal Load (0.1ms)[0m   [0mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;36;1mGoal Columns (2.7ms)[0m   [0;1mSHOW FIELDS FROM `goals`[0m
+  [4;35;1mQuickFact Load (0.1ms)[0m   [0mSELECT * FROM `quick_facts` [0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;35;1mQuickFact Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `quick_facts`[0m
+  [4;36;1mHome Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `homes`[0m
+  [4;35;1mQuickSupport Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `quick_supports`[0m
+  [4;36;1mWater Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `waters`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-21 00:01:18') AND (`waters`.user_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-28 00:01:18') AND (`waters`.user_id = 1) [0m
+  [4;35;1mFood Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `foods`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-21 00:01:18') AND (`foods`.user_id = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-28 00:01:18') AND (`foods`.user_id = 1) [0m
+  [4;36;1mWeight Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `weights`[0m
+  [4;35;1mMeasurement Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `measurements`[0m
+  [4;36;1mExercise Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `exercises`[0m
+  [4;35;1mBodyScan Columns (11.0ms)[0m   [0mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within member/layouts/member
+Rendering member/homes/show
+Rendered member/homes/_quick_form (15.2ms)
+Rendered member/homes/_progress (0.3ms)
+Rendered member/homes/_goals (1.4ms)
+  [4;36;1mWater Load (0.4ms)[0m   [0;1mSELECT * FROM `waters` WHERE (`waters`.user_id = 1) ORDER BY date asc[0m
+  [4;35;1mFood Load (0.3ms)[0m   [0mSELECT * FROM `foods` WHERE (`foods`.user_id = 1) ORDER BY date asc[0m
+  [4;36;1mExercise Load (0.3ms)[0m   [0;1mSELECT * FROM `exercises` WHERE (`exercises`.user_id = 1) ORDER BY date asc[0m
+  [4;35;1mMeasurement Load (0.1ms)[0m   [0mSELECT * FROM `measurements` WHERE (`measurements`.user_id = 1) ORDER BY date asc[0m
+  [4;36;1mWeight Load (0.1ms)[0m   [0;1mSELECT * FROM `weights` WHERE (`weights`.user_id = 1) ORDER BY date asc[0m
+Rendered member/homes/_charts (9.0ms)
+Rendered member/homes/_quick_fact (0.2ms)
+Rendered member/homes/_support (3.8ms)
+Completed in 214ms (View: 33, DB: 24) | 200 OK [http://localhost/member]

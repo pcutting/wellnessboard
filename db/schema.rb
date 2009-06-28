@@ -92,7 +92,7 @@ ActiveRecord::Schema.define(:version => 20090627153951) do
     t.integer  "water",                                                       :default => 64
     t.integer  "steps_daily",                                                 :default => 3000
     t.integer  "daily_calories",                                              :default => 1250
-    t.datetime "date",                                                        :default => '2009-06-27 00:00:00'
+    t.datetime "date",                                                        :default => '2009-06-28 00:00:00'
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -121,7 +121,7 @@ ActiveRecord::Schema.define(:version => 20090627153951) do
     t.integer  "hips",        :limit => 10, :precision => 10, :scale => 0
     t.integer  "thigh",       :limit => 10, :precision => 10, :scale => 0
     t.integer  "arm",         :limit => 10, :precision => 10, :scale => 0
-    t.datetime "date",                                                     :default => '2009-06-27 00:00:00'
+    t.datetime "date",                                                     :default => '2009-06-28 00:00:00'
     t.datetime "created_at"
     t.datetime "updated_at"
   end
