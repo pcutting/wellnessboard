@@ -1,4 +1,4 @@
-class Member::BlogsController  < Member::BaseController
+class BlogsController  < BaseController
   # GET /blogs
   # GET /blogs.xml
   def index
