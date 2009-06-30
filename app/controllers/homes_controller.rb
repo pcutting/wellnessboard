@@ -203,9 +203,9 @@ class HomesController  < BaseController
     
     respond_to do |format|
       if success then
-        flash[:notice] = 'Great job!'
+        #flash[:notice] = 'Great job!'
       else
-        flash[:notice] = 'There was an error in your submission.  Please contact your coach for help.'
+        flash[:error] = 'There was an error in your submission.  Please contact your coach for help.'
       end
         format.html { redirect_to( home_path) }
     end
