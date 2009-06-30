@@ -95,7 +95,61 @@ class HomesController  < BaseController
       aFood.calories = 5
       aFood.date = Time.now
       success = aFood.save
+
+    
+    elsif commit == "Wine" then
+      aDrink = @current_user.waters.new
+      aDrink.date = Time.now
+      aDrink.ounces = (-2)
+      success = aDrink.save
       
+      aExercise = @current_user.exercises.new
+      aExercise.title = "Alcohol slows metabolism"
+      aExercise.calories = (-20)
+      aExercise.length = 1
+      aExercise.date = Time.now
+      success = aExercise.save
+      
+      aFood = @current_user.foods.new
+      aFood.name = "Wine"
+      aFood.calories = 119
+      aFood.protein = 0.5
+      aFood.date = Time.now
+      success = aFood.save
+    
+    elsif commit == "Beer" then
+      aDrink = @current_user.waters.new
+      aDrink.date = Time.now
+      aDrink.ounces = (-6)
+      success = aDrink.save
+      
+      aExercise = @current_user.exercises.new
+      aExercise.title = "Alcohol slows metabolism"
+      aExercise.calories = (-80)
+      aExercise.length = 1
+      aExercise.date = Time.now
+      success = aExercise.save
+      
+      aFood = @current_user.foods.new
+      aFood.name = "Beer"
+      aFood.calories = 180
+      aFood.protein = 2
+      aFood.date = Time.now
+      success = aFood.save
+
+    elsif commit == "Coffee 6oz" then
+      aDrink = @current_user.waters.new
+      aDrink.date = Time.now
+      aDrink.ounces = -4
+      success = aDrink.save
+      
+      aFood = @current_user.foods.new
+      aFood.name = "Coffee w/o cream and sugar"
+      aFood.calories = 2
+      aFood.protein = 0
+      aFood.date = Time.now
+      success = aFood.save
+            
       
     elsif commit == "Measurements" then
       aMeasure = @current_user.measurements.new(params[:measurement])
