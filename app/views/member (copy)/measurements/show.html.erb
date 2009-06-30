@@ -1,0 +1,38 @@
+<p>
+  <b>User:</b>
+  <%=h @measurement.user %>
+</p>
+
+<p>
+  <b>Chest:</b>
+  <%=h @measurement.chest %>
+</p>
+
+<p>
+  <b>Belly upper:</b>
+  <%=h @measurement.belly_upper %>
+</p>
+
+<p>
+  <b>Belly lower:</b>
+  <%=h @measurement.belly_lower %>
+</p>
+
+<p>
+  <b>Hips:</b>
+  <%=h @measurement.hips %>
+</p>
+
+<p>
+  <b>Thigh:</b>
+  <%=h @measurement.thigh %>
+</p>
+
+<p>
+  <b>Arm:</b>
+  <%=h @measurement.arm %>
+</p>
+
+
+<%= link_to 'Edit', edit_measurement_path(@measurement) %> |
+<%= link_to 'Back', measurements_path %>

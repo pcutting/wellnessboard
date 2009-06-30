@@ -1,0 +1,33 @@
+<p>
+  <b>Sku:</b>
+  <%=h @catalog.sku %>
+</p>
+
+<p>
+  <b>Item:</b>
+  <%=h @catalog.item %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @catalog.description %>
+</p>
+
+<p>
+  <b>Picture:</b>
+  <%=h @catalog.picture %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%=h @catalog.price %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%=h @catalog.category %>
+</p>
+
+
+<%= link_to 'Edit', edit_catalog_path(@catalog) %> |
+<%= link_to 'Back', catalogs_path %>

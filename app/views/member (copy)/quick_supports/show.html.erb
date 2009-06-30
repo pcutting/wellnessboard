@@ -1,0 +1,28 @@
+<p>
+  <b>User:</b>
+  <%=h @quick_support.user %>
+</p>
+
+<p>
+  <b>Priority:</b>
+  <%=h @quick_support.priority %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%=h @quick_support.title %>
+</p>
+
+<p>
+  <b>Details:</b>
+  <%=h @quick_support.details %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%=h @quick_support.status %>
+</p>
+
+
+<%= link_to 'Edit', edit_quick_support_path(@quick_support) %> |
+<%= link_to 'Back', quick_supports_path %>

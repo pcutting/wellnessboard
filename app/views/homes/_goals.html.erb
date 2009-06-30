@@ -1,0 +1,17 @@
+<fieldset>
+Current Goal
+<% form_for( @home) do |form| %>
+<% fields_for :goal do |f| %>
+<table><tr>
+<th>Weight</th><th>Daily Water</th><th>Daily Steps</th><th>Daily Calories</th></tr>
+<tr>
+  <td><%= f.text_field :weight , :size=>3 %></td>
+  <td><%= f.text_field :water, :size=>3 %></td>
+  <td><%= f.text_field :steps_daily, :size=>3 %></td>
+  <td><%= f.text_field :daily_calories, :size=>4 %></td>
+  </tr></table>
+  <% end %>
+  <%= form.submit 'New Goal' %>
+<% end %>
+
+</fieldset>

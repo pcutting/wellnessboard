@@ -1,0 +1,98 @@
+<h1>Please Review your profile.</h1>
+
+<% form_for([:member, @profile]) do |f| %>
+  <%= f.error_messages %>
+  <p>
+   <%= link_to "Skip" , member_root_path %>
+   </p>
+   
+   <p>
+    <%= f.label "First name" %><br />
+    <%= f.text_field :name_first %>
+  </p>
+    <p>
+    <%= f.label :Middle_initial %><br />
+    <%= f.text_field :middle_initial %>
+  </p>
+  
+    <p>
+    <%= f.label :Last_Name %><br />
+    <%= f.text_field :name_last %>
+  </p>
+    <p>
+    <%= f.label :sufix %><br />
+    <%= f.text_field :sufix %>
+  </p>
+      
+  <p>
+    <%= f.label "Date of birth" %><br />
+    <%= f.text_field :dob %>
+    DOB is used in calculating things like BMI and also for offering special birthday promotions.
+  </p>
+      
+  <p>
+    <%= f.label "Hight in feet and Inches" %><br />
+    Feet:<%= f.text_field :hight_feet %>  Inches:<%= f.text_field :hight_inches %>
+  </p>
+      
+   <p>
+    <%= f.label :shipping_address %><br />
+    <%= f.text_field :shipping_address %>
+  </p>
+     <p>
+    <%= f.label :shipping_city %><br />
+    <%= f.text_field :shipping_city %>
+  </p>
+     <p>
+    <%= f.label :shipping_state %><br />
+    <%= f.text_field :shipping_state %>
+  </p>
+     <p>
+    <%= f.label :shipping_zip %><br />
+    <%= f.text_field :shipping_zip %>
+  </p>
+  <p>
+    <%= f.label :billing_address %><br />
+    <%= f.text_field :billing_address %>
+  </p>
+  <p>
+    <%= f.label :billing_city %><br />
+    <%= f.text_field :billing_city %>
+  </p>
+    <p>
+    <%= f.label :billing_state %><br />
+    <%= f.text_field :billing_state %>
+  </p>
+    <p>
+    <%= f.label :billing_zip %><br />
+    <%= f.text_field :billing_zip %>
+  </p>  
+  <p>
+    <%= f.label "Sponsor code if you know it" %><br />
+    <%= f.text_field :sponsor %>
+  </p>
+
+  <p>
+    <%= f.label :referred_by %><br />
+    <%= f.text_field :referred_by %>
+  </p>
+  <p>
+    <%= f.label :phone %><br />
+    <%= f.text_field :phone %>
+  </p>
+  <p>
+    <%= f.label :alt_phone %><br />
+    <%= f.text_field :alt_phone %>
+  </p>
+  
+  <p>
+    <%= f.label :time_zone %><br />
+    <%= f.text_field :time_zone %>
+  </p>
+  
+
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+

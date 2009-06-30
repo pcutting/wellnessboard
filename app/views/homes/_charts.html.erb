@@ -1,0 +1,18 @@
+
+<fieldset>
+
+<% form_for (:home) do |form| %>
+<%= form.submit 'All Charts' %> <%= form.submit 'Weight' %><%= form.submit 'Water' %><%= form.submit 'Exercise' %><%= form.submit 'Food' %><%= form.submit 'Measurements' %>
+
+<% end %>
+
+Chart
+
+
+<%- @plot_data = [] -%>
+<% myPlots(@chart_type) %>
+<%= makeChart %>
+
+
+</fieldset>
+

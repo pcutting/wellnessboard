@@ -10,6 +10,38 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :user_sessions
 
 
+  #map.home :controller=> "home", :action=>"show"
+  
+  map.resource :home
+  map.resources :offer_restrictions
+  map.resources :offer_accesses
+  map.resources :offer_skus
+  map.resources :coupons
+  map.resources :items
+  map.resources :orders
+  map.resources :comments
+  map.resources :blogs
+  map.resources :catalogs
+  map.resources :promotions
+  map.resources :quick_facts
+  map.resources :my_foods
+  map.resources :foods
+  map.resources :my_exercises
+  map.resources :exercises
+  map.resources :body_scans
+  map.resources :measurements
+  map.resources :goals
+  map.resources :shake_recipes
+  map.resources :quick_supports
+  map.resources :waters
+  map.resources :weights
+  map.resources :sponsors
+#  map.resource :user
+  map.resource :profile
+
+
+
+
 map.namespace :member do |member|
     #admin.root :controller => "home", :action => 'show'
     #admin.resource :home, :controller => "home"

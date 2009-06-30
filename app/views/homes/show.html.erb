@@ -1,13 +1,42 @@
-<p>
-  <b>Option:</b>
-  <%=h @home.option %>
-</p>
+<div class"body last">
 
-<p>
-  <b>User:</b>
-  <%=h @home.user %>
-</p>
+<div class="panel_left quick_form" >
+  <%= render :partial => "quick_form" %>
+</div> <%# class=panel_left quick_form %>
 
 
-<%= link_to 'Edit', edit_home_path(@home) %> |
-<%= link_to 'Back', homes_path %>
+<fieldset>
+<table class="noborder">
+<th>
+<div class="progress">
+  <%= render :partial => "progress" %>
+</div>
+</th>
+<th>
+<div class="recent_goals"> 
+<%= render :partial=>"goals" %>
+</div >
+</th>
+</tr>
+</table>
+</fieldset>
+
+<div class="charts">
+  <%= render :partial => "charts" %>
+</div>
+
+
+<div>
+  <%= render :partial=>"quick_fact" %>
+</div>
+
+
+
+
+
+<div class="support" >
+<%= render :partial =>"support" %>
+</div>
+
+
+</div> <%# class=body last %>

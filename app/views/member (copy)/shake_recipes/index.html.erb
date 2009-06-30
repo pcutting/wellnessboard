@@ -1,0 +1,26 @@
+<h1>Listing shake_recipes</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Calories</th>
+    <th>Protein</th>
+  </tr>
+
+<% @shake_recipes.each do |shake_recipe| %>
+  <tr>
+    <td><%=h shake_recipe.name %></td>
+    <td><%=h shake_recipe.description %></td>
+    <td><%=h shake_recipe.calories %></td>
+    <td><%=h shake_recipe.protein %></td>
+    <td><%= link_to 'Show', shake_recipe %></td>
+    <td><%= link_to 'Edit', edit_shake_recipe_path(shake_recipe) %></td>
+    <td><%= link_to 'Destroy', shake_recipe, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New shake_recipe', new_shake_recipe_path %>

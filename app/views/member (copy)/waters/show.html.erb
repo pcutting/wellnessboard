@@ -1,0 +1,18 @@
+<p>
+  <b>User:</b>
+  <%=h @water.user %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%=h @water.date %>
+</p>
+
+<p>
+  <b>Onces:</b>
+  <%=h @water.onces %>
+</p>
+
+
+<%= link_to 'Edit', edit_water_path(@water) %> |
+<%= link_to 'Back', waters_path %>

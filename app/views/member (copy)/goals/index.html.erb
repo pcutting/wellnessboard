@@ -1,0 +1,40 @@
+<h1>Listing goals</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Weight</th>
+    <th>Chest</th>
+    <th>Belly upper</th>
+    <th>Belly lower</th>
+    <th>Hips</th>
+    <th>Thigh</th>
+    <th>Arm</th>
+    <th>Water</th>
+    <th>Steps daily</th>
+    <th>Daily calories</th>
+  </tr>
+
+<% @goals.each do |goals| %>
+  <tr>
+    <td><%=h goals.user %></td>
+    <td><%=h goals.weight %></td>
+    <td><%=h goals.chest %></td>
+    <td><%=h goals.belly_upper %></td>
+    <td><%=h goals.belly_lower %></td>
+    <td><%=h goals.hips %></td>
+    <td><%=h goals.thigh %></td>
+    <td><%=h goals.arm %></td>
+    <td><%=h goals.water %></td>
+    <td><%=h goals.steps_daily %></td>
+    <td><%=h goals.daily_calories %></td>
+    <td><%= link_to 'Show', goals %></td>
+    <td><%= link_to 'Edit', edit_goals_path(goals) %></td>
+    <td><%= link_to 'Destroy', goals, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New goals', new_goals_path %>

@@ -1,0 +1,28 @@
+<p>
+  <b>User:</b>
+  <%=h @food.user %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%=h @food.name %>
+</p>
+
+<p>
+  <b>Calories:</b>
+  <%=h @food.calories %>
+</p>
+
+<p>
+  <b>Protein:</b>
+  <%=h @food.protein %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%=h @food.date %>
+</p>
+
+
+<%= link_to 'Edit', edit_food_path(@food) %> |
+<%= link_to 'Back', foods_path %>
