@@ -2,7 +2,7 @@
 Quick Support
 *Please keep in mind that it may take an hour for a coach to recieve this message.  Feel free to call your coach directely. Also feel free to share interesting facts that others might enjoy.
 
-<% form_for( @home) do |form| %>
+<% form_for( :home) do |form| %>
 <% fields_for :quick_support do |f| %>
 <table>
 <tr><th>Priority:  <%= f.text_field :priority %> </th><th><%= f.label :title %> <%= f.text_field :title %> </th></tr>
