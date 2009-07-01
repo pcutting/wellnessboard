@@ -106,7 +106,7 @@ input {
   }
   
   
-.recent_goals table, td, th {
+.recent_goals  {
   border:1px solid;
   border-collapse: collapse;
  }
@@ -116,13 +116,14 @@ input {
   border: none;
 }
 
-table .noborder  { 
-border-style:none;
-border-size: 0px;
 
-
-}
 
 select {
 font-size:9px;
+}
+
+.profile_format {
+
+text-align:right;
+
 }

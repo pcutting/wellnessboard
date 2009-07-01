@@ -1,6 +1,6 @@
 <h1>Register</h1>
 
-<p>We all have challenges with our health and we all need a little extra help.  Here is the place where you can go for that personal support, the products that are scientificaly developed to help you acheve that support, and the tools at your fingers to help you see your results and to make adjustments along the way.</p>
+<p>We all have challenges with our health and we all need a little extra help.  Here is the place where you can go for that personal support, the products that are scientificaly developed to help you acheve your goals, and the tools at your fingers to help you see your results and to make adjustments along the way.</p>
 
 
 <% form_for :user, :url => {:action => "create" } do |f| %>
@@ -27,52 +27,43 @@
     <% fields_for :profile do |w| %>
   <fieldset><legend>Required</legend>
   <p>
-    <%= w.label "Date of birth" %><br />
-    <%= w.text_field :dob %>
+    <%= w.label "Date of birth" %><%= w.date_select :dob %><br/>
     DOB is used in calculating things like BMI and also for offering special birthday promotions.
   </p>
       
   <p>
-    <%= w.label "Hight in feet and Inches" %><br />
-    <%= w.text_field :hight_feet %> FT <%= w.text_field :hight_inches %> inches.
+    <%= w.label "Hight:" %> Feet:<%= w.text_field :hight_feet , :size => 2 %> Inches<%= w.text_field :hight_inches , :size => 2 %>.
   </p>
   </fieldset>
 
-
-  <p>
-    <%= w.label "Nick name (Preferred name)" %><br />
-    <%= w.text_field :name_first %>
-  </p>
-    
-    <p>
-    <%= w.label "First name" %><br />
-    <%= w.text_field :name_first %>
-  </p>
-    <p>
-    <%= w.label :Middle_initial %><br />
-    <%= w.text_field :middle_initial %>
-  </p>
+<table class="profile_format"><tr>
+  <tr><th>
+    <%= w.label "Nick name" %></th><th><%= w.text_field :name_first %>
+  </th></tr>
+   
+  <tr><th>
+    <%= w.label "First name" %></th><th><%= w.text_field :name_first %>
+  </th></tr>
+    <tr><th>
+    <%= w.label :Middle_initial %></th><th><%= w.text_field :middle_initial %>
+  </th></tr>
   
-    <p>
-    <%= w.label :Last_Name %><br />
-    <%= w.text_field :name_last %>
-  </p>
-    <p>
-    <%= w.label :sufix %><br />
-    <%= w.text_field :sufix %>
-  </p>
+    <tr><th>
+    <%= w.label :Last_Name %></th><th><%= w.text_field :name_last %>
+  </th></tr>
+    <tr><th>
+    <%= w.label :sufix %></th><th><%= w.text_field :sufix %>
+  </th></tr>
       
 
-  <p>
-    <%= w.label "Sponsor code if you know it" %><br />
-    <%= w.text_field :sponsor %>
-  </p>
+  <tr><th>
+    <%= w.label "Sponsor code if you know it" %></th><th><%= w.text_field :sponsor %>
+  </th></tr>
 
-  <p>
-    <%= w.label :referred_by %><br />
-    <%= w.text_field :referred_by %>
-  </p>
-
+  <tr><th>
+    <%= w.label :referred_by %></th><th><%= w.text_field :referred_by %>
+  </th></tr>
+</table>
 
   <% end %>
   
