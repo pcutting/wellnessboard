@@ -770,7 +770,7 @@ def getMiniExercise
         @set1.addPoint(exercises.date.to_time.to_i * 1000,  daily_calories_sum)
       end
     end    
-    if oldDate != exercises.date.to_date then
+    if oldDate != @exercise.last.date.to_date then
       daily_calories_sum += exercises.calories
       @set1.addPoint(exercises.date.to_time.to_i * 1000,  daily_calories_sum)
     end   
