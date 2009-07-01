@@ -156,23 +156,18 @@ display = "
 
 <div class='right'>
 
-Weight 
-
-
-<br/>
+Weight Chart<br/>
 <div id='miniWeight' style='width:350px;height:100px;'></div>
-Water
-<br/>
+Water Chart<br/>
 <div id='miniWater' style='width:350px;height:100px;'></div>
 
 
-Calories<br/>
+Calories Eaten<br/>
 <div id='miniCalorie' style='width:350px;height:100px;'></div>
-Fitness<br/>
-<div id='miniFitness' style='width:350px;height:100px;'></div>
-<br/>
+Fitness (Calories burned not to include resting metabolism)<br/>
+<div id='miniFitness' style='width:350px;height:100px;'></div><br/>
 
-Measurements<br/>
+Measurements (Total inches)<br/>
 <div id='miniMeasures' style='width:350px;height:100px;'></div>
 
 
@@ -757,7 +752,7 @@ def getMiniExercise
 
 ##############################################
 
-  if ( @chartoptions[:exercise][0])  
+  if ( @chartoptions[:exercise][0] && !@exercise.nil?)  
     oldDate = nil  
     daily_calories_sum = 0
     @set1 = ChartItem.new("Calories Burnt(Fitness)")   
@@ -809,7 +804,7 @@ def getMiniWeight
  #raise @chartoptions.to_yaml
  
  
-if ( @chartoptions[:weight][0] )
+if ( @chartoptions[:weight][0]  &&  ! @weight.nil?)
 
     @set1 = ChartItem.new("Weight")
 
@@ -834,67 +829,16 @@ end #def getMiniweight
 
 def getMiniMeasurement
 #measurements
-#TODO check that this needs to be called, currently it always calls it.
-#if @chartoptions[:measurement][0] || @chartoptions[:measurement][1] || @chartoptions[:measurement][2]
 
 
-    @set5 = ChartItem.new("Measurement:Chest")
+   @set= ChartItem.new("Total Inches")
 
-    @set6 = ChartItem.new("Measurement:Upper Belly")
-
-    @set7 = ChartItem.new("Measurement:Hip")
- 
-    @set8 = ChartItem.new("Measurement:Thigh")
-
-    @set10 = ChartItem.new("Measurement:Arm")
-
- 
-    
-    
-    
-  meas1, meas2, meas3, meas4, meas5, meas6, meas7, meas8, meas9, meas10, meas11, meas12, meas13 = [],[],[],[],[],[],[],[],[],[],[],[],[]
-  
-  meas1_avg, meas2_avg, meas3_avg, meas4_avg, meas5_avg, meas6_avg, meas7_avg, meas8_avg, meas9_avg, meas10_avg, meas11_avg, meas12_avg, meas13_avg = [],[],[],[],[],[],[],[],[],[],[],[],[]
-  
-   
-  meas1_count, meas2_count, meas3_count, meas4_count, meas5_count, meas6_count, meas7_count, meas8_count, meas9_count, meas10_count, meas11_count, meas12_count, meas13_count = 0,0,0,0,0,0,0,0 ,0,0,0,0,0
-  
-  meas1_sum, meas2_sum, meas3_sum, meas4_sum, meas5_sum, meas6_sum, meas7_sum, meas8_sum , meas9_sum, meas10_sum, meas11_sum, meas12_sum, meas13_sum = 0,0,0,0,0,0,0,0,0,0,0,0,0 
-  
   for measurement in @measurement
     
+   # id: integer, user_id: integer, chest: integer, belly_upper: integer, belly_lower: integer, hips: integer, thigh: integer, arm: integer, date: datetime, created_at: datetime, updated_at: datetime
+    sum = measurement.chest + measurement.belly_upper + measurement.belly_lower + measurement.hips + measurement.thigh + measurement.arm
     
-    if !(measurement.chest.nil? )  &&  ( @chartoptions[:measurement_chest][0] || @chartoptions[:measurement_chest][1]   || @chartoptions[:measurement][0] || @chartoptions[:measurement][1]) 
-      meas6_count += 1 
-      meas6_sum += measurement.chest  
-      @set5.addPoint(measurement.date.to_time.to_i * 1000,measurement.chest)
-   
-    end 
-    
-    if !(measurement.belly_upper.nil? ) &&  ( @chartoptions[:measurement_upper_belly][0]) 
-      @set6.addPoint(measurement.date.to_time.to_i * 1000, measurement.belly_upper)
-    end 
-    
-    if !(measurement.hips.nil? )  &&  (@chartoptions[:measurement_hip][0] ) 
-   
-      @set7.addPoint(measurement.date.to_time.to_i * 1000,measurement.hips)
- 
-    end 
-    
-
-    if @chartoptions[:measurement_thigh][0]
-      @set8.addPoint(measurement.date.to_time.to_i * 1000,measurement.thigh)
-    end     
-    
-
-    
-    if !(measurement.arm.nil? && measurement.arm == 0 )  &&  (@chartoptions[:measurement_arm][0]) 
-
-      @set10.addPoint(measurement.date.to_time.to_i * 1000,measurement.arm)
-
-    end      
-
- 
+    @set.addPoint(measurement.date.to_time.to_i * 1000,sum)
     
   end 
 #  ----------------------------------
@@ -902,24 +846,9 @@ def getMiniMeasurement
 #  ----------------------------------    
   #if @chartoptions[:measurement][0]
  
-    if (@chartoptions[:measurement_chest][0] || @chartoptions[:measurement][0] )
-     @miniMeasures.add(@set5)
-    end 
-    if (@chartoptions[:measurement_upper_belly][0] || @chartoptions[:measurement][0] )
-      @miniMeasures.add(@set6) 
-    end 
-    if (@chartoptions[:measurement_hip][0] || @chartoptions[:measurement][0] )
-      @miniMeasures.add(@set7)
-    end 
+ 
+     @miniMeasures.add(@set)
 
-    if (@chartoptions[:measurement_thigh][0] || @chartoptions[:measurement][0] )
-      @miniMeasures.add(@set8)
-    end 
-
-    if (@chartoptions[:measurement_arm][0] || @chartoptions[:measurement][0] )
-      @miniMeasures.add(@set10)
-    end 
-    
 
 #end # if @chartoptions[:measurments] 
 end #def getMiniMeasurements
