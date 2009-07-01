@@ -672,37 +672,40 @@ def getMiniWater
   #Water
   
   oldDate = nil
+  if ( ! @water.nil? && @water.size > 0) then
   
-  if ( @chartoptions[:water][0])
-    
-    @set1 = ChartItem.new("Ounces Water")   
+    if ( @chartoptions[:water][0])
+      
+      @set1 = ChartItem.new("Ounces Water")   
 
-    for water in @water
-      if oldDate.nil?
-        daily_water_sum = water.ounces
-        oldDate = water.date.to_date
-        @set1.addPoint(water.date.to_time.to_i * 1000,  daily_water_sum)
-      elsif oldDate != water.date.to_date
-        @set1.addPoint(water.date.to_time.to_i * 1000,  daily_water_sum)
-        daily_water_sum = water.ounces
-        oldDate = water.date.to_date
-      else #must be same date as previous record (records should be ordered)
+      for water in @water
+        if oldDate.nil?
+          daily_water_sum = water.ounces
+          oldDate = water.date.to_date
+          @set1.addPoint(water.date.to_time.to_i * 1000,  daily_water_sum)
+        elsif oldDate != water.date.to_date
+          @set1.addPoint(water.date.to_time.to_i * 1000,  daily_water_sum)
+          daily_water_sum = water.ounces
+          oldDate = water.date.to_date
+        else #must be same date as previous record (records should be ordered)
+          daily_water_sum += water.ounces
+          @set1.addPoint(water.date.to_time.to_i * 1000,  daily_water_sum)
+        end
+      end 
+      
+      #Make last post to chart
+      if oldDate != @water.last.date.to_date then
         daily_water_sum += water.ounces
         @set1.addPoint(water.date.to_time.to_i * 1000,  daily_water_sum)
       end
+       
+        
+      if @chartoptions[:water][0]
+      @miniWater.add(@set1)
+      end 
     end 
     
-    #Make last post to chart
-    if oldDate != water.date.to_date then
-      daily_water_sum += water.ounces
-      @set1.addPoint(water.date.to_time.to_i * 1000,  daily_water_sum)
-    end
-     
-      
-    if @chartoptions[:water][0]
-    @miniWater.add(@set1)
-    end 
-  end 
+  end
 end 
     
   
@@ -712,6 +715,7 @@ end
 ####################
 def getMiniFood
 
+if (!@food.nil? && @food.size > 0 ) then
   if ( @chartoptions[:food][0])  
     oldDate = nil  
     @set1 = ChartItem.new("Daily Calories")   
@@ -740,6 +744,7 @@ def getMiniFood
     end 
   end
 
+end
 end #def getMiniFood
   
   

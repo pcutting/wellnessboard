@@ -3,7 +3,7 @@
 <p>We all have challenges with our health and we all need a little extra help.  Here is the place where you can go for that personal support, the products that are scientificaly developed to help you acheve that support, and the tools at your fingers to help you see your results and to make adjustments along the way.</p>
 
 
-<% form_for(@user) do |f| %>
+<% form_for :user, :url => {:action => "create" } do |f| %>
   <%= f.error_messages %>
 
   <p>

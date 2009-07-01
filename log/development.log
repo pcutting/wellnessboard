@@ -25620,3 +25620,814 @@ Rendered homes/_charts (19.1ms)
 Rendered homes/_quick_fact (0.1ms)
 Rendered homes/_support (2.4ms)
 Completed in 217ms (View: 40, DB: 22) | 200 OK [http://localhost/home]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-07-01 13:17:29) [GET]
+  [4;36;1mUser Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered user_sessions/_login (6.1ms)
+Rendered user_sessions/_mission (1.9ms)
+Completed in 348ms (View: 106, DB: 3) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-07-01 13:17:32) [GET]
+  [4;35;1mUser Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mProfile Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `profiles`[0m
+Rendering template within layouts/application
+Rendering users/new
+
+ActionView::TemplateError (undefined method `users_path' for #<ActionView::Base:0x7f0b32d90a28>) on line #6 of app/views/users/new.html.erb:
+3: <p>We all have challenges with our health and we all need a little extra help.  Here is the place where you can go for that personal support, the products that are scientificaly developed to help you acheve that support, and the tools at your fingers to help you see your results and to make adjustments along the way.</p>
+4: 
+5: 
+6: <% form_for(@user) do |f| %>
+7:   <%= f.error_messages %>
+8: 
+9:   <p>
+
+    app/views/users/new.html.erb:6
+    app/controllers/users_controller.rb:24:in `new'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (76.3ms)
+Rendered rescues/_request_and_response (3.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-07-01 13:20:32) [GET]
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mProfile Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `profiles`[0m
+Rendering template within layouts/application
+Rendering users/new
+
+ActionView::TemplateError (undefined method `users_path' for #<ActionView::Base:0x7f0b33100370>) on line #6 of app/views/users/new.html.erb:
+3: <p>We all have challenges with our health and we all need a little extra help.  Here is the place where you can go for that personal support, the products that are scientificaly developed to help you acheve that support, and the tools at your fingers to help you see your results and to make adjustments along the way.</p>
+4: 
+5: 
+6: <% form_for @user do |f| %>
+7:   <%= f.error_messages %>
+8: 
+9:   <p>
+
+    app/views/users/new.html.erb:6
+    app/controllers/users_controller.rb:24:in `new'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (38.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-07-01 13:22:48) [GET]
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mProfile Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `profiles`[0m
+Rendering template within layouts/application
+Rendering users/new
+
+ActionView::TemplateError (undefined method `users_path' for #<ActionView::Base:0x7f0b32e4a0b8>) on line #6 of app/views/users/new.html.erb:
+3: <p>We all have challenges with our health and we all need a little extra help.  Here is the place where you can go for that personal support, the products that are scientificaly developed to help you acheve that support, and the tools at your fingers to help you see your results and to make adjustments along the way.</p>
+4: 
+5: 
+6: <% form_for @user do |f| %>
+7:   <%= f.error_messages %>
+8: 
+9:   <p>
+
+    app/views/users/new.html.erb:6
+    app/controllers/users_controller.rb:24:in `new'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (105.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-07-01 13:22:49) [GET]
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mProfile Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `profiles`[0m
+Rendering template within layouts/application
+Rendering users/new
+
+ActionView::TemplateError (undefined method `users_path' for #<ActionView::Base:0x7f0b32d5e7d0>) on line #6 of app/views/users/new.html.erb:
+3: <p>We all have challenges with our health and we all need a little extra help.  Here is the place where you can go for that personal support, the products that are scientificaly developed to help you acheve that support, and the tools at your fingers to help you see your results and to make adjustments along the way.</p>
+4: 
+5: 
+6: <% form_for @user do |f| %>
+7:   <%= f.error_messages %>
+8: 
+9:   <p>
+
+    app/views/users/new.html.erb:6
+    app/controllers/users_controller.rb:24:in `new'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (108.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-07-01 13:22:50) [GET]
+  [4;35;1mUser Columns (3.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mProfile Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `profiles`[0m
+Rendering template within layouts/application
+Rendering users/new
+
+ActionView::TemplateError (undefined method `users_path' for #<ActionView::Base:0x7f0b32c243b0>) on line #6 of app/views/users/new.html.erb:
+3: <p>We all have challenges with our health and we all need a little extra help.  Here is the place where you can go for that personal support, the products that are scientificaly developed to help you acheve that support, and the tools at your fingers to help you see your results and to make adjustments along the way.</p>
+4: 
+5: 
+6: <% form_for @user do |f| %>
+7:   <%= f.error_messages %>
+8: 
+9:   <p>
+
+    app/views/users/new.html.erb:6
+    app/controllers/users_controller.rb:24:in `new'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (39.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-07-01 13:22:51) [GET]
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mProfile Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `profiles`[0m
+Rendering template within layouts/application
+Rendering users/new
+
+ActionView::TemplateError (undefined method `users_path' for #<ActionView::Base:0x7f0b32b3d708>) on line #6 of app/views/users/new.html.erb:
+3: <p>We all have challenges with our health and we all need a little extra help.  Here is the place where you can go for that personal support, the products that are scientificaly developed to help you acheve that support, and the tools at your fingers to help you see your results and to make adjustments along the way.</p>
+4: 
+5: 
+6: <% form_for @user do |f| %>
+7:   <%= f.error_messages %>
+8: 
+9:   <p>
+
+    app/views/users/new.html.erb:6
+    app/controllers/users_controller.rb:24:in `new'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (38.7ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-07-01 13:22:52) [GET]
+  [4;35;1mUser Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mProfile Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `profiles`[0m
+Rendering template within layouts/application
+Rendering users/new
+
+ActionView::TemplateError (undefined method `users_path' for #<ActionView::Base:0x7f0b32fe0d78>) on line #6 of app/views/users/new.html.erb:
+3: <p>We all have challenges with our health and we all need a little extra help.  Here is the place where you can go for that personal support, the products that are scientificaly developed to help you acheve that support, and the tools at your fingers to help you see your results and to make adjustments along the way.</p>
+4: 
+5: 
+6: <% form_for @user do |f| %>
+7:   <%= f.error_messages %>
+8: 
+9:   <p>
+
+    app/views/users/new.html.erb:6
+    app/controllers/users_controller.rb:24:in `new'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (37.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-07-01 13:22:53) [GET]
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mProfile Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `profiles`[0m
+Rendering template within layouts/application
+Rendering users/new
+
+ActionView::TemplateError (undefined method `users_path' for #<ActionView::Base:0x7f0b32dd6190>) on line #6 of app/views/users/new.html.erb:
+3: <p>We all have challenges with our health and we all need a little extra help.  Here is the place where you can go for that personal support, the products that are scientificaly developed to help you acheve that support, and the tools at your fingers to help you see your results and to make adjustments along the way.</p>
+4: 
+5: 
+6: <% form_for @user do |f| %>
+7:   <%= f.error_messages %>
+8: 
+9:   <p>
+
+    app/views/users/new.html.erb:6
+    app/controllers/users_controller.rb:24:in `new'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (103.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-07-01 13:23:20) [GET]
+  [4;35;1mUser Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mProfile Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `profiles`[0m
+Rendering template within layouts/application
+Rendering users/new
+Completed in 105ms (View: 44, DB: 6) | 200 OK [http://localhost/user/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-01 13:24:18) [POST]
+  Parameters: {"commit"=>"Create", "profile"=>{"referred_by"=>"", "sufix"=>"", "name_last"=>"c", "dob"=>"5/4/2000", "hight_feet"=>"4", "sponsor"=>"", "hight_inches"=>"11", "middle_initial"=>"j", "name_first"=>"P"}, "authenticity_token"=>"Lsqj01xE98E6my/P7MEUNu4uSIAsOA29IVOlQx+eYUY=", "user"=>{"password_confirmation"=>"test", "password"=>"test", "login"=>"test1", "email"=>"test1@test.com"}}
+
+ActionController::MethodNotAllowed (Only get requests are allowed.):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (56.9ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (method_not_allowed)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-07-01 13:57:37) [GET]
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mProfile Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `profiles`[0m
+Rendering template within layouts/application
+Rendering users/new
+Completed in 43ms (View: 16, DB: 3) | 200 OK [http://localhost/user/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-07-01 13:57:41) [GET]
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mProfile Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `profiles`[0m
+Rendering template within layouts/application
+Rendering users/new
+Completed in 144ms (View: 12, DB: 3) | 200 OK [http://localhost/user/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-07-01 13:58:02) [POST]
+  Parameters: {"commit"=>"Create", "profile"=>{"referred_by"=>"", "sufix"=>"jr", "name_last"=>"", "dob"=>"1998-06-23", "hight_feet"=>"4", "sponsor"=>"", "hight_inches"=>"11", "middle_initial"=>"J", "name_first"=>"P"}, "authenticity_token"=>"Lsqj01xE98E6my/P7MEUNu4uSIAsOA29IVOlQx+eYUY=", "user"=>{"password_confirmation"=>"test", "password"=>"teste", "login"=>"test1", "email"=>"test1@test.com"}}
+  [4;35;1mUser Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mProfile Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `profiles`[0m
+  [4;35;1mHome Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `homes`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Exists (0.4ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'test1@test.com') LIMIT 1[0m
+  [4;36;1mUser Exists (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`login`) = BINARY 'test1') LIMIT 1[0m
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '7f22eaec88b109ec1af28a9b3191819d5d2b1bbb015f8898b37800cdf250c924b1b77a3185e3fc441a9c9a1994e9016c5b221e45e1723fea8caf6dff860db433') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+Rendering template within layouts/application
+Rendering users/new
+Completed in 420ms (View: 6, DB: 5) | 200 OK [http://localhost/user]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-07-01 13:58:27) [POST]
+  Parameters: {"commit"=>"Create", "profile"=>{"referred_by"=>"", "sufix"=>"jr", "name_last"=>"", "dob"=>"6/12/1988", "hight_feet"=>"4", "sponsor"=>"", "hight_inches"=>"11", "middle_initial"=>"J", "name_first"=>"P"}, "authenticity_token"=>"Lsqj01xE98E6my/P7MEUNu4uSIAsOA29IVOlQx+eYUY=", "user"=>{"password_confirmation"=>"test", "password"=>"teste", "login"=>"test1", "email"=>"test1@test.com"}}
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mProfile Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `profiles`[0m
+  [4;35;1mHome Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `homes`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'test1@test.com') LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`login`) = BINARY 'test1') LIMIT 1[0m
+  [4;35;1mUser Exists (0.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '820849a7603546b14ca1f550650b6a926f0f51d8ef8b5a4630aa2aa8d88faacdd9fad801ba1827c84edab5c1b6f0968570be65fd9dd85f78e4785d538129c792') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+Rendering template within layouts/application
+Rendering users/new
+Completed in 137ms (View: 6, DB: 4) | 200 OK [http://localhost/user]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-07-01 13:58:47) [POST]
+  Parameters: {"commit"=>"Create", "profile"=>{"referred_by"=>"", "sufix"=>"jr", "name_last"=>"", "dob"=>"6/12/1988", "hight_feet"=>"4", "sponsor"=>"", "hight_inches"=>"11", "middle_initial"=>"J", "name_first"=>"P"}, "authenticity_token"=>"Lsqj01xE98E6my/P7MEUNu4uSIAsOA29IVOlQx+eYUY=", "user"=>{"password_confirmation"=>"test", "password"=>"test", "login"=>"test1", "email"=>"test1@test.com"}}
+  [4;35;1mUser Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mProfile Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `profiles`[0m
+  [4;35;1mHome Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `homes`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'test1@test.com') LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`login`) = BINARY 'test1') LIMIT 1[0m
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`persistence_token` = BINARY '37e80dd17513f89eee1824fd7a3ea4ec8f62cba5d85407b00f1f218ff19107878d7a11d7698070eaaa51b23d888205665518a19cfe841b35f8a0aac466efed7b') LIMIT 1[0m
+  [4;36;1mUser Create (0.4ms)[0m   [0;1mINSERT INTO `users` (`last_request_at`, `created_at`, `crypted_password`, `updated_at`, `admin`, `failed_login_count`, `current_login_ip`, `password_salt`, `current_login_at`, `persistence_token`, `login_count`, `last_login_ip`, `login`, `last_login_at`, `email`) VALUES('2009-07-01 17:58:47', '2009-07-01 17:58:47', '9855befb652fab3c74c5ae02cccba1d15b8497a38ea4839623620f661216757765aa38df441238f806596ac61db6b3623bb505217af725fc8a0cfae78f522f33', '2009-07-01 17:58:47', NULL, 0, '127.0.0.1', 'vqzqqznSEN18-8slQmDN', '2009-07-01 17:58:47', '37e80dd17513f89eee1824fd7a3ea4ec8f62cba5d85407b00f1f218ff19107878d7a11d7698070eaaa51b23d888205665518a19cfe841b35f8a0aac466efed7b', 1, NULL, 'test1', NULL, 'test1@test.com')[0m
+  [4;35;1mSQL (3.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProfile Create (0.3ms)[0m   [0mINSERT INTO `profiles` (`shipping_state`, `referred_by`, `name_last`, `sufix`, `dob`, `created_at`, `updated_at`, `billing_city`, `billing_state`, `shipping_address`, `shipping_zip`, `hight_feet`, `user_id`, `sponsor`, `coach`, `alt_phone`, `billing_address`, `billing_zip`, `phone`, `hight_inches`, `nick_name`, `shipping_city`, `time_zone`, `name_first`, `middle_initial`) VALUES(NULL, '', '', 'jr', '1988-06-12', '2009-07-01 17:58:47', '2009-07-01 17:58:47', NULL, NULL, NULL, NULL, 4, NULL, '', NULL, NULL, NULL, NULL, NULL, 11, NULL, NULL, NULL, 'P', 'J')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mProfile Load (0.3ms)[0m   [0mSELECT * FROM `profiles` WHERE (`profiles`.user_id = 2) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProfile Update (0.3ms)[0m   [0mUPDATE `profiles` SET `updated_at` = '2009-07-01 17:58:47', `user_id` = 2 WHERE `id` = 2[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mHome Load (0.2ms)[0m   [0mSELECT * FROM `homes` WHERE (`homes`.user_id = 2) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mHome Create (0.2ms)[0m   [0mINSERT INTO `homes` (`option`, `created_at`, `updated_at`, `time_span_days`, `chart_type`, `user_id`) VALUES(NULL, '2009-07-01 17:58:48', '2009-07-01 17:58:48', NULL, 'all', 2)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+
+NameError (undefined local variable or method `edit_member_profile_url' for #<UsersController:0x7f0b32b15190>):
+  app/controllers/users_controller.rb:59:in `create'
+  app/controllers/users_controller.rb:56:in `create'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (31.4ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomesController#show (for 127.0.0.1 at 2009-07-01 13:59:26) [GET]
+  [4;35;1mUser Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '37e80dd17513f89eee1824fd7a3ea4ec8f62cba5d85407b00f1f218ff19107878d7a11d7698070eaaa51b23d888205665518a19cfe841b35f8a0aac466efed7b') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-07-01 17:59:26', `last_request_at` = '2009-07-01 17:59:26' WHERE `id` = 2[0m
+  [4;35;1mSQL (9.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mHome Load (0.3ms)[0m   [0;1mSELECT * FROM `homes` WHERE (`homes`.user_id = 2) LIMIT 1[0m
+  [4;35;1mGoal Load (0.3ms)[0m   [0mSELECT * FROM `goals` WHERE (`goals`.user_id = 2) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;36;1mGoal Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `goals`[0m
+  [4;35;1mQuickFact Load (0.3ms)[0m   [0mSELECT * FROM `quick_facts` [0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;35;1mQuickFact Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `quick_facts`[0m
+  [4;36;1mHome Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `homes`[0m
+  [4;35;1mQuickSupport Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `quick_supports`[0m
+  [4;36;1mWater Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `waters`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-24 13:59:26') AND (`waters`.user_id = 2) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-01 13:59:26') AND (`waters`.user_id = 2) [0m
+  [4;35;1mFood Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `foods`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-24 13:59:27') AND (`foods`.user_id = 2) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-01 13:59:27') AND (`foods`.user_id = 2) [0m
+  [4;36;1mWeight Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `weights`[0m
+  [4;35;1mMeasurement Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `measurements`[0m
+  [4;36;1mExercise Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `exercises`[0m
+  [4;35;1mBodyScan Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within layouts/member
+Rendering homes/show
+Rendered homes/_quick_form (60.1ms)
+Rendered homes/_progress (4.6ms)
+Rendered homes/_goals (7.6ms)
+  [4;36;1mWater Load (1.2ms)[0m   [0;1mSELECT * FROM `waters` WHERE (`waters`.user_id = 2) ORDER BY date asc[0m
+  [4;35;1mFood Load (0.5ms)[0m   [0mSELECT * FROM `foods` WHERE (`foods`.user_id = 2) ORDER BY date asc[0m
+  [4;36;1mExercise Load (0.5ms)[0m   [0;1mSELECT * FROM `exercises` WHERE (`exercises`.user_id = 2) ORDER BY date asc[0m
+  [4;35;1mMeasurement Load (0.4ms)[0m   [0mSELECT * FROM `measurements` WHERE (`measurements`.user_id = 2) ORDER BY date asc[0m
+  [4;36;1mWeight Load (0.4ms)[0m   [0;1mSELECT * FROM `weights` WHERE (`weights`.user_id = 2) ORDER BY date asc[0m
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.date) on line #13 of app/views/homes/_charts.html.erb:
+10: 
+11: 
+12: <%- @plot_data = [] -%>
+13: <% myPlots(@chart_type) %>
+14: <%= makeChart %>
+15: 
+16: 
+
+    app/helpers/charts_helper.rb:696:in `getMiniWater'
+    app/helpers/charts_helper.rb:381:in `myPlots'
+    app/views/homes/_charts.html.erb:13
+    app/views/homes/show.html.erb:25
+    app/controllers/homes_controller.rb:46:in `show'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (122.5ms)
+Rendered rescues/_request_and_response (0.7ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomesController#show (for 127.0.0.1 at 2009-07-01 14:01:21) [GET]
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '37e80dd17513f89eee1824fd7a3ea4ec8f62cba5d85407b00f1f218ff19107878d7a11d7698070eaaa51b23d888205665518a19cfe841b35f8a0aac466efed7b') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-07-01 18:01:21', `last_request_at` = '2009-07-01 18:01:21' WHERE `id` = 2[0m
+  [4;35;1mSQL (4.8ms)[0m   [0mCOMMIT[0m
+  [4;36;1mHome Load (0.1ms)[0m   [0;1mSELECT * FROM `homes` WHERE (`homes`.user_id = 2) LIMIT 1[0m
+  [4;35;1mGoal Load (0.1ms)[0m   [0mSELECT * FROM `goals` WHERE (`goals`.user_id = 2) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;36;1mGoal Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `goals`[0m
+  [4;35;1mQuickFact Load (0.1ms)[0m   [0mSELECT * FROM `quick_facts` [0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;35;1mQuickFact Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `quick_facts`[0m
+  [4;36;1mHome Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `homes`[0m
+  [4;35;1mQuickSupport Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `quick_supports`[0m
+  [4;36;1mWater Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `waters`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-24 14:01:21') AND (`waters`.user_id = 2) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-01 14:01:21') AND (`waters`.user_id = 2) [0m
+  [4;35;1mFood Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `foods`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-24 14:01:21') AND (`foods`.user_id = 2) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-01 14:01:21') AND (`foods`.user_id = 2) [0m
+  [4;36;1mWeight Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `weights`[0m
+  [4;35;1mMeasurement Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `measurements`[0m
+  [4;36;1mExercise Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `exercises`[0m
+  [4;35;1mBodyScan Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within layouts/member
+Rendering homes/show
+Rendered homes/_quick_form (13.1ms)
+Rendered homes/_progress (0.3ms)
+Rendered homes/_goals (1.2ms)
+  [4;36;1mWater Load (0.1ms)[0m   [0;1mSELECT * FROM `waters` WHERE (`waters`.user_id = 2) ORDER BY date asc[0m
+  [4;35;1mFood Load (0.1ms)[0m   [0mSELECT * FROM `foods` WHERE (`foods`.user_id = 2) ORDER BY date asc[0m
+  [4;36;1mExercise Load (0.1ms)[0m   [0;1mSELECT * FROM `exercises` WHERE (`exercises`.user_id = 2) ORDER BY date asc[0m
+  [4;35;1mMeasurement Load (0.1ms)[0m   [0mSELECT * FROM `measurements` WHERE (`measurements`.user_id = 2) ORDER BY date asc[0m
+  [4;36;1mWeight Load (0.1ms)[0m   [0;1mSELECT * FROM `weights` WHERE (`weights`.user_id = 2) ORDER BY date asc[0m
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.date) on line #13 of app/views/homes/_charts.html.erb:
+10: 
+11: 
+12: <%- @plot_data = [] -%>
+13: <% myPlots(@chart_type) %>
+14: <%= makeChart %>
+15: 
+16: 
+
+    app/helpers/charts_helper.rb:697:in `getMiniWater'
+    app/helpers/charts_helper.rb:381:in `myPlots'
+    app/views/homes/_charts.html.erb:13
+    app/views/homes/show.html.erb:25
+    app/controllers/homes_controller.rb:46:in `show'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (43.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomesController#show (for 127.0.0.1 at 2009-07-01 14:01:26) [GET]
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '37e80dd17513f89eee1824fd7a3ea4ec8f62cba5d85407b00f1f218ff19107878d7a11d7698070eaaa51b23d888205665518a19cfe841b35f8a0aac466efed7b') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-07-01 18:01:26', `last_request_at` = '2009-07-01 18:01:26' WHERE `id` = 2[0m
+  [4;35;1mSQL (4.7ms)[0m   [0mCOMMIT[0m
+  [4;36;1mHome Load (0.1ms)[0m   [0;1mSELECT * FROM `homes` WHERE (`homes`.user_id = 2) LIMIT 1[0m
+  [4;35;1mGoal Load (0.1ms)[0m   [0mSELECT * FROM `goals` WHERE (`goals`.user_id = 2) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;36;1mGoal Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `goals`[0m
+  [4;35;1mQuickFact Load (0.1ms)[0m   [0mSELECT * FROM `quick_facts` [0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;35;1mQuickFact Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `quick_facts`[0m
+  [4;36;1mHome Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `homes`[0m
+  [4;35;1mQuickSupport Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `quick_supports`[0m
+  [4;36;1mWater Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `waters`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-24 14:01:26') AND (`waters`.user_id = 2) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-01 14:01:26') AND (`waters`.user_id = 2) [0m
+  [4;35;1mFood Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `foods`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-24 14:01:26') AND (`foods`.user_id = 2) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-01 14:01:26') AND (`foods`.user_id = 2) [0m
+  [4;36;1mWeight Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `weights`[0m
+  [4;35;1mMeasurement Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `measurements`[0m
+  [4;36;1mExercise Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `exercises`[0m
+  [4;35;1mBodyScan Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within layouts/member
+Rendering homes/show
+Rendered homes/_quick_form (14.2ms)
+Rendered homes/_progress (0.3ms)
+Rendered homes/_goals (1.5ms)
+  [4;36;1mWater Load (0.1ms)[0m   [0;1mSELECT * FROM `waters` WHERE (`waters`.user_id = 2) ORDER BY date asc[0m
+  [4;35;1mFood Load (0.1ms)[0m   [0mSELECT * FROM `foods` WHERE (`foods`.user_id = 2) ORDER BY date asc[0m
+  [4;36;1mExercise Load (0.1ms)[0m   [0;1mSELECT * FROM `exercises` WHERE (`exercises`.user_id = 2) ORDER BY date asc[0m
+  [4;35;1mMeasurement Load (0.1ms)[0m   [0mSELECT * FROM `measurements` WHERE (`measurements`.user_id = 2) ORDER BY date asc[0m
+  [4;36;1mWeight Load (0.1ms)[0m   [0;1mSELECT * FROM `weights` WHERE (`weights`.user_id = 2) ORDER BY date asc[0m
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.date) on line #13 of app/views/homes/_charts.html.erb:
+10: 
+11: 
+12: <%- @plot_data = [] -%>
+13: <% myPlots(@chart_type) %>
+14: <%= makeChart %>
+15: 
+16: 
+
+    app/helpers/charts_helper.rb:697:in `getMiniWater'
+    app/helpers/charts_helper.rb:381:in `myPlots'
+    app/views/homes/_charts.html.erb:13
+    app/views/homes/show.html.erb:25
+    app/controllers/homes_controller.rb:46:in `show'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (44.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomesController#show (for 127.0.0.1 at 2009-07-01 14:02:38) [GET]
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '37e80dd17513f89eee1824fd7a3ea4ec8f62cba5d85407b00f1f218ff19107878d7a11d7698070eaaa51b23d888205665518a19cfe841b35f8a0aac466efed7b') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-07-01 18:02:38', `last_request_at` = '2009-07-01 18:02:38' WHERE `id` = 2[0m
+  [4;35;1mSQL (9.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mHome Load (0.1ms)[0m   [0;1mSELECT * FROM `homes` WHERE (`homes`.user_id = 2) LIMIT 1[0m
+  [4;35;1mGoal Load (0.1ms)[0m   [0mSELECT * FROM `goals` WHERE (`goals`.user_id = 2) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;36;1mGoal Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `goals`[0m
+  [4;35;1mQuickFact Load (0.1ms)[0m   [0mSELECT * FROM `quick_facts` [0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;35;1mQuickFact Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `quick_facts`[0m
+  [4;36;1mHome Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `homes`[0m
+  [4;35;1mQuickSupport Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `quick_supports`[0m
+  [4;36;1mWater Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `waters`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-24 14:02:38') AND (`waters`.user_id = 2) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-01 14:02:38') AND (`waters`.user_id = 2) [0m
+  [4;35;1mFood Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `foods`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-24 14:02:38') AND (`foods`.user_id = 2) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-01 14:02:38') AND (`foods`.user_id = 2) [0m
+  [4;36;1mWeight Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `weights`[0m
+  [4;35;1mMeasurement Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `measurements`[0m
+  [4;36;1mExercise Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `exercises`[0m
+  [4;35;1mBodyScan Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within layouts/member
+Rendering homes/show
+Rendered homes/_quick_form (92.4ms)
+Rendered homes/_progress (0.3ms)
+Rendered homes/_goals (1.3ms)
+  [4;36;1mWater Load (0.1ms)[0m   [0;1mSELECT * FROM `waters` WHERE (`waters`.user_id = 2) ORDER BY date asc[0m
+  [4;35;1mFood Load (0.1ms)[0m   [0mSELECT * FROM `foods` WHERE (`foods`.user_id = 2) ORDER BY date asc[0m
+  [4;36;1mExercise Load (0.1ms)[0m   [0;1mSELECT * FROM `exercises` WHERE (`exercises`.user_id = 2) ORDER BY date asc[0m
+  [4;35;1mMeasurement Load (0.1ms)[0m   [0mSELECT * FROM `measurements` WHERE (`measurements`.user_id = 2) ORDER BY date asc[0m
+  [4;36;1mWeight Load (0.1ms)[0m   [0;1mSELECT * FROM `weights` WHERE (`weights`.user_id = 2) ORDER BY date asc[0m
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.date) on line #13 of app/views/homes/_charts.html.erb:
+10: 
+11: 
+12: <%- @plot_data = [] -%>
+13: <% myPlots(@chart_type) %>
+14: <%= makeChart %>
+15: 
+16: 
+
+    app/helpers/charts_helper.rb:697:in `getMiniWater'
+    app/helpers/charts_helper.rb:381:in `myPlots'
+    app/views/homes/_charts.html.erb:13
+    app/views/homes/show.html.erb:25
+    app/controllers/homes_controller.rb:46:in `show'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (43.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`login` = 'test') LIMIT 1[0m
+  [4;36;1mWater Load (0.8ms)[0m   [0;1mSELECT * FROM `waters` WHERE (`waters`.user_id = 1) [0m
+  [4;35;1mWater Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `waters`[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`login` = 'test1') LIMIT 1[0m
+  [4;35;1mWater Load (0.6ms)[0m   [0mSELECT * FROM `waters` WHERE (`waters`.user_id = 2) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomesController#show (for 127.0.0.1 at 2009-07-01 14:07:57) [GET]
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '37e80dd17513f89eee1824fd7a3ea4ec8f62cba5d85407b00f1f218ff19107878d7a11d7698070eaaa51b23d888205665518a19cfe841b35f8a0aac466efed7b') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-07-01 18:07:57', `last_request_at` = '2009-07-01 18:07:57' WHERE `id` = 2[0m
+  [4;35;1mSQL (10.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mHome Load (0.1ms)[0m   [0;1mSELECT * FROM `homes` WHERE (`homes`.user_id = 2) LIMIT 1[0m
+  [4;35;1mGoal Load (0.1ms)[0m   [0mSELECT * FROM `goals` WHERE (`goals`.user_id = 2) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;36;1mGoal Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `goals`[0m
+  [4;35;1mQuickFact Load (0.1ms)[0m   [0mSELECT * FROM `quick_facts` [0m
+  [4;36;1mQuickFact Load (0.0ms)[0m   [0;1mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;35;1mQuickFact Columns (2.6ms)[0m   [0mSHOW FIELDS FROM `quick_facts`[0m
+  [4;36;1mHome Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `homes`[0m
+  [4;35;1mQuickSupport Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `quick_supports`[0m
+  [4;36;1mWater Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `waters`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-24 14:07:57') AND (`waters`.user_id = 2) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-01 14:07:57') AND (`waters`.user_id = 2) [0m
+  [4;35;1mFood Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `foods`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-24 14:07:57') AND (`foods`.user_id = 2) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-01 14:07:57') AND (`foods`.user_id = 2) [0m
+  [4;36;1mWeight Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `weights`[0m
+  [4;35;1mMeasurement Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `measurements`[0m
+  [4;36;1mExercise Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `exercises`[0m
+  [4;35;1mBodyScan Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within layouts/member
+Rendering homes/show
+Rendered homes/_quick_form (12.9ms)
+Rendered homes/_progress (0.3ms)
+Rendered homes/_goals (1.2ms)
+  [4;36;1mWater Load (0.1ms)[0m   [0;1mSELECT * FROM `waters` WHERE (`waters`.user_id = 2) ORDER BY date asc[0m
+  [4;35;1mFood Load (2.0ms)[0m   [0mSELECT * FROM `foods` WHERE (`foods`.user_id = 2) ORDER BY date asc[0m
+  [4;36;1mExercise Load (0.1ms)[0m   [0;1mSELECT * FROM `exercises` WHERE (`exercises`.user_id = 2) ORDER BY date asc[0m
+  [4;35;1mMeasurement Load (0.1ms)[0m   [0mSELECT * FROM `measurements` WHERE (`measurements`.user_id = 2) ORDER BY date asc[0m
+  [4;36;1mWeight Load (0.1ms)[0m   [0;1mSELECT * FROM `weights` WHERE (`weights`.user_id = 2) ORDER BY date asc[0m
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.date) on line #13 of app/views/homes/_charts.html.erb:
+10: 
+11: 
+12: <%- @plot_data = [] -%>
+13: <% myPlots(@chart_type) %>
+14: <%= makeChart %>
+15: 
+16: 
+
+    app/helpers/charts_helper.rb:736:in `getMiniFood'
+    app/helpers/charts_helper.rb:382:in `myPlots'
+    app/views/homes/_charts.html.erb:13
+    app/views/homes/show.html.erb:25
+    app/controllers/homes_controller.rb:46:in `show'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (44.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomesController#show (for 127.0.0.1 at 2009-07-01 14:08:47) [GET]
+  [4;35;1mUser Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`persistence_token` = '37e80dd17513f89eee1824fd7a3ea4ec8f62cba5d85407b00f1f218ff19107878d7a11d7698070eaaa51b23d888205665518a19cfe841b35f8a0aac466efed7b') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-07-01 18:08:47', `last_request_at` = '2009-07-01 18:08:47' WHERE `id` = 2[0m
+  [4;35;1mSQL (11.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mHome Load (0.1ms)[0m   [0;1mSELECT * FROM `homes` WHERE (`homes`.user_id = 2) LIMIT 1[0m
+  [4;35;1mGoal Load (0.1ms)[0m   [0mSELECT * FROM `goals` WHERE (`goals`.user_id = 2) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;36;1mGoal Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `goals`[0m
+  [4;35;1mQuickFact Load (0.1ms)[0m   [0mSELECT * FROM `quick_facts` [0m
+  [4;36;1mQuickFact Load (0.0ms)[0m   [0;1mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;35;1mQuickFact Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `quick_facts`[0m
+  [4;36;1mHome Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `homes`[0m
+  [4;35;1mQuickSupport Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `quick_supports`[0m
+  [4;36;1mWater Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `waters`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-06-24 14:08:47') AND (`waters`.user_id = 2) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-01 14:08:47') AND (`waters`.user_id = 2) [0m
+  [4;35;1mFood Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `foods`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-06-24 14:08:47') AND (`foods`.user_id = 2) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-01 14:08:47') AND (`foods`.user_id = 2) [0m
+  [4;36;1mWeight Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `weights`[0m
+  [4;35;1mMeasurement Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `measurements`[0m
+  [4;36;1mExercise Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `exercises`[0m
+  [4;35;1mBodyScan Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within layouts/member
+Rendering homes/show
+Rendered homes/_quick_form (12.8ms)
+Rendered homes/_progress (0.3ms)
+Rendered homes/_goals (1.2ms)
+  [4;36;1mWater Load (0.1ms)[0m   [0;1mSELECT * FROM `waters` WHERE (`waters`.user_id = 2) ORDER BY date asc[0m
+  [4;35;1mFood Load (0.1ms)[0m   [0mSELECT * FROM `foods` WHERE (`foods`.user_id = 2) ORDER BY date asc[0m
+  [4;36;1mExercise Load (0.1ms)[0m   [0;1mSELECT * FROM `exercises` WHERE (`exercises`.user_id = 2) ORDER BY date asc[0m
+  [4;35;1mMeasurement Load (0.1ms)[0m   [0mSELECT * FROM `measurements` WHERE (`measurements`.user_id = 2) ORDER BY date asc[0m
+  [4;36;1mWeight Load (0.1ms)[0m   [0;1mSELECT * FROM `weights` WHERE (`weights`.user_id = 2) ORDER BY date asc[0m
+Rendered homes/_charts (3.5ms)
+Rendered homes/_quick_fact (29.7ms)
+Rendered homes/_support (183.1ms)
+Completed in 356ms (View: 254, DB: 22) | 200 OK [http://localhost/home]
