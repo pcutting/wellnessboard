@@ -2,7 +2,7 @@ class UserSessionsController < ApplicationController
 
   def new
     @user_session = UserSession.new
-    @testimony = Testimony.find(:first,  :offset=>(rand(Testimony.all.size )) )
+    @testimony = Testimony.find(:first,  :offset=>(rand(Testimony.all.size)) )
 
     
   end
