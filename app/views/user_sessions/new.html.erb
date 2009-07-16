@@ -9,7 +9,7 @@
 <tr>
 <th colspan = 2>
 <h2>Herbalife Successes</h2>
-<%= if @testimony.layout == "bottom" then render :partial=>"testimony_bottom" else render :partial=>"testimony_right" end %>
+<%= unless @testimony.layout != "bottom" then render :partial=>"testimony_bottom" else render :partial=>"testimony_right" end %>
 </th>
 </tr>
 </table>
