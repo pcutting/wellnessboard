@@ -1,0 +1,42 @@
+<h1>Listing testimonies</h1>
+
+<table>
+  <tr>
+    <th>Photo</th>
+    <th>Name</th>
+    <th>Layout</th>
+    <th>Public</th>
+    <th>Title</th>
+    <th>Comment</th>
+    <th>Points</th>
+    <th>Votes</th>
+    <th>Before</th>
+    <th>After</th>
+    <th>Display value</th>
+    <th>Approved</th>
+  </tr>
+
+<% @testimonies.each do |testimony| %>
+  <tr>
+    <td><%=h testimony.photo %></td>
+    <td><%=h testimony.name %></td>
+    <td><%=h testimony.layout %></td>
+    <td><%=h testimony.public %></td>
+    <td><%=h testimony.title %></td>
+    <td><%=h testimony.comment %></td>
+    <td><%=h testimony.points %></td>
+    <td><%=h testimony.votes %></td>
+    <td><%=h testimony.before %></td>
+    <td><%=h testimony.after %></td>
+    <td><%=h testimony.display_value %></td>
+    <td><%=h testimony.approved %></td>
+    <td><%= link_to 'Show', testimony %></td>
+    <td><%= link_to 'Edit', edit_testimony_path(testimony) %></td>
+    <td><%= link_to 'Destroy', testimony, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New testimony', new_testimony_path %>

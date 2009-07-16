@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090630183332) do
+ActiveRecord::Schema.define(:version => 20090716035036) do
 
   create_table "blogs", :force => true do |t|
     t.integer  "user_id"
@@ -258,6 +258,23 @@ ActiveRecord::Schema.define(:version => 20090630183332) do
     t.string   "zip"
     t.string   "motto"
     t.text     "summary"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "testimonies", :force => true do |t|
+    t.string   "photo"
+    t.string   "name"
+    t.string   "layout"
+    t.boolean  "public"
+    t.string   "title"
+    t.text     "comment"
+    t.integer  "points"
+    t.integer  "votes"
+    t.integer  "before"
+    t.integer  "after"
+    t.integer  "display_value"
+    t.boolean  "approved"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

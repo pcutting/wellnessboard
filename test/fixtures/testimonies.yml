@@ -1,0 +1,29 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  photo: MyString
+  name: MyString
+  layout: MyString
+  public: false
+  title: MyString
+  comment: MyText
+  points: 1
+  votes: 1
+  before: 1
+  after: 1
+  display_value: 1
+  approved: false
+
+two:
+  photo: MyString
+  name: MyString
+  layout: MyString
+  public: false
+  title: MyString
+  comment: MyText
+  points: 1
+  votes: 1
+  before: 1
+  after: 1
+  display_value: 1
+  approved: false

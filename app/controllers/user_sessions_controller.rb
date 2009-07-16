@@ -2,6 +2,9 @@ class UserSessionsController < ApplicationController
 
   def new
     @user_session = UserSession.new
+    @testimony = Testimony.find(:first,  :offset=>(rand(QuickFact.all.size - 1)) )
+
+    
   end
 
   def create

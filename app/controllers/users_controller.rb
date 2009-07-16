@@ -56,7 +56,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if success
         flash[:notice] = 'Registration successful.'
-        format.html { redirect_to(edit_profile_url) }
+        format.html { redirect_to(home_url) }
 
       else
         format.html { render :action => "new" }

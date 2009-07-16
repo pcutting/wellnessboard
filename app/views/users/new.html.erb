@@ -27,7 +27,7 @@
     <% fields_for :profile do |w| %>
   <fieldset><legend>Required</legend>
   <p>
-    <%= w.label "Date of birth" %><%= w.date_select :dob %><br/>
+    <%= w.label "Date of birth" %><%= w.date_select :dob , :start_year=>"1900"%><br/>
     DOB is used in calculating things like BMI and also for offering special birthday promotions.
   </p>
       

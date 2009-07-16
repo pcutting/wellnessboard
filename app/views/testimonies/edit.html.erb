@@ -1,0 +1,60 @@
+<h1>Editing testimony</h1>
+
+<% form_for(@testimony) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :photo %><br />
+    <%= f.text_field :photo %>
+  </p>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :layout %><br />
+    <%= f.text_field :layout %>
+  </p>
+  <p>
+    <%= f.label :public %><br />
+    <%= f.check_box :public %>
+  </p>
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :comment %><br />
+    <%= f.text_area :comment %>
+  </p>
+  <p>
+    <%= f.label :points %><br />
+    <%= f.text_field :points %>
+  </p>
+  <p>
+    <%= f.label :votes %><br />
+    <%= f.text_field :votes %>
+  </p>
+  <p>
+    <%= f.label :before %><br />
+    <%= f.text_field :before %>
+  </p>
+  <p>
+    <%= f.label :after %><br />
+    <%= f.text_field :after %>
+  </p>
+  <p>
+    <%= f.label :display_value %><br />
+    <%= f.text_field :display_value %>
+  </p>
+  <p>
+    <%= f.label :approved %><br />
+    <%= f.check_box :approved %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @testimony %> |
+<%= link_to 'Back', testimonies_path %>

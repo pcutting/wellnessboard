@@ -26691,3 +26691,808 @@ Processing UsersController#new (for 127.0.0.1 at 2009-07-01 15:29:19) [GET]
 Rendering template within layouts/application
 Rendering users/new
 Completed in 41ms (View: 14, DB: 3) | 200 OK [http://localhost/user/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-07-15 23:59:28) [GET]
+  [4;36;1mUser Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+
+NameError (uninitialized constant UserSessionsController::Testimonies):
+  app/controllers/user_sessions_controller.rb:5:in `new'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (79.7ms)
+Rendered rescues/_request_and_response (3.1ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20090618223409)
+Migrating to CreateProfiles (20090619030933)
+Migrating to CreateSponsors (20090619031120)
+Migrating to CreateWeights (20090619031251)
+Migrating to CreateWaters (20090619031308)
+Migrating to CreateQuickSupports (20090619031314)
+Migrating to CreateShakeRecipes (20090619031340)
+Migrating to CreateGoals (20090619031353)
+Migrating to CreateMeasurements (20090619031403)
+Migrating to CreateBodyScans (20090619031414)
+Migrating to CreateExercises (20090619031439)
+Migrating to CreateMyExercises (20090619031444)
+Migrating to CreateFoods (20090619031456)
+Migrating to CreateMyFoods (20090619031519)
+Migrating to CreateQuickFacts (20090619031532)
+Migrating to CreatePromotions (20090619031556)
+Migrating to CreateCatalogs (20090619031629)
+Migrating to CreateBlogs (20090619031659)
+Migrating to CreateComments (20090619031704)
+Migrating to CreateOrders (20090619031729)
+Migrating to CreateItems (20090619031754)
+Migrating to CreateCoupons (20090619031759)
+Migrating to CreateOfferSkus (20090619031812)
+Migrating to CreateOfferAccesses (20090619031823)
+Migrating to CreateOfferRestrictions (20090619031838)
+Migrating to CreateHomes (20090620165914)
+Migrating to AddChartTypeToHome (20090627153951)
+Migrating to AddTimeSpanToHome (20090630183332)
+Migrating to CreateTestimonies (20090716035036)
+  [4;36;1mSQL (38.6ms)[0m   [0;1mCREATE TABLE `testimonies` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `photo` varchar(255), `name` varchar(255), `layout` varchar(255), `public` tinyint(1), `title` varchar(255), `comment` text, `points` int(11), `votes` int(11), `before` int(11), `after` int(11), `display_value` int(11), `approved` tinyint(1), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090716035036')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW FIELDS FROM `blogs`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mdescribe `blogs`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `blogs`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW FIELDS FROM `body_scans`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mdescribe `body_scans`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `body_scans`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW FIELDS FROM `catalogs`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mdescribe `catalogs`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `catalogs`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mdescribe `comments`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `comments`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW FIELDS FROM `coupons`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mdescribe `coupons`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `coupons`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW FIELDS FROM `exercises`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mdescribe `exercises`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `exercises`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW FIELDS FROM `foods`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mdescribe `foods`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `foods`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW FIELDS FROM `goals`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mdescribe `goals`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `goals`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW FIELDS FROM `homes`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mdescribe `homes`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `homes`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW FIELDS FROM `items`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mdescribe `items`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `items`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW FIELDS FROM `measurements`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mdescribe `measurements`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `measurements`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW FIELDS FROM `my_exercises`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mdescribe `my_exercises`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `my_exercises`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW FIELDS FROM `my_foods`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mdescribe `my_foods`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `my_foods`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW FIELDS FROM `offer_accesses`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mdescribe `offer_accesses`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `offer_accesses`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW FIELDS FROM `offer_restrictions`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mdescribe `offer_restrictions`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `offer_restrictions`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW FIELDS FROM `offer_skus`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mdescribe `offer_skus`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `offer_skus`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW FIELDS FROM `orders`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mdescribe `orders`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `orders`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW FIELDS FROM `profiles`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mdescribe `profiles`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `profiles`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW FIELDS FROM `promotions`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mdescribe `promotions`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `promotions`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW FIELDS FROM `quick_facts`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mdescribe `quick_facts`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `quick_facts`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW FIELDS FROM `quick_supports`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mdescribe `quick_supports`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `quick_supports`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW FIELDS FROM `shake_recipes`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mdescribe `shake_recipes`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `shake_recipes`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW FIELDS FROM `sponsors`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mdescribe `sponsors`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `sponsors`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW FIELDS FROM `testimonies`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mdescribe `testimonies`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSHOW KEYS FROM `testimonies`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mdescribe `users`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW FIELDS FROM `waters`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mdescribe `waters`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `waters`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW FIELDS FROM `weights`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mdescribe `weights`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSHOW KEYS FROM `weights`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-07-16 00:00:00) [GET]
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+
+NameError (uninitialized constant UserSessionsController::Testimonies):
+  app/controllers/user_sessions_controller.rb:5:in `new'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (27.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-07-16 00:00:02) [GET]
+  [4;36;1mUser Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+
+NameError (uninitialized constant UserSessionsController::Testimonies):
+  app/controllers/user_sessions_controller.rb:5:in `new'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (30.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-07-16 00:00:47) [GET]
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mQuickFact Load (0.4ms)[0m   [0;1mSELECT * FROM `quick_facts` [0m
+  [4;35;1mTestimony Load (0.2ms)[0m   [0mSELECT * FROM `testimonies` LIMIT 0, 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered user_sessions/_login (10.3ms)
+Rendered user_sessions/_mission (0.9ms)
+Completed in 91ms (View: 52, DB: 2) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-16 00:00:58) [GET]
+
+ActionController::RoutingError (No route matches "/testimony/new" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestimoniesController#new (for 127.0.0.1 at 2009-07-16 00:01:02) [GET]
+  [4;36;1mTestimony Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `testimonies`[0m
+Rendering template within layouts/testimonies
+Rendering testimonies/new
+Completed in 61ms (View: 39, DB: 2) | 200 OK [http://localhost/testimonies/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestimoniesController#create (for 127.0.0.1 at 2009-07-16 00:03:11) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"N8WfNVuiRUd34KGack60/gNrrpUaXUS/alo3BHOG/rQ=", "testimony"=>{"display_value"=>"", "votes"=>"0", "comment"=>"Donna lost 95 pounds.", "name"=>"Donna Kollar", "photo"=>"donna_hollar.jpg", "layout"=>"bottom", "title"=>"Weight Loss Success", "public"=>"1", "after"=>"125", "approved"=>"1", "points"=>"0", "before"=>"220"}}
+  [4;35;1mTestimony Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `testimonies`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mTestimony Create (0.8ms)[0m   [0mINSERT INTO `testimonies` (`photo`, `name`, `comment`, `votes`, `display_value`, `layout`, `created_at`, `public`, `title`, `updated_at`, `after`, `points`, `approved`, `before`) VALUES('donna_hollar.jpg', 'Donna Kollar', 'Donna lost 95 pounds.', 0, NULL, 'bottom', '2009-07-16 04:03:11', 1, 'Weight Loss Success', '2009-07-16 04:03:11', 125, 0, 1, 220)[0m
+  [4;36;1mSQL (8.7ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/testimonies/1
+Completed in 96ms (DB: 12) | 302 Found [http://localhost/testimonies]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestimoniesController#show (for 127.0.0.1 at 2009-07-16 00:03:11) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mTestimony Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `testimonies`[0m
+  [4;36;1mTestimony Load (0.6ms)[0m   [0;1mSELECT * FROM `testimonies` WHERE (`testimonies`.`id` = 1) [0m
+Rendering template within layouts/testimonies
+Rendering testimonies/show
+Completed in 40ms (View: 17, DB: 3) | 200 OK [http://localhost/testimonies/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-07-16 00:09:30) [GET]
+  [4;35;1mUser Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` [0m
+  [4;35;1mTestimony Load (0.3ms)[0m   [0mSELECT * FROM `testimonies` LIMIT 0, 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+ERROR: compiling _run_erb_app47views47user_sessions47new46html46erb RAISED compile error
+/home/phil/Desktop/wellnessboard/app/views/user_sessions/new.html.erb:14: syntax error, unexpected ')', expecting kEND
+... :partial=>"testimony_right" ).to_s); @output_buffer.concat ...
+                              ^
+/home/phil/Desktop/wellnessboard/app/views/user_sessions/new.html.erb:19: syntax error, unexpected kENSURE, expecting kEND
+/home/phil/Desktop/wellnessboard/app/views/user_sessions/new.html.erb:21: syntax error, unexpected $end, expecting ')'
+Function body:           def _run_erb_app47views47user_sessions47new46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "\n<h1>Login </h1>\n<table>\n<tr><th>\n"
+
+
+
+; @output_buffer.concat(( render :partial=>"login" ).to_s); @output_buffer.concat "\n</th>\n<th>\n"
+
+
+; @output_buffer.concat(( render :partial=>"mission" ).to_s); @output_buffer.concat "\n</th>\n</tr>\n<tr>\n<th colspan = 2>\n<h2>Herbalife Successes</h2>\n"
+
+
+
+
+
+; @output_buffer.concat(( if @testimony.layout == "bottom" then render :partial=>"testimony_bottom" else render :partial=>"testimony_right" ).to_s); @output_buffer.concat "\n</th>\n</tr>\n</table>\n"
+
+
+
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /home/phil/Desktop/wellnessboard/app/views/user_sessions/new.html.erb:21:in `compile!'
+/home/phil/Desktop/wellnessboard/vendor/rails/actionpack/lib/action_view/renderable.rb:61:in `compile'
+/home/phil/Desktop/wellnessboard/vendor/rails/actionpack/lib/action_view/renderable.rb:28:in `render'
+/home/phil/Desktop/wellnessboard/vendor/rails/actionpack/lib/action_view/template.rb:194:in `render_template'
+/home/phil/Desktop/wellnessboard/vendor/rails/actionpack/lib/action_view/base.rb:260:in `render'
+/home/phil/Desktop/wellnessboard/vendor/rails/actionpack/lib/action_view/base.rb:343:in `_render_with_layout'
+/home/phil/Desktop/wellnessboard/vendor/rails/actionpack/lib/action_view/base.rb:257:in `render'
+/home/phil/Desktop/wellnessboard/vendor/rails/actionpack/lib/action_controller/base.rb:1241:in `render_for_file'
+/home/phil/Desktop/wellnessboard/vendor/rails/actionpack/lib/action_controller/base.rb:937:in `render_without_benchmark'
+/home/phil/Desktop/wellnessboard/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+/home/phil/Desktop/wellnessboard/vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/home/phil/Desktop/wellnessboard/vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/home/phil/Desktop/wellnessboard/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'
+/home/phil/Desktop/wellnessboard/vendor/rails/actionpack/lib/action_controller/base.rb:1317:in `default_render'
+/home/phil/Desktop/wellnessboard/vendor/rails/actionpack/lib/action_controller/base.rb:1323:in `perform_action_without_filters'
+/home/phil/Desktop/wellnessboard/vendor/rails/actionpack/lib/action_controller/filters.rb:617:in `call_filters'
+/home/phil/Desktop/wellnessboard/vendor/rails/actionpack/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/home/phil/Desktop/wellnessboard/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/home/phil/Desktop/wellnessboard/vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/home/phil/Desktop/wellnessboard/vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/home/phil/Desktop/wellnessboard/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/home/phil/Desktop/wellnessboard/vendor/rails/actionpack/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/home/phil/Desktop/wellnessboard/vendor/rails/actionpack/lib/action_controller/flash.rb:141:in `perform_action'
+/home/phil/Desktop/wellnessboard/vendor/rails/actionpack/lib/action_controller/base.rb:523:in `send'
+/home/phil/Desktop/wellnessboard/vendor/rails/actionpack/lib/action_controller/base.rb:523:in `process_without_filters'
+/home/phil/Desktop/wellnessboard/vendor/rails/actionpack/lib/action_controller/filters.rb:606:in `process'
+/home/phil/Desktop/wellnessboard/vendor/rails/actionpack/lib/action_controller/base.rb:391:in `process'
+/home/phil/Desktop/wellnessboard/vendor/rails/actionpack/lib/action_controller/base.rb:386:in `call'
+/home/phil/Desktop/wellnessboard/vendor/rails/actionpack/lib/action_controller/routing/route_set.rb:433:in `call'
+/home/phil/Desktop/wellnessboard/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:88:in `dispatch'
+/home/phil/Desktop/wellnessboard/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:111:in `_call'
+/home/phil/Desktop/wellnessboard/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:82:in `initialize'
+/home/phil/Desktop/wellnessboard/vendor/rails/activerecord/lib/active_record/query_cache.rb:29:in `call'
+/home/phil/Desktop/wellnessboard/vendor/rails/activerecord/lib/active_record/query_cache.rb:29:in `call'
+/home/phil/Desktop/wellnessboard/vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/home/phil/Desktop/wellnessboard/vendor/rails/activerecord/lib/active_record/query_cache.rb:9:in `cache'
+/home/phil/Desktop/wellnessboard/vendor/rails/activerecord/lib/active_record/query_cache.rb:28:in `call'
+/home/phil/Desktop/wellnessboard/vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/home/phil/Desktop/wellnessboard/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/head.rb:9:in `call'
+/home/phil/Desktop/wellnessboard/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/methodoverride.rb:24:in `call'
+/home/phil/Desktop/wellnessboard/vendor/rails/actionpack/lib/action_controller/params_parser.rb:15:in `call'
+/home/phil/Desktop/wellnessboard/vendor/rails/actionpack/lib/action_controller/rewindable_input.rb:25:in `call'
+/home/phil/Desktop/wellnessboard/vendor/rails/actionpack/lib/action_controller/session/cookie_store.rb:93:in `call'
+/home/phil/Desktop/wellnessboard/vendor/rails/actionpack/lib/action_controller/reloader.rb:9:in `call'
+/home/phil/Desktop/wellnessboard/vendor/rails/actionpack/lib/action_controller/failsafe.rb:11:in `call'
+/home/phil/Desktop/wellnessboard/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+/home/phil/Desktop/wellnessboard/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `synchronize'
+/home/phil/Desktop/wellnessboard/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/lock.rb:11:in `call'
+/home/phil/Desktop/wellnessboard/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:106:in `call'
+/home/phil/Desktop/wellnessboard/vendor/rails/railties/lib/rails/rack/static.rb:31:in `call'
+/home/phil/Desktop/wellnessboard/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:46:in `call'
+/home/phil/Desktop/wellnessboard/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:40:in `each'
+/home/phil/Desktop/wellnessboard/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/urlmap.rb:40:in `call'
+/home/phil/Desktop/wellnessboard/vendor/rails/railties/lib/rails/rack/log_tailer.rb:17:in `call'
+/home/phil/Desktop/wellnessboard/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/content_length.rb:13:in `call'
+/home/phil/Desktop/wellnessboard/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/handler/webrick.rb:46:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/home/phil/Desktop/wellnessboard/vendor/rails/actionpack/lib/action_controller/vendor/rack-1.0/rack/handler/webrick.rb:13:in `run'
+/home/phil/Desktop/wellnessboard/vendor/rails/railties/lib/commands/server.rb:111
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/home/phil/Desktop/wellnessboard/app/views/user_sessions/new.html.erb:14: syntax error, unexpected ')', expecting kEND
+... :partial=>"testimony_right" ).to_s); @output_buffer.concat ...
+                              ^
+/home/phil/Desktop/wellnessboard/app/views/user_sessions/new.html.erb:19: syntax error, unexpected kENSURE, expecting kEND
+/home/phil/Desktop/wellnessboard/app/views/user_sessions/new.html.erb:21: syntax error, unexpected $end, expecting ')') on line #14 of app/views/user_sessions/new.html.erb:
+11: <tr>
+12: <th colspan = 2>
+13: <h2>Herbalife Successes</h2>
+14: <%= if @testimony.layout == "bottom" then render :partial=>"testimony_bottom" else render :partial=>"testimony_right" %>
+15: </th>
+16: </tr>
+17: </table>
+
+    app/views/user_sessions/new.html.erb:21:in `compile!'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (31.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-07-16 00:09:51) [GET]
+  [4;36;1mUser Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mQuickFact Load (0.2ms)[0m   [0mSELECT * FROM `quick_facts` [0m
+  [4;36;1mTestimony Load (0.2ms)[0m   [0;1mSELECT * FROM `testimonies` LIMIT 0, 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered user_sessions/_login (3.8ms)
+Rendered user_sessions/_mission (0.2ms)
+  [4;35;1mTestimony Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `testimonies`[0m
+Rendered user_sessions/_testimony_bottom (1.2ms)
+Completed in 98ms (View: 28, DB: 5) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-16 00:09:52) [GET]
+
+ActionController::RoutingError (No route matches "/donna_hollar.jpg" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-07-16 00:10:52) [GET]
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mQuickFact Load (0.1ms)[0m   [0mSELECT * FROM `quick_facts` [0m
+  [4;36;1mTestimony Load (0.1ms)[0m   [0;1mSELECT * FROM `testimonies` LIMIT 0, 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered user_sessions/_login (1.8ms)
+Rendered user_sessions/_mission (0.1ms)
+  [4;35;1mTestimony Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `testimonies`[0m
+Rendered user_sessions/_testimony_bottom (0.6ms)
+Completed in 112ms (View: 10, DB: 3) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-16 00:10:52) [GET]
+
+ActionController::RoutingError (No route matches "/images/testimonies/donna_hollar.jpg" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-07-16 00:10:55) [GET]
+  [4;36;1mUser Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mQuickFact Load (0.1ms)[0m   [0mSELECT * FROM `quick_facts` [0m
+  [4;36;1mTestimony Load (0.1ms)[0m   [0;1mSELECT * FROM `testimonies` LIMIT 0, 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered user_sessions/_login (1.6ms)
+Rendered user_sessions/_mission (0.1ms)
+  [4;35;1mTestimony Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `testimonies`[0m
+Rendered user_sessions/_testimony_bottom (0.1ms)
+Completed in 37ms (View: 7, DB: 2) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-16 00:10:55) [GET]
+
+ActionController::RoutingError (No route matches "/images/testimonies/donna_hollar.jpg" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-16 00:11:53) [GET]
+
+ActionController::RoutingError (No route matches "/images/" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-16 00:13:00) [GET]
+
+ActionController::RoutingError (No route matches "/image" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-07-16 00:14:22) [GET]
+  [4;36;1mUser Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mQuickFact Load (0.2ms)[0m   [0mSELECT * FROM `quick_facts` [0m
+  [4;36;1mTestimony Load (0.2ms)[0m   [0;1mSELECT * FROM `testimonies` LIMIT 0, 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered user_sessions/_login (3.6ms)
+Rendered user_sessions/_mission (0.2ms)
+  [4;35;1mTestimony Columns (2.6ms)[0m   [0mSHOW FIELDS FROM `testimonies`[0m
+Rendered user_sessions/_testimony_bottom (83.3ms)
+Completed in 176ms (View: 105, DB: 6) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-07-16 00:14:25) [GET]
+  [4;36;1mUser Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mQuickFact Load (0.1ms)[0m   [0mSELECT * FROM `quick_facts` [0m
+  [4;36;1mTestimony Load (0.1ms)[0m   [0;1mSELECT * FROM `testimonies` LIMIT 0, 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered user_sessions/_login (1.4ms)
+Rendered user_sessions/_mission (0.1ms)
+  [4;35;1mTestimony Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `testimonies`[0m
+Rendered user_sessions/_testimony_bottom (0.1ms)
+Completed in 75ms (View: 6, DB: 3) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-16 00:14:25) [GET]
+
+ActionController::RoutingError (No route matches "/images/testimonies/donna_hollar.jpg" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-07-16 00:15:18) [GET]
+  [4;36;1mUser Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mQuickFact Load (0.1ms)[0m   [0mSELECT * FROM `quick_facts` [0m
+  [4;36;1mTestimony Load (0.1ms)[0m   [0;1mSELECT * FROM `testimonies` LIMIT 0, 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered user_sessions/_login (1.6ms)
+Rendered user_sessions/_mission (0.1ms)
+  [4;35;1mTestimony Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `testimonies`[0m
+Rendered user_sessions/_testimony_bottom (0.6ms)
+Completed in 150ms (View: 10, DB: 4) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-16 00:15:18) [GET]
+
+ActionController::RoutingError (No route matches "/images/testimonies/donna_hollar.jpg" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-07-16 00:26:13) [GET]
+  [4;36;1mUser Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mQuickFact Load (0.1ms)[0m   [0mSELECT * FROM `quick_facts` [0m
+  [4;36;1mTestimony Load (0.1ms)[0m   [0;1mSELECT * FROM `testimonies` LIMIT 0, 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered user_sessions/_login (2.7ms)
+Rendered user_sessions/_mission (0.7ms)
+  [4;35;1mTestimony Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `testimonies`[0m
+Rendered user_sessions/_testimony_bottom (0.6ms)
+Completed in 122ms (View: 22, DB: 2) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-16 00:26:13) [GET]
+
+ActionController::RoutingError (No route matches "/images/testimonies/donna_hollar.jpg" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestimoniesController#edit (for 127.0.0.1 at 2009-07-16 00:28:11) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mTestimony Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `testimonies`[0m
+  [4;35;1mTestimony Load (0.2ms)[0m   [0mSELECT * FROM `testimonies` WHERE (`testimonies`.`id` = 1) [0m
+Rendering template within layouts/testimonies
+Rendering testimonies/edit
+Completed in 39ms (View: 17, DB: 3) | 200 OK [http://localhost/testimonies/edit/1]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestimoniesController#update (for 127.0.0.1 at 2009-07-16 00:28:20) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"N8WfNVuiRUd34KGack60/gNrrpUaXUS/alo3BHOG/rQ=", "testimony"=>{"display_value"=>"", "votes"=>"0", "comment"=>"Donna lost 95 pounds.", "name"=>"Donna Kollar", "photo"=>"donna_kollar.jpg", "layout"=>"bottom", "title"=>"Weight Loss Success", "public"=>"1", "after"=>"125", "approved"=>"1", "points"=>"0", "before"=>"220"}, "id"=>"1"}
+  [4;36;1mTestimony Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `testimonies`[0m
+  [4;35;1mTestimony Load (0.1ms)[0m   [0mSELECT * FROM `testimonies` WHERE (`testimonies`.`id` = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mTestimony Update (0.4ms)[0m   [0mUPDATE `testimonies` SET `updated_at` = '2009-07-16 04:28:20', `photo` = 'donna_kollar.jpg' WHERE `id` = 1[0m
+  [4;36;1mSQL (4.4ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/testimonies/1
+Completed in 31ms (DB: 7) | 302 Found [http://localhost/testimonies/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestimoniesController#show (for 127.0.0.1 at 2009-07-16 00:28:20) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mTestimony Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `testimonies`[0m
+  [4;36;1mTestimony Load (0.3ms)[0m   [0;1mSELECT * FROM `testimonies` WHERE (`testimonies`.`id` = 1) [0m
+Rendering template within layouts/testimonies
+Rendering testimonies/show
+Completed in 16ms (View: 7, DB: 1) | 200 OK [http://localhost/testimonies/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-07-16 00:28:33) [GET]
+  [4;35;1mUser Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` [0m
+  [4;35;1mTestimony Load (0.3ms)[0m   [0mSELECT * FROM `testimonies` LIMIT 0, 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered user_sessions/_login (1.6ms)
+Rendered user_sessions/_mission (0.1ms)
+  [4;36;1mTestimony Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `testimonies`[0m
+Rendered user_sessions/_testimony_bottom (0.7ms)
+Completed in 42ms (View: 10, DB: 3) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-07-16 00:28:57) [GET]
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` [0m
+  [4;35;1mTestimony Load (0.1ms)[0m   [0mSELECT * FROM `testimonies` LIMIT 0, 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered user_sessions/_login (1.7ms)
+Rendered user_sessions/_mission (0.1ms)
+  [4;36;1mTestimony Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `testimonies`[0m
+Rendered user_sessions/_testimony_bottom (0.6ms)
+Completed in 37ms (View: 10, DB: 2) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-07-16 00:30:11) [GET]
+  [4;35;1mUser Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mQuickFact Load (0.2ms)[0m   [0;1mSELECT * FROM `quick_facts` [0m
+  [4;35;1mTestimony Load (0.2ms)[0m   [0mSELECT * FROM `testimonies` LIMIT 0, 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered user_sessions/_login (3.8ms)
+Rendered user_sessions/_mission (0.3ms)
+  [4;36;1mTestimony Columns (3.1ms)[0m   [0;1mSHOW FIELDS FROM `testimonies`[0m
+Rendered user_sessions/_testimony_bottom (1.7ms)
+Completed in 104ms (View: 24, DB: 6) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-07-16 00:34:19) [GET]
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` [0m
+  [4;35;1mTestimony Load (0.1ms)[0m   [0mSELECT * FROM `testimonies` LIMIT 0, 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered user_sessions/_login (1.6ms)
+Rendered user_sessions/_mission (0.1ms)
+  [4;36;1mTestimony Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `testimonies`[0m
+Rendered user_sessions/_testimony_bottom (0.1ms)
+Completed in 101ms (View: 7, DB: 2) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-07-16 00:34:28) [GET]
+  [4;35;1mUser Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mQuickFact Load (0.2ms)[0m   [0;1mSELECT * FROM `quick_facts` [0m
+  [4;35;1mTestimony Load (0.2ms)[0m   [0mSELECT * FROM `testimonies` LIMIT 0, 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered user_sessions/_login (3.7ms)
+Rendered user_sessions/_mission (0.3ms)
+  [4;36;1mTestimony Columns (7.6ms)[0m   [0;1mSHOW FIELDS FROM `testimonies`[0m
+Rendered user_sessions/_testimony_bottom (0.2ms)
+Completed in 150ms (View: 75, DB: 10) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-07-16 00:34:35) [GET]
+  [4;35;1mUser Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mQuickFact Load (0.2ms)[0m   [0;1mSELECT * FROM `quick_facts` [0m
+  [4;35;1mTestimony Load (0.2ms)[0m   [0mSELECT * FROM `testimonies` LIMIT 0, 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered user_sessions/_login (3.7ms)
+Rendered user_sessions/_mission (0.2ms)
+  [4;36;1mTestimony Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `testimonies`[0m
+Rendered user_sessions/_testimony_bottom (0.3ms)
+Completed in 90ms (View: 17, DB: 5) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-07-16 00:37:49) [GET]
+  [4;35;1mUser Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` [0m
+  [4;35;1mTestimony Load (0.1ms)[0m   [0mSELECT * FROM `testimonies` LIMIT 0, 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered user_sessions/_login (1.5ms)
+Rendered user_sessions/_mission (0.1ms)
+  [4;36;1mTestimony Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `testimonies`[0m
+Rendered user_sessions/_testimony_bottom (0.1ms)
+Completed in 75ms (View: 9, DB: 4) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-07-16 00:37:52) [GET]
+  [4;35;1mUser Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` [0m
+  [4;35;1mTestimony Load (0.1ms)[0m   [0mSELECT * FROM `testimonies` LIMIT 0, 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered user_sessions/_login (1.4ms)
+Rendered user_sessions/_mission (0.1ms)
+  [4;36;1mTestimony Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `testimonies`[0m
+Rendered user_sessions/_testimony_bottom (0.2ms)
+Completed in 57ms (View: 8, DB: 4) | 200 OK [http://localhost/]
