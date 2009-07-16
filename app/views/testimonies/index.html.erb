@@ -18,7 +18,7 @@
 
 <% @testimonies.each do |testimony| %>
   <tr>
-    <td><img src="images/testimonies/<%= @testimony.photo %>" width=100 ></td>
+    <td><img src="images/testimonies/<%= testimony.photo %>" width=100 ></td>
     <td><%=h testimony.name %></td>
     <td><%=h testimony.layout %></td>
     <td><%=h testimony.public %></td>

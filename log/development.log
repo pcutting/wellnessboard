@@ -29572,3 +29572,325 @@ Rendered user_sessions/_mission (0.1ms)
   [4;36;1mTestimony Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `testimonies`[0m
 Rendered user_sessions/_testimony_bottom (0.2ms)
 Completed in 41ms (View: 9, DB: 3) | 200 OK [http://localhost/login]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-07-16 09:36:39) [GET]
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mTestimony Load (0.2ms)[0m   [0;1mSELECT * FROM `testimonies` [0m
+  [4;35;1mTestimony Load (0.1ms)[0m   [0mSELECT * FROM `testimonies` LIMIT 1, 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered user_sessions/_login (1.5ms)
+Rendered user_sessions/_mission (0.1ms)
+  [4;36;1mTestimony Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `testimonies`[0m
+Rendered user_sessions/_testimony_bottom (0.1ms)
+Completed in 42ms (View: 10, DB: 2) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-07-16 09:37:08) [GET]
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mTestimony Load (0.1ms)[0m   [0;1mSELECT * FROM `testimonies` [0m
+  [4;35;1mTestimony Load (0.1ms)[0m   [0mSELECT * FROM `testimonies` LIMIT 1, 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered user_sessions/_login (1.9ms)
+Rendered user_sessions/_mission (0.1ms)
+  [4;36;1mTestimony Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `testimonies`[0m
+Rendered user_sessions/_testimony_bottom (0.1ms)
+Completed in 40ms (View: 8, DB: 2) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-07-16 09:37:10) [GET]
+  [4;35;1mUser Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mTestimony Load (0.1ms)[0m   [0;1mSELECT * FROM `testimonies` [0m
+  [4;35;1mTestimony Load (0.1ms)[0m   [0mSELECT * FROM `testimonies` LIMIT 1, 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered user_sessions/_login (1.8ms)
+Rendered user_sessions/_mission (0.1ms)
+  [4;36;1mTestimony Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `testimonies`[0m
+Rendered user_sessions/_testimony_bottom (0.3ms)
+Completed in 126ms (View: 9, DB: 3) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-07-16 09:37:12) [GET]
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mTestimony Load (0.1ms)[0m   [0;1mSELECT * FROM `testimonies` [0m
+  [4;35;1mTestimony Load (0.3ms)[0m   [0mSELECT * FROM `testimonies` LIMIT 2, 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered user_sessions/_login (86.3ms)
+Rendered user_sessions/_mission (0.1ms)
+  [4;36;1mTestimony Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `testimonies`[0m
+Rendered user_sessions/_testimony_bottom (0.1ms)
+Completed in 120ms (View: 93, DB: 3) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-07-16 09:37:13) [GET]
+  [4;35;1mUser Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mTestimony Load (0.2ms)[0m   [0;1mSELECT * FROM `testimonies` [0m
+  [4;35;1mTestimony Load (0.2ms)[0m   [0mSELECT * FROM `testimonies` LIMIT 0, 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered user_sessions/_login (3.6ms)
+Rendered user_sessions/_mission (0.2ms)
+  [4;36;1mTestimony Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `testimonies`[0m
+Rendered user_sessions/_testimony_bottom (0.3ms)
+Completed in 85ms (View: 17, DB: 5) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-07-16 09:37:15) [GET]
+  [4;35;1mUser Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mTestimony Load (0.1ms)[0m   [0;1mSELECT * FROM `testimonies` [0m
+  [4;35;1mTestimony Load (0.1ms)[0m   [0mSELECT * FROM `testimonies` LIMIT 0, 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered user_sessions/_login (1.4ms)
+Rendered user_sessions/_mission (0.1ms)
+  [4;36;1mTestimony Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `testimonies`[0m
+Rendered user_sessions/_testimony_bottom (0.1ms)
+Completed in 37ms (View: 6, DB: 3) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-07-16 09:37:17) [GET]
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mTestimony Load (0.1ms)[0m   [0;1mSELECT * FROM `testimonies` [0m
+  [4;35;1mTestimony Load (0.1ms)[0m   [0mSELECT * FROM `testimonies` LIMIT 2, 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered user_sessions/_login (1.5ms)
+Rendered user_sessions/_mission (0.1ms)
+  [4;36;1mTestimony Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `testimonies`[0m
+Rendered user_sessions/_testimony_bottom (0.1ms)
+Completed in 41ms (View: 7, DB: 2) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-07-16 09:37:18) [GET]
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mTestimony Load (0.1ms)[0m   [0;1mSELECT * FROM `testimonies` [0m
+  [4;35;1mTestimony Load (0.1ms)[0m   [0mSELECT * FROM `testimonies` LIMIT 2, 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered user_sessions/_login (1.6ms)
+Rendered user_sessions/_mission (0.1ms)
+  [4;36;1mTestimony Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `testimonies`[0m
+Rendered user_sessions/_testimony_bottom (0.1ms)
+Completed in 42ms (View: 7, DB: 2) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-07-16 09:37:20) [GET]
+  [4;35;1mUser Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mTestimony Load (0.1ms)[0m   [0;1mSELECT * FROM `testimonies` [0m
+  [4;35;1mTestimony Load (0.1ms)[0m   [0mSELECT * FROM `testimonies` LIMIT 2, 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered user_sessions/_login (1.7ms)
+Rendered user_sessions/_mission (0.1ms)
+  [4;36;1mTestimony Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `testimonies`[0m
+Rendered user_sessions/_testimony_bottom (0.2ms)
+Completed in 128ms (View: 8, DB: 2) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-07-16 09:37:22) [GET]
+  [4;35;1mUser Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mTestimony Load (0.1ms)[0m   [0;1mSELECT * FROM `testimonies` [0m
+  [4;35;1mTestimony Load (0.1ms)[0m   [0mSELECT * FROM `testimonies` LIMIT 1, 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered user_sessions/_login (1.8ms)
+Rendered user_sessions/_mission (0.1ms)
+  [4;36;1mTestimony Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `testimonies`[0m
+Rendered user_sessions/_testimony_bottom (0.1ms)
+Completed in 122ms (View: 8, DB: 3) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-07-16 09:37:23) [GET]
+  [4;35;1mUser Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mTestimony Load (0.2ms)[0m   [0;1mSELECT * FROM `testimonies` [0m
+  [4;35;1mTestimony Load (0.2ms)[0m   [0mSELECT * FROM `testimonies` LIMIT 2, 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered user_sessions/_login (3.6ms)
+Rendered user_sessions/_mission (0.2ms)
+  [4;36;1mTestimony Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `testimonies`[0m
+Rendered user_sessions/_testimony_bottom (0.3ms)
+Completed in 83ms (View: 16, DB: 5) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-07-16 09:37:25) [GET]
+  [4;35;1mUser Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mTestimony Load (0.1ms)[0m   [0;1mSELECT * FROM `testimonies` [0m
+  [4;35;1mTestimony Load (0.1ms)[0m   [0mSELECT * FROM `testimonies` LIMIT 2, 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered user_sessions/_login (1.5ms)
+Rendered user_sessions/_mission (0.2ms)
+  [4;36;1mTestimony Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `testimonies`[0m
+Rendered user_sessions/_testimony_bottom (0.1ms)
+Completed in 36ms (View: 7, DB: 2) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-07-16 09:37:27) [GET]
+  [4;35;1mUser Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mTestimony Load (0.1ms)[0m   [0;1mSELECT * FROM `testimonies` [0m
+  [4;35;1mTestimony Load (0.1ms)[0m   [0mSELECT * FROM `testimonies` LIMIT 0, 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered user_sessions/_login (1.5ms)
+Rendered user_sessions/_mission (0.1ms)
+  [4;36;1mTestimony Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `testimonies`[0m
+Rendered user_sessions/_testimony_bottom (0.1ms)
+Completed in 36ms (View: 7, DB: 2) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-07-16 09:37:28) [GET]
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mTestimony Load (0.1ms)[0m   [0;1mSELECT * FROM `testimonies` [0m
+  [4;35;1mTestimony Load (0.1ms)[0m   [0mSELECT * FROM `testimonies` LIMIT 1, 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered user_sessions/_login (1.5ms)
+Rendered user_sessions/_mission (0.1ms)
+  [4;36;1mTestimony Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `testimonies`[0m
+Rendered user_sessions/_testimony_bottom (0.1ms)
+Completed in 38ms (View: 7, DB: 2) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-07-16 09:37:29) [GET]
+  [4;35;1mUser Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mTestimony Load (0.1ms)[0m   [0;1mSELECT * FROM `testimonies` [0m
+  [4;35;1mTestimony Load (0.1ms)[0m   [0mSELECT * FROM `testimonies` LIMIT 1, 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered user_sessions/_login (1.6ms)
+Rendered user_sessions/_mission (0.1ms)
+  [4;36;1mTestimony Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `testimonies`[0m
+Rendered user_sessions/_testimony_bottom (0.1ms)
+Completed in 132ms (View: 7, DB: 3) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-07-16 09:37:31) [GET]
+  [4;35;1mUser Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mTestimony Load (0.1ms)[0m   [0;1mSELECT * FROM `testimonies` [0m
+  [4;35;1mTestimony Load (0.1ms)[0m   [0mSELECT * FROM `testimonies` LIMIT 0, 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered user_sessions/_login (1.6ms)
+Rendered user_sessions/_mission (0.1ms)
+  [4;36;1mTestimony Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `testimonies`[0m
+Rendered user_sessions/_testimony_bottom (0.1ms)
+Completed in 136ms (View: 7, DB: 4) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-07-16 09:37:32) [GET]
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mTestimony Load (0.1ms)[0m   [0;1mSELECT * FROM `testimonies` [0m
+  [4;35;1mTestimony Load (0.1ms)[0m   [0mSELECT * FROM `testimonies` LIMIT 2, 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered user_sessions/_login (1.7ms)
+Rendered user_sessions/_mission (0.1ms)
+  [4;36;1mTestimony Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `testimonies`[0m
+Rendered user_sessions/_testimony_bottom (0.1ms)
+Completed in 37ms (View: 7, DB: 2) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-07-16 09:37:34) [GET]
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mTestimony Load (0.1ms)[0m   [0;1mSELECT * FROM `testimonies` [0m
+  [4;35;1mTestimony Load (0.1ms)[0m   [0mSELECT * FROM `testimonies` LIMIT 2, 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered user_sessions/_login (1.4ms)
+Rendered user_sessions/_mission (0.1ms)
+  [4;36;1mTestimony Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `testimonies`[0m
+Rendered user_sessions/_testimony_bottom (0.1ms)
+Completed in 34ms (View: 7, DB: 2) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-07-16 09:37:35) [GET]
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mTestimony Load (0.1ms)[0m   [0;1mSELECT * FROM `testimonies` [0m
+  [4;35;1mTestimony Load (0.1ms)[0m   [0mSELECT * FROM `testimonies` LIMIT 2, 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered user_sessions/_login (1.5ms)
+Rendered user_sessions/_mission (0.1ms)
+  [4;36;1mTestimony Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `testimonies`[0m
+Rendered user_sessions/_testimony_bottom (0.1ms)
+Completed in 36ms (View: 7, DB: 2) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TestimoniesController#index (for 127.0.0.1 at 2009-07-16 09:37:42) [GET]
+  [4;35;1mTestimony Load (0.1ms)[0m   [0mSELECT * FROM `testimonies` [0m
+Rendering template within layouts/application
+Rendering testimonies/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.photo) on line #21 of app/views/testimonies/index.html.erb:
+18: 
+19: <% @testimonies.each do |testimony| %>
+20:   <tr>
+21:     <td><img src="images/testimonies/<%= @testimony.photo %>" width=100 ></td>
+22:     <td><%=h testimony.name %></td>
+23:     <td><%=h testimony.layout %></td>
+24:     <td><%=h testimony.public %></td>
+
+    app/views/testimonies/index.html.erb:21
+    app/views/testimonies/index.html.erb:19:in `each'
+    app/views/testimonies/index.html.erb:19
+    app/controllers/testimonies_controller.rb:7:in `index'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (38.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
