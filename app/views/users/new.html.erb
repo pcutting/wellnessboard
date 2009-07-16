@@ -3,73 +3,93 @@
 <p>We all have challenges with our health and we all need a little extra help.  Here is the place where you can go for that personal support, the products that are scientificaly developed to help you acheve your goals, and the tools at your fingers to help you see your results and to make adjustments along the way.</p>
 
 
+<center>
+<table>
+<tr><td>
+
 <% form_for :user, :url => {:action => "create" } do |f| %>
   <%= f.error_messages %>
 
+
+<div class="center last">
+  <fieldset><legend>User name & Password</legend>
   <p>
     <%= f.label :login %><br />
     <%= f.text_field :login %>
-  </p>
-  <p>
+<br/>
     <%= f.label :email %><br />
     <%= f.text_field :email %>
-  </p>
-  <p>
+<br/>
     <%= f.label :password %><br />
     <%= f.password_field :password %>
-  </p>
-  <p>
+<br/>
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation %>
   </p>
+   </fieldset>
+   
+</div>
+   
+     <% fields_for :profile do |w| %>
+   
+
+<div class="center last" >
+<fieldset><legend>Profile</legend>
+<table class="profile_format"><tr>
+  <tr><th>
+    <%= w.label "First" %></th><th>
+    <%= w.label "M.I." %></th><th>
+    <%= w.label "Last" %></th><th>
+    <%= w.label :sufix %></th>
+    
+    
+  </tr><tr><th><%= w.text_field :name_first  , :size => 6 %>
+  </th><th><%= w.text_field :middle_initial , :size =>1  %>
+  </th><th><%= w.text_field :name_last , :size => 6  %>
+  </th><th><%= w.text_field :sufix , :size => 3  %>
+  </th></tr>
+</table>
+<br/>
+<table>
+  <tr><th>
+    <%= w.label "Sponsor name or code if you know it" %><br/>
+    <%= w.text_field :sponsor %>
+  </th></tr>
+
+  <tr><th>
+    <%= w.label :referred_by %><br/>
+    <%= w.text_field :referred_by %>
+  </th></tr>
+</table>
+</fieldset>
+</div>   
    
    
-    <% fields_for :profile do |w| %>
+   <div class="center last">
+   
+  
   <fieldset><legend>Required</legend>
   <p>
-    <%= w.label "Date of birth" %><%= w.date_select :dob , :start_year=>"1900"%><br/>
-    DOB is used in calculating things like BMI and also for offering special birthday promotions.
+    <%= w.label "Date of birth" %><%= w.date_select :dob , :start_year => 1900 %><br/>
   </p>
       
   <p>
     <%= w.label "Hight:" %> Feet:<%= w.text_field :hight_feet , :size => 2 %> Inches<%= w.text_field :hight_inches , :size => 2 %>.
   </p>
   </fieldset>
+</div>
 
-<table class="profile_format"><tr>
-  <tr><th>
-    <%= w.label "Nick name" %></th><th><%= w.text_field :name_first %>
-  </th></tr>
-   
-  <tr><th>
-    <%= w.label "First name" %></th><th><%= w.text_field :name_first %>
-  </th></tr>
-    <tr><th>
-    <%= w.label :Middle_initial %></th><th><%= w.text_field :middle_initial %>
-  </th></tr>
-  
-    <tr><th>
-    <%= w.label :Last_Name %></th><th><%= w.text_field :name_last %>
-  </th></tr>
-    <tr><th>
-    <%= w.label :sufix %></th><th><%= w.text_field :sufix %>
-  </th></tr>
-      
-
-  <tr><th>
-    <%= w.label "Sponsor code if you know it" %></th><th><%= w.text_field :sponsor %>
-  </th></tr>
-
-  <tr><th>
-    <%= w.label :referred_by %></th><th><%= w.text_field :referred_by %>
-  </th></tr>
-</table>
 
   <% end %>
   
-
-  <p>
+<div class="center last" >
+  
     <%= f.submit 'Create' %>
-  </p>
+  
+  
+</div>
+</td>
+</tr>
+</table>
 <% end %>
 
