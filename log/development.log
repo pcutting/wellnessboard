@@ -30524,3 +30524,2023 @@ Rendered user_sessions/_mission (3.4ms)
 Rendered user_sessions/_testimony_bottom (0.1ms)
 Rendered user_sessions/_welcome_audio (0.6ms)
 Completed in 177ms (View: 113, DB: 4) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-07-27 18:32:17) [GET]
+  [4;36;1mUser Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mTestimony Load (0.1ms)[0m   [0mSELECT * FROM `testimonies` [0m
+  [4;36;1mTestimony Load (0.1ms)[0m   [0;1mSELECT * FROM `testimonies` LIMIT 2, 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered user_sessions/_login (2.5ms)
+Rendered user_sessions/_mission (0.7ms)
+  [4;35;1mTestimony Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `testimonies`[0m
+Rendered user_sessions/_testimony_bottom (0.8ms)
+Rendered user_sessions/_welcome_audio (0.4ms)
+Completed in 134ms (View: 25, DB: 3) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2009-07-27 18:46:54) [POST]
+  Parameters: {"commit"=>"Submit", "user_session"=>{"password"=>"test", "login"=>"test"}, "authenticity_token"=>"gAnqbdhL+lQy6LvaS/PEfUPd0eInX/293KmngrQm3oA="}
+  [4;36;1mUser Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (LOWER(`users`.login) = 'test') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE `users` SET `updated_at` = '2009-07-27 22:46:54', `last_login_at` = '2009-07-16 05:09:19', `current_login_at` = '2009-07-27 22:46:54', `login_count` = 27, `last_request_at` = '2009-07-27 22:46:54' WHERE `id` = 1[0m
+  [4;36;1mSQL (9.2ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/home
+Completed in 122ms (DB: 11) | 302 Found [http://localhost/user_sessions]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomesController#show (for 127.0.0.1 at 2009-07-27 18:46:54) [GET]
+  [4;35;1mUser Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-07-27 22:46:54', `last_request_at` = '2009-07-27 22:46:54' WHERE `id` = 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mHome Load (0.4ms)[0m   [0;1mSELECT * FROM `homes` WHERE (`homes`.user_id = 1) LIMIT 1[0m
+  [4;35;1mGoal Load (0.4ms)[0m   [0mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;36;1mGoal Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `goals`[0m
+  [4;35;1mQuickFact Load (0.3ms)[0m   [0mSELECT * FROM `quick_facts` [0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;35;1mQuickFact Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `quick_facts`[0m
+  [4;36;1mHome Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `homes`[0m
+  [4;35;1mQuickSupport Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `quick_supports`[0m
+  [4;36;1mWater Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `waters`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-20 18:46:54') AND (`waters`.user_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-27 18:46:54') AND (`waters`.user_id = 1) [0m
+  [4;35;1mFood Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `foods`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-20 18:46:54') AND (`foods`.user_id = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-27 18:46:54') AND (`foods`.user_id = 1) [0m
+  [4;36;1mWeight Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `weights`[0m
+  [4;35;1mMeasurement Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `measurements`[0m
+  [4;36;1mExercise Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `exercises`[0m
+  [4;35;1mBodyScan Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within layouts/member
+Rendering homes/show
+Rendered homes/_quick_form (81.7ms)
+Rendered homes/_progress (2.0ms)
+Rendered homes/_goals (3.3ms)
+  [4;36;1mWater Load (0.4ms)[0m   [0;1mSELECT * FROM `waters` WHERE (`waters`.user_id = 1) ORDER BY date asc[0m
+  [4;35;1mFood Load (0.3ms)[0m   [0mSELECT * FROM `foods` WHERE (`foods`.user_id = 1) ORDER BY date asc[0m
+  [4;36;1mExercise Load (0.3ms)[0m   [0;1mSELECT * FROM `exercises` WHERE (`exercises`.user_id = 1) ORDER BY date asc[0m
+  [4;35;1mMeasurement Load (0.3ms)[0m   [0mSELECT * FROM `measurements` WHERE (`measurements`.user_id = 1) ORDER BY date asc[0m
+  [4;36;1mWeight Load (0.2ms)[0m   [0;1mSELECT * FROM `weights` WHERE (`weights`.user_id = 1) ORDER BY date asc[0m
+Rendered homes/_charts (27.2ms)
+Rendered homes/_quick_fact (0.7ms)
+Rendered homes/_support (3.2ms)
+Completed in 228ms (View: 138, DB: 13) | 200 OK [http://localhost/home]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomesController#show (for 127.0.0.1 at 2009-07-27 19:08:30) [GET]
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-07-27 23:08:30', `last_request_at` = '2009-07-27 23:08:30' WHERE `id` = 1[0m
+  [4;35;1mSQL (14.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mHome Load (0.1ms)[0m   [0;1mSELECT * FROM `homes` WHERE (`homes`.user_id = 1) LIMIT 1[0m
+  [4;35;1mGoal Load (0.1ms)[0m   [0mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;36;1mGoal Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `goals`[0m
+  [4;35;1mQuickFact Load (0.1ms)[0m   [0mSELECT * FROM `quick_facts` [0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;35;1mQuickFact Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `quick_facts`[0m
+  [4;36;1mHome Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `homes`[0m
+  [4;35;1mQuickSupport Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `quick_supports`[0m
+  [4;36;1mWater Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `waters`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-20 19:08:30') AND (`waters`.user_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-27 19:08:30') AND (`waters`.user_id = 1) [0m
+  [4;35;1mFood Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `foods`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-20 19:08:30') AND (`foods`.user_id = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-27 19:08:30') AND (`foods`.user_id = 1) [0m
+  [4;36;1mWeight Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `weights`[0m
+  [4;35;1mMeasurement Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `measurements`[0m
+  [4;36;1mExercise Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `exercises`[0m
+  [4;35;1mBodyScan Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within layouts/member
+Rendering homes/show
+Rendered homes/_quick_form (12.6ms)
+
+ActionView::TemplateError (/home/phil/Desktop/wellnessboard/app/models/profile.rb:14: unmatched ): /(height_in_inches * height_in_inches.to_f))* 703).to_i
+  end
+  
+  def hight_in_inches
+       hight_feet * 12 + hight_inches
+  end
+  
+  def age  
+(( Time.now - dob.to_time ) /
+/home/phil/Desktop/wellnessboard/app/models/profile.rb:14: syntax error, unexpected tINTEGER, expecting ')'
+(( Time.now - dob.to_time ) / 1.years).to_i
+                               ^
+/home/phil/Desktop/wellnessboard/app/models/profile.rb:15: syntax error, unexpected kEND, expecting ')') on line #15 of app/views/homes/_progress.html.erb:
+12: 
+13: 
+14: <fieldset>
+15: Water and calaries - BMI: <%= @current_user.profile.bmi %>
+16: <table>
+17: <tr>
+18: <th>Water today</th>
+
+    app/views/homes/_progress.html.erb:15
+    app/views/homes/show.html.erb:12
+    app/controllers/homes_controller.rb:46:in `show'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (51.9ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomesController#show (for 127.0.0.1 at 2009-07-27 19:09:47) [GET]
+  [4;36;1mUser Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE `users` SET `updated_at` = '2009-07-27 23:09:47', `last_request_at` = '2009-07-27 23:09:47' WHERE `id` = 1[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mHome Load (0.1ms)[0m   [0mSELECT * FROM `homes` WHERE (`homes`.user_id = 1) LIMIT 1[0m
+  [4;36;1mGoal Load (0.1ms)[0m   [0;1mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;35;1mGoal Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `goals`[0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` [0m
+  [4;35;1mQuickFact Load (0.1ms)[0m   [0mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;36;1mQuickFact Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `quick_facts`[0m
+  [4;35;1mHome Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `homes`[0m
+  [4;36;1mQuickSupport Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `quick_supports`[0m
+  [4;35;1mWater Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `waters`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-20 19:09:47') AND (`waters`.user_id = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-27 19:09:47') AND (`waters`.user_id = 1) [0m
+  [4;36;1mFood Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `foods`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-20 19:09:47') AND (`foods`.user_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-27 19:09:47') AND (`foods`.user_id = 1) [0m
+  [4;35;1mWeight Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `weights`[0m
+  [4;36;1mMeasurement Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `measurements`[0m
+  [4;35;1mExercise Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `exercises`[0m
+  [4;36;1mBodyScan Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within layouts/member
+Rendering homes/show
+Rendered homes/_quick_form (75.3ms)
+
+ActionView::TemplateError (/home/phil/Desktop/wellnessboard/app/models/profile.rb:16: unmatched ): /(height_in_inches * height_in_inches.to_f))* 703).to_i
+  end
+  
+  
+  
+  def hight_in_inches
+       hight_feet * 12 + hight_inches
+  end
+  
+  def age  
+(( Time.now - dob.to_time ) /
+/home/phil/Desktop/wellnessboard/app/models/profile.rb:16: syntax error, unexpected tINTEGER, expecting ')'
+(( Time.now - dob.to_time ) / 1.years).to_i
+                               ^
+/home/phil/Desktop/wellnessboard/app/models/profile.rb:17: syntax error, unexpected kEND, expecting ')') on line #15 of app/views/homes/_progress.html.erb:
+12: 
+13: 
+14: <fieldset>
+15: Water and calaries - BMI: <%= @current_user.profile.hight_in_inches %>
+16: <table>
+17: <tr>
+18: <th>Water today</th>
+
+    app/views/homes/_progress.html.erb:15
+    app/views/homes/show.html.erb:12
+    app/controllers/homes_controller.rb:46:in `show'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (51.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomesController#show (for 127.0.0.1 at 2009-07-27 19:12:07) [GET]
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-07-27 23:12:07', `last_request_at` = '2009-07-27 23:12:07' WHERE `id` = 1[0m
+  [4;35;1mSQL (4.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mHome Load (0.1ms)[0m   [0;1mSELECT * FROM `homes` WHERE (`homes`.user_id = 1) LIMIT 1[0m
+  [4;35;1mGoal Load (0.1ms)[0m   [0mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;36;1mGoal Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `goals`[0m
+  [4;35;1mQuickFact Load (0.1ms)[0m   [0mSELECT * FROM `quick_facts` [0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;35;1mQuickFact Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `quick_facts`[0m
+  [4;36;1mHome Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `homes`[0m
+  [4;35;1mQuickSupport Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `quick_supports`[0m
+  [4;36;1mWater Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `waters`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-20 19:12:07') AND (`waters`.user_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-27 19:12:07') AND (`waters`.user_id = 1) [0m
+  [4;35;1mFood Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `foods`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-20 19:12:07') AND (`foods`.user_id = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-27 19:12:07') AND (`foods`.user_id = 1) [0m
+  [4;36;1mWeight Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `weights`[0m
+  [4;35;1mMeasurement Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `measurements`[0m
+  [4;36;1mExercise Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `exercises`[0m
+  [4;35;1mBodyScan Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within layouts/member
+Rendering homes/show
+Rendered homes/_quick_form (11.9ms)
+
+ActionView::TemplateError (/home/phil/Desktop/wellnessboard/app/models/profile.rb:16: unmatched ): /(height_in_inches * height_in_inches.to_f)) * 703 
+  end
+  
+  
+  
+  def hight_in_inches
+       hight_feet * 12 + hight_inches
+  end
+  
+  def age  
+(( Time.now - dob.to_time ) /
+/home/phil/Desktop/wellnessboard/app/models/profile.rb:16: syntax error, unexpected tINTEGER, expecting ')'
+(( Time.now - dob.to_time ) / 1.years).to_i
+                               ^) on line #15 of app/views/homes/_progress.html.erb:
+12: 
+13: 
+14: <fieldset>
+15: Water and calaries - BMI: <%= @current_user.profile.bmi %>
+16: <table>
+17: <tr>
+18: <th>Water today</th>
+
+    app/views/homes/_progress.html.erb:15
+    app/views/homes/show.html.erb:12
+    app/controllers/homes_controller.rb:46:in `show'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (51.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomesController#show (for 127.0.0.1 at 2009-07-27 19:12:10) [GET]
+  [4;36;1mUser Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2009-07-27 23:12:10', `last_request_at` = '2009-07-27 23:12:10' WHERE `id` = 1[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mHome Load (0.1ms)[0m   [0mSELECT * FROM `homes` WHERE (`homes`.user_id = 1) LIMIT 1[0m
+  [4;36;1mGoal Load (0.1ms)[0m   [0;1mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;35;1mGoal Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `goals`[0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` [0m
+  [4;35;1mQuickFact Load (0.1ms)[0m   [0mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;36;1mQuickFact Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `quick_facts`[0m
+  [4;35;1mHome Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `homes`[0m
+  [4;36;1mQuickSupport Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `quick_supports`[0m
+  [4;35;1mWater Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `waters`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-20 19:12:10') AND (`waters`.user_id = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-27 19:12:10') AND (`waters`.user_id = 1) [0m
+  [4;36;1mFood Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `foods`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-20 19:12:10') AND (`foods`.user_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-27 19:12:10') AND (`foods`.user_id = 1) [0m
+  [4;35;1mWeight Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `weights`[0m
+  [4;36;1mMeasurement Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `measurements`[0m
+  [4;35;1mExercise Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `exercises`[0m
+  [4;36;1mBodyScan Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within layouts/member
+Rendering homes/show
+Rendered homes/_quick_form (14.1ms)
+
+ActionView::TemplateError (/home/phil/Desktop/wellnessboard/app/models/profile.rb:16: unmatched ): /(height_in_inches * height_in_inches.to_f)) * 703 
+  end
+  
+  
+  
+  def hight_in_inches
+       hight_feet * 12 + hight_inches
+  end
+  
+  def age  
+(( Time.now - dob.to_time ) /
+/home/phil/Desktop/wellnessboard/app/models/profile.rb:16: syntax error, unexpected tINTEGER, expecting ')'
+(( Time.now - dob.to_time ) / 1.years).to_i
+                               ^) on line #15 of app/views/homes/_progress.html.erb:
+12: 
+13: 
+14: <fieldset>
+15: Water and calaries - BMI: <%= @current_user.profile.bmi %>
+16: <table>
+17: <tr>
+18: <th>Water today</th>
+
+    app/views/homes/_progress.html.erb:15
+    app/views/homes/show.html.erb:12
+    app/controllers/homes_controller.rb:46:in `show'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (54.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomesController#show (for 127.0.0.1 at 2009-07-27 19:12:24) [GET]
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-07-27 23:12:24', `last_request_at` = '2009-07-27 23:12:24' WHERE `id` = 1[0m
+  [4;35;1mSQL (2.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mHome Load (0.1ms)[0m   [0;1mSELECT * FROM `homes` WHERE (`homes`.user_id = 1) LIMIT 1[0m
+  [4;35;1mGoal Load (0.1ms)[0m   [0mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;36;1mGoal Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `goals`[0m
+  [4;35;1mQuickFact Load (0.1ms)[0m   [0mSELECT * FROM `quick_facts` [0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;35;1mQuickFact Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `quick_facts`[0m
+  [4;36;1mHome Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `homes`[0m
+  [4;35;1mQuickSupport Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `quick_supports`[0m
+  [4;36;1mWater Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `waters`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-20 19:12:24') AND (`waters`.user_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-27 19:12:24') AND (`waters`.user_id = 1) [0m
+  [4;35;1mFood Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `foods`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-20 19:12:24') AND (`foods`.user_id = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-27 19:12:24') AND (`foods`.user_id = 1) [0m
+  [4;36;1mWeight Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `weights`[0m
+  [4;35;1mMeasurement Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `measurements`[0m
+  [4;36;1mExercise Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `exercises`[0m
+  [4;35;1mBodyScan Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within layouts/member
+Rendering homes/show
+Rendered homes/_quick_form (12.4ms)
+  [4;36;1mProfile Load (0.5ms)[0m   [0;1mSELECT * FROM `profiles` WHERE (`profiles`.user_id = 1) LIMIT 1[0m
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.weight) on line #15 of app/views/homes/_progress.html.erb:
+12: 
+13: 
+14: <fieldset>
+15: Water and calaries - BMI: <%= @current_user.profile.bmi %>
+16: <table>
+17: <tr>
+18: <th>Water today</th>
+
+    app/models/profile.rb:6:in `bmi'
+    app/views/homes/_progress.html.erb:15
+    app/views/homes/show.html.erb:12
+    app/controllers/homes_controller.rb:46:in `show'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (46.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomesController#show (for 127.0.0.1 at 2009-07-27 19:12:56) [GET]
+  [4;35;1mUser Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-07-27 23:12:56', `last_request_at` = '2009-07-27 23:12:56' WHERE `id` = 1[0m
+  [4;35;1mSQL (2.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mHome Load (0.1ms)[0m   [0;1mSELECT * FROM `homes` WHERE (`homes`.user_id = 1) LIMIT 1[0m
+  [4;35;1mGoal Load (0.1ms)[0m   [0mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;36;1mGoal Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `goals`[0m
+  [4;35;1mQuickFact Load (0.1ms)[0m   [0mSELECT * FROM `quick_facts` [0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;35;1mQuickFact Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `quick_facts`[0m
+  [4;36;1mHome Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `homes`[0m
+  [4;35;1mQuickSupport Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `quick_supports`[0m
+  [4;36;1mWater Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `waters`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-20 19:12:56') AND (`waters`.user_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-27 19:12:56') AND (`waters`.user_id = 1) [0m
+  [4;35;1mFood Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `foods`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-20 19:12:56') AND (`foods`.user_id = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-27 19:12:56') AND (`foods`.user_id = 1) [0m
+  [4;36;1mWeight Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `weights`[0m
+  [4;35;1mMeasurement Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `measurements`[0m
+  [4;36;1mExercise Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `exercises`[0m
+  [4;35;1mBodyScan Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within layouts/member
+Rendering homes/show
+Rendered homes/_quick_form (12.5ms)
+  [4;36;1mProfile Load (0.1ms)[0m   [0;1mSELECT * FROM `profiles` WHERE (`profiles`.user_id = 1) LIMIT 1[0m
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.weight) on line #15 of app/views/homes/_progress.html.erb:
+12: 
+13: 
+14: <fieldset>
+15: Water and calaries - BMI: <%= @current_user.profile.bmi %>
+16: <table>
+17: <tr>
+18: <th>Water today</th>
+
+    app/models/profile.rb:6:in `bmi'
+    app/views/homes/_progress.html.erb:15
+    app/views/homes/show.html.erb:12
+    app/controllers/homes_controller.rb:46:in `show'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (114.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomesController#show (for 127.0.0.1 at 2009-07-27 19:12:59) [GET]
+  [4;35;1mUser Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-07-27 23:12:59', `last_request_at` = '2009-07-27 23:12:59' WHERE `id` = 1[0m
+  [4;35;1mSQL (2.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mHome Load (0.1ms)[0m   [0;1mSELECT * FROM `homes` WHERE (`homes`.user_id = 1) LIMIT 1[0m
+  [4;35;1mGoal Load (0.1ms)[0m   [0mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;36;1mGoal Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `goals`[0m
+  [4;35;1mQuickFact Load (0.1ms)[0m   [0mSELECT * FROM `quick_facts` [0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;35;1mQuickFact Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `quick_facts`[0m
+  [4;36;1mHome Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `homes`[0m
+  [4;35;1mQuickSupport Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `quick_supports`[0m
+  [4;36;1mWater Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `waters`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-20 19:12:59') AND (`waters`.user_id = 1) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-27 19:12:59') AND (`waters`.user_id = 1) [0m
+  [4;35;1mFood Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `foods`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-20 19:12:59') AND (`foods`.user_id = 1) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-27 19:12:59') AND (`foods`.user_id = 1) [0m
+  [4;36;1mWeight Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `weights`[0m
+  [4;35;1mMeasurement Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `measurements`[0m
+  [4;36;1mExercise Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `exercises`[0m
+  [4;35;1mBodyScan Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within layouts/member
+Rendering homes/show
+Rendered homes/_quick_form (12.6ms)
+  [4;36;1mProfile Load (0.1ms)[0m   [0;1mSELECT * FROM `profiles` WHERE (`profiles`.user_id = 1) LIMIT 1[0m
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.weight) on line #15 of app/views/homes/_progress.html.erb:
+12: 
+13: 
+14: <fieldset>
+15: Water and calaries - BMI: <%= @current_user.profile.bmi %>
+16: <table>
+17: <tr>
+18: <th>Water today</th>
+
+    app/models/profile.rb:6:in `bmi'
+    app/views/homes/_progress.html.erb:15
+    app/views/homes/show.html.erb:12
+    app/controllers/homes_controller.rb:46:in `show'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (118.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomesController#show (for 127.0.0.1 at 2009-07-27 19:13:22) [GET]
+  [4;35;1mUser Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-07-27 23:13:22', `last_request_at` = '2009-07-27 23:13:22' WHERE `id` = 1[0m
+  [4;35;1mSQL (7.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mHome Load (0.1ms)[0m   [0;1mSELECT * FROM `homes` WHERE (`homes`.user_id = 1) LIMIT 1[0m
+  [4;35;1mGoal Load (0.1ms)[0m   [0mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;36;1mGoal Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `goals`[0m
+  [4;35;1mQuickFact Load (0.1ms)[0m   [0mSELECT * FROM `quick_facts` [0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;35;1mQuickFact Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `quick_facts`[0m
+  [4;36;1mHome Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `homes`[0m
+  [4;35;1mQuickSupport Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `quick_supports`[0m
+  [4;36;1mWater Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `waters`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-20 19:13:22') AND (`waters`.user_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-27 19:13:22') AND (`waters`.user_id = 1) [0m
+  [4;35;1mFood Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `foods`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-20 19:13:22') AND (`foods`.user_id = 1) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-27 19:13:22') AND (`foods`.user_id = 1) [0m
+  [4;36;1mWeight Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `weights`[0m
+  [4;35;1mMeasurement Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `measurements`[0m
+  [4;36;1mExercise Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `exercises`[0m
+  [4;35;1mBodyScan Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within layouts/member
+Rendering homes/show
+Rendered homes/_quick_form (12.7ms)
+  [4;36;1mProfile Load (0.1ms)[0m   [0;1mSELECT * FROM `profiles` WHERE (`profiles`.user_id = 1) LIMIT 1[0m
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.weight) on line #15 of app/views/homes/_progress.html.erb:
+12: 
+13: 
+14: <fieldset>
+15: Water and calaries - BMI: <%= @current_user.profile.bmi %>
+16: <table>
+17: <tr>
+18: <th>Water today</th>
+
+    app/models/profile.rb:6:in `bmi'
+    app/views/homes/_progress.html.erb:15
+    app/views/homes/show.html.erb:12
+    app/controllers/homes_controller.rb:46:in `show'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (119.4ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomesController#show (for 127.0.0.1 at 2009-07-27 19:13:24) [GET]
+  [4;35;1mUser Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-07-27 23:13:24', `last_request_at` = '2009-07-27 23:13:24' WHERE `id` = 1[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mHome Load (0.1ms)[0m   [0;1mSELECT * FROM `homes` WHERE (`homes`.user_id = 1) LIMIT 1[0m
+  [4;35;1mGoal Load (0.1ms)[0m   [0mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;36;1mGoal Columns (6.3ms)[0m   [0;1mSHOW FIELDS FROM `goals`[0m
+  [4;35;1mQuickFact Load (0.1ms)[0m   [0mSELECT * FROM `quick_facts` [0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;35;1mQuickFact Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `quick_facts`[0m
+  [4;36;1mHome Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `homes`[0m
+  [4;35;1mQuickSupport Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `quick_supports`[0m
+  [4;36;1mWater Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `waters`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-20 19:13:24') AND (`waters`.user_id = 1) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-27 19:13:24') AND (`waters`.user_id = 1) [0m
+  [4;35;1mFood Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `foods`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-20 19:13:24') AND (`foods`.user_id = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-27 19:13:24') AND (`foods`.user_id = 1) [0m
+  [4;36;1mWeight Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `weights`[0m
+  [4;35;1mMeasurement Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `measurements`[0m
+  [4;36;1mExercise Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `exercises`[0m
+  [4;35;1mBodyScan Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within layouts/member
+Rendering homes/show
+Rendered homes/_quick_form (13.9ms)
+  [4;36;1mProfile Load (0.1ms)[0m   [0;1mSELECT * FROM `profiles` WHERE (`profiles`.user_id = 1) LIMIT 1[0m
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.weight) on line #15 of app/views/homes/_progress.html.erb:
+12: 
+13: 
+14: <fieldset>
+15: Water and calaries - BMI: <%= @current_user.profile.bmi %>
+16: <table>
+17: <tr>
+18: <th>Water today</th>
+
+    app/models/profile.rb:6:in `bmi'
+    app/views/homes/_progress.html.erb:15
+    app/views/homes/show.html.erb:12
+    app/controllers/homes_controller.rb:46:in `show'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (44.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomesController#show (for 127.0.0.1 at 2009-07-27 19:14:47) [GET]
+  [4;35;1mUser Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-07-27 23:14:47', `last_request_at` = '2009-07-27 23:14:47' WHERE `id` = 1[0m
+  [4;35;1mSQL (6.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mHome Load (0.1ms)[0m   [0;1mSELECT * FROM `homes` WHERE (`homes`.user_id = 1) LIMIT 1[0m
+  [4;35;1mGoal Load (0.1ms)[0m   [0mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;36;1mGoal Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `goals`[0m
+  [4;35;1mQuickFact Load (0.1ms)[0m   [0mSELECT * FROM `quick_facts` [0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;35;1mQuickFact Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `quick_facts`[0m
+  [4;36;1mHome Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `homes`[0m
+  [4;35;1mQuickSupport Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `quick_supports`[0m
+  [4;36;1mWater Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `waters`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-20 19:14:47') AND (`waters`.user_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-27 19:14:47') AND (`waters`.user_id = 1) [0m
+  [4;35;1mFood Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `foods`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-20 19:14:47') AND (`foods`.user_id = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-27 19:14:47') AND (`foods`.user_id = 1) [0m
+  [4;36;1mWeight Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `weights`[0m
+  [4;35;1mMeasurement Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `measurements`[0m
+  [4;36;1mExercise Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `exercises`[0m
+  [4;35;1mBodyScan Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within layouts/member
+Rendering homes/show
+Rendered homes/_quick_form (13.9ms)
+  [4;36;1mProfile Load (0.1ms)[0m   [0;1mSELECT * FROM `profiles` WHERE (`profiles`.user_id = 1) LIMIT 1[0m
+  [4;35;1mProfile Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `profiles`[0m
+Rendered homes/_progress (11.1ms)
+Rendered homes/_goals (1.2ms)
+  [4;36;1mWater Load (0.1ms)[0m   [0;1mSELECT * FROM `waters` WHERE (`waters`.user_id = 1) ORDER BY date asc[0m
+  [4;35;1mFood Load (0.1ms)[0m   [0mSELECT * FROM `foods` WHERE (`foods`.user_id = 1) ORDER BY date asc[0m
+  [4;36;1mExercise Load (0.1ms)[0m   [0;1mSELECT * FROM `exercises` WHERE (`exercises`.user_id = 1) ORDER BY date asc[0m
+  [4;35;1mMeasurement Load (0.1ms)[0m   [0mSELECT * FROM `measurements` WHERE (`measurements`.user_id = 1) ORDER BY date asc[0m
+  [4;36;1mWeight Load (0.1ms)[0m   [0;1mSELECT * FROM `weights` WHERE (`weights`.user_id = 1) ORDER BY date asc[0m
+Rendered homes/_charts (25.2ms)
+Rendered homes/_quick_fact (0.1ms)
+Rendered homes/_support (2.5ms)
+Completed in 234ms (View: 58, DB: 20) | 200 OK [http://localhost/home]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomesController#show (for 127.0.0.1 at 2009-07-27 19:15:11) [GET]
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-07-27 23:15:11', `last_request_at` = '2009-07-27 23:15:11' WHERE `id` = 1[0m
+  [4;35;1mSQL (6.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mHome Load (0.1ms)[0m   [0;1mSELECT * FROM `homes` WHERE (`homes`.user_id = 1) LIMIT 1[0m
+  [4;35;1mGoal Load (0.1ms)[0m   [0mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;36;1mGoal Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `goals`[0m
+  [4;35;1mQuickFact Load (0.1ms)[0m   [0mSELECT * FROM `quick_facts` [0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;35;1mQuickFact Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `quick_facts`[0m
+  [4;36;1mHome Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `homes`[0m
+  [4;35;1mQuickSupport Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `quick_supports`[0m
+  [4;36;1mWater Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `waters`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-20 19:15:11') AND (`waters`.user_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-27 19:15:11') AND (`waters`.user_id = 1) [0m
+  [4;35;1mFood Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `foods`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-20 19:15:11') AND (`foods`.user_id = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-27 19:15:11') AND (`foods`.user_id = 1) [0m
+  [4;36;1mWeight Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `weights`[0m
+  [4;35;1mMeasurement Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `measurements`[0m
+  [4;36;1mExercise Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `exercises`[0m
+  [4;35;1mBodyScan Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within layouts/member
+Rendering homes/show
+Rendered homes/_quick_form (22.2ms)
+  [4;36;1mProfile Load (0.1ms)[0m   [0;1mSELECT * FROM `profiles` WHERE (`profiles`.user_id = 1) LIMIT 1[0m
+  [4;35;1mProfile Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `profiles`[0m
+Rendered homes/_progress (10.6ms)
+Rendered homes/_goals (1.5ms)
+  [4;36;1mWater Load (0.1ms)[0m   [0;1mSELECT * FROM `waters` WHERE (`waters`.user_id = 1) ORDER BY date asc[0m
+  [4;35;1mFood Load (0.1ms)[0m   [0mSELECT * FROM `foods` WHERE (`foods`.user_id = 1) ORDER BY date asc[0m
+  [4;36;1mExercise Load (0.1ms)[0m   [0;1mSELECT * FROM `exercises` WHERE (`exercises`.user_id = 1) ORDER BY date asc[0m
+  [4;35;1mMeasurement Load (0.1ms)[0m   [0mSELECT * FROM `measurements` WHERE (`measurements`.user_id = 1) ORDER BY date asc[0m
+  [4;36;1mWeight Load (0.1ms)[0m   [0;1mSELECT * FROM `weights` WHERE (`weights`.user_id = 1) ORDER BY date asc[0m
+Rendered homes/_charts (26.4ms)
+Rendered homes/_quick_fact (0.2ms)
+Rendered homes/_support (2.5ms)
+Completed in 216ms (View: 122, DB: 18) | 200 OK [http://localhost/home]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomesController#show (for 127.0.0.1 at 2009-07-27 19:15:16) [GET]
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-07-27 23:15:16', `last_request_at` = '2009-07-27 23:15:16' WHERE `id` = 1[0m
+  [4;35;1mSQL (11.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mHome Load (0.1ms)[0m   [0;1mSELECT * FROM `homes` WHERE (`homes`.user_id = 1) LIMIT 1[0m
+  [4;35;1mGoal Load (0.1ms)[0m   [0mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;36;1mGoal Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `goals`[0m
+  [4;35;1mQuickFact Load (0.1ms)[0m   [0mSELECT * FROM `quick_facts` [0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;35;1mQuickFact Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `quick_facts`[0m
+  [4;36;1mHome Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `homes`[0m
+  [4;35;1mQuickSupport Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `quick_supports`[0m
+  [4;36;1mWater Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `waters`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-20 19:15:16') AND (`waters`.user_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-27 19:15:16') AND (`waters`.user_id = 1) [0m
+  [4;35;1mFood Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `foods`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-20 19:15:16') AND (`foods`.user_id = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-27 19:15:16') AND (`foods`.user_id = 1) [0m
+  [4;36;1mWeight Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `weights`[0m
+  [4;35;1mMeasurement Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `measurements`[0m
+  [4;36;1mExercise Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `exercises`[0m
+  [4;35;1mBodyScan Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within layouts/member
+Rendering homes/show
+Rendered homes/_quick_form (12.4ms)
+  [4;36;1mProfile Load (0.1ms)[0m   [0;1mSELECT * FROM `profiles` WHERE (`profiles`.user_id = 1) LIMIT 1[0m
+  [4;35;1mProfile Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `profiles`[0m
+Rendered homes/_progress (9.7ms)
+Rendered homes/_goals (1.2ms)
+  [4;36;1mWater Load (0.1ms)[0m   [0;1mSELECT * FROM `waters` WHERE (`waters`.user_id = 1) ORDER BY date asc[0m
+  [4;35;1mFood Load (0.2ms)[0m   [0mSELECT * FROM `foods` WHERE (`foods`.user_id = 1) ORDER BY date asc[0m
+  [4;36;1mExercise Load (0.1ms)[0m   [0;1mSELECT * FROM `exercises` WHERE (`exercises`.user_id = 1) ORDER BY date asc[0m
+  [4;35;1mMeasurement Load (0.1ms)[0m   [0mSELECT * FROM `measurements` WHERE (`measurements`.user_id = 1) ORDER BY date asc[0m
+  [4;36;1mWeight Load (0.1ms)[0m   [0;1mSELECT * FROM `weights` WHERE (`weights`.user_id = 1) ORDER BY date asc[0m
+Rendered homes/_charts (92.9ms)
+Rendered homes/_quick_fact (0.2ms)
+Rendered homes/_support (2.7ms)
+Completed in 220ms (View: 120, DB: 23) | 200 OK [http://localhost/home]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomesController#show (for 127.0.0.1 at 2009-07-27 19:15:29) [GET]
+  [4;35;1mUser Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-07-27 23:15:29', `last_request_at` = '2009-07-27 23:15:29' WHERE `id` = 1[0m
+  [4;35;1mSQL (9.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mHome Load (0.1ms)[0m   [0;1mSELECT * FROM `homes` WHERE (`homes`.user_id = 1) LIMIT 1[0m
+  [4;35;1mGoal Load (0.1ms)[0m   [0mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;36;1mGoal Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `goals`[0m
+  [4;35;1mQuickFact Load (0.1ms)[0m   [0mSELECT * FROM `quick_facts` [0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;35;1mQuickFact Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `quick_facts`[0m
+  [4;36;1mHome Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `homes`[0m
+  [4;35;1mQuickSupport Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `quick_supports`[0m
+  [4;36;1mWater Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `waters`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-20 19:15:29') AND (`waters`.user_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-27 19:15:29') AND (`waters`.user_id = 1) [0m
+  [4;35;1mFood Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `foods`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-20 19:15:29') AND (`foods`.user_id = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-27 19:15:29') AND (`foods`.user_id = 1) [0m
+  [4;36;1mWeight Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `weights`[0m
+  [4;35;1mMeasurement Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `measurements`[0m
+  [4;36;1mExercise Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `exercises`[0m
+  [4;35;1mBodyScan Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within layouts/member
+Rendering homes/show
+Rendered homes/_quick_form (12.5ms)
+  [4;36;1mProfile Load (0.1ms)[0m   [0;1mSELECT * FROM `profiles` WHERE (`profiles`.user_id = 1) LIMIT 1[0m
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.weight) on line #15 of app/views/homes/_progress.html.erb:
+12: 
+13: 
+14: <fieldset>
+15: Water and calaries - BMI: <%= @current_user.profile.bmi %>
+16: <table>
+17: <tr>
+18: <th>Water today</th>
+
+    app/models/profile.rb:8:in `bmi'
+    app/views/homes/_progress.html.erb:15
+    app/views/homes/show.html.erb:12
+    app/controllers/homes_controller.rb:46:in `show'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (119.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomesController#show (for 127.0.0.1 at 2009-07-27 19:17:04) [GET]
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-07-27 23:17:05', `last_request_at` = '2009-07-27 23:17:05' WHERE `id` = 1[0m
+  [4;35;1mSQL (7.7ms)[0m   [0mCOMMIT[0m
+  [4;36;1mHome Load (0.1ms)[0m   [0;1mSELECT * FROM `homes` WHERE (`homes`.user_id = 1) LIMIT 1[0m
+  [4;35;1mGoal Load (0.1ms)[0m   [0mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;36;1mGoal Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `goals`[0m
+  [4;35;1mQuickFact Load (0.1ms)[0m   [0mSELECT * FROM `quick_facts` [0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;35;1mQuickFact Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `quick_facts`[0m
+  [4;36;1mHome Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `homes`[0m
+  [4;35;1mQuickSupport Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `quick_supports`[0m
+  [4;36;1mWater Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `waters`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-20 19:17:05') AND (`waters`.user_id = 1) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-27 19:17:05') AND (`waters`.user_id = 1) [0m
+  [4;35;1mFood Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `foods`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-20 19:17:05') AND (`foods`.user_id = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-27 19:17:05') AND (`foods`.user_id = 1) [0m
+  [4;36;1mWeight Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `weights`[0m
+  [4;35;1mMeasurement Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `measurements`[0m
+  [4;36;1mExercise Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `exercises`[0m
+  [4;35;1mBodyScan Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within layouts/member
+Rendering homes/show
+Rendered homes/_quick_form (13.3ms)
+  [4;36;1mProfile Load (0.1ms)[0m   [0;1mSELECT * FROM `profiles` WHERE (`profiles`.user_id = 1) LIMIT 1[0m
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.weight) on line #15 of app/views/homes/_progress.html.erb:
+12: 
+13: 
+14: <fieldset>
+15: Water and calaries - BMI: <%= @current_user.profile.bmi %>
+16: <table>
+17: <tr>
+18: <th>Water today</th>
+
+    app/models/profile.rb:7:in `bmi'
+    app/views/homes/_progress.html.erb:15
+    app/views/homes/show.html.erb:12
+    app/controllers/homes_controller.rb:46:in `show'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (117.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomesController#show (for 127.0.0.1 at 2009-07-27 19:17:07) [GET]
+  [4;35;1mUser Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-07-27 23:17:07', `last_request_at` = '2009-07-27 23:17:07' WHERE `id` = 1[0m
+  [4;35;1mSQL (2.7ms)[0m   [0mCOMMIT[0m
+  [4;36;1mHome Load (0.1ms)[0m   [0;1mSELECT * FROM `homes` WHERE (`homes`.user_id = 1) LIMIT 1[0m
+  [4;35;1mGoal Load (0.1ms)[0m   [0mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;36;1mGoal Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `goals`[0m
+  [4;35;1mQuickFact Load (0.1ms)[0m   [0mSELECT * FROM `quick_facts` [0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;35;1mQuickFact Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `quick_facts`[0m
+  [4;36;1mHome Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `homes`[0m
+  [4;35;1mQuickSupport Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `quick_supports`[0m
+  [4;36;1mWater Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `waters`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-20 19:17:07') AND (`waters`.user_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-27 19:17:07') AND (`waters`.user_id = 1) [0m
+  [4;35;1mFood Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `foods`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-20 19:17:07') AND (`foods`.user_id = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-27 19:17:07') AND (`foods`.user_id = 1) [0m
+  [4;36;1mWeight Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `weights`[0m
+  [4;35;1mMeasurement Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `measurements`[0m
+  [4;36;1mExercise Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `exercises`[0m
+  [4;35;1mBodyScan Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within layouts/member
+Rendering homes/show
+Rendered homes/_quick_form (14.5ms)
+  [4;36;1mProfile Load (0.2ms)[0m   [0;1mSELECT * FROM `profiles` WHERE (`profiles`.user_id = 1) LIMIT 1[0m
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.weight) on line #15 of app/views/homes/_progress.html.erb:
+12: 
+13: 
+14: <fieldset>
+15: Water and calaries - BMI: <%= @current_user.profile.bmi %>
+16: <table>
+17: <tr>
+18: <th>Water today</th>
+
+    app/models/profile.rb:7:in `bmi'
+    app/views/homes/_progress.html.erb:15
+    app/views/homes/show.html.erb:12
+    app/controllers/homes_controller.rb:46:in `show'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (48.4ms)
+Rendered rescues/_request_and_response (85.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomesController#show (for 127.0.0.1 at 2009-07-27 19:18:17) [GET]
+  [4;35;1mUser Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-07-27 23:18:18', `last_request_at` = '2009-07-27 23:18:18' WHERE `id` = 1[0m
+  [4;35;1mSQL (9.7ms)[0m   [0mCOMMIT[0m
+  [4;36;1mHome Load (0.1ms)[0m   [0;1mSELECT * FROM `homes` WHERE (`homes`.user_id = 1) LIMIT 1[0m
+  [4;35;1mGoal Load (0.1ms)[0m   [0mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;36;1mGoal Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `goals`[0m
+  [4;35;1mQuickFact Load (0.1ms)[0m   [0mSELECT * FROM `quick_facts` [0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;35;1mQuickFact Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `quick_facts`[0m
+  [4;36;1mHome Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `homes`[0m
+  [4;35;1mQuickSupport Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `quick_supports`[0m
+  [4;36;1mWater Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `waters`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-20 19:18:18') AND (`waters`.user_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-27 19:18:18') AND (`waters`.user_id = 1) [0m
+  [4;35;1mFood Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `foods`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-20 19:18:18') AND (`foods`.user_id = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-27 19:18:18') AND (`foods`.user_id = 1) [0m
+  [4;36;1mWeight Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `weights`[0m
+  [4;35;1mMeasurement Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `measurements`[0m
+  [4;36;1mExercise Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `exercises`[0m
+  [4;35;1mBodyScan Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within layouts/member
+Rendering homes/show
+Rendered homes/_quick_form (13.1ms)
+  [4;36;1mProfile Load (0.1ms)[0m   [0;1mSELECT * FROM `profiles` WHERE (`profiles`.user_id = 1) LIMIT 1[0m
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.weight) on line #15 of app/views/homes/_progress.html.erb:
+12: 
+13: 
+14: <fieldset>
+15: Water and calaries - BMI: <%= @current_user.profile.bmi %>
+16: <table>
+17: <tr>
+18: <th>Water today</th>
+
+    app/models/profile.rb:7:in `bmi'
+    app/views/homes/_progress.html.erb:15
+    app/views/homes/show.html.erb:12
+    app/controllers/homes_controller.rb:46:in `show'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (44.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomesController#show (for 127.0.0.1 at 2009-07-27 19:18:20) [GET]
+  [4;35;1mUser Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-07-27 23:18:20', `last_request_at` = '2009-07-27 23:18:20' WHERE `id` = 1[0m
+  [4;35;1mSQL (2.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mHome Load (0.1ms)[0m   [0;1mSELECT * FROM `homes` WHERE (`homes`.user_id = 1) LIMIT 1[0m
+  [4;35;1mGoal Load (0.1ms)[0m   [0mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;36;1mGoal Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `goals`[0m
+  [4;35;1mQuickFact Load (0.1ms)[0m   [0mSELECT * FROM `quick_facts` [0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;35;1mQuickFact Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `quick_facts`[0m
+  [4;36;1mHome Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `homes`[0m
+  [4;35;1mQuickSupport Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `quick_supports`[0m
+  [4;36;1mWater Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `waters`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-20 19:18:20') AND (`waters`.user_id = 1) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-27 19:18:20') AND (`waters`.user_id = 1) [0m
+  [4;35;1mFood Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `foods`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-20 19:18:20') AND (`foods`.user_id = 1) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-27 19:18:20') AND (`foods`.user_id = 1) [0m
+  [4;36;1mWeight Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `weights`[0m
+  [4;35;1mMeasurement Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `measurements`[0m
+  [4;36;1mExercise Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `exercises`[0m
+  [4;35;1mBodyScan Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within layouts/member
+Rendering homes/show
+Rendered homes/_quick_form (15.6ms)
+  [4;36;1mProfile Load (0.1ms)[0m   [0;1mSELECT * FROM `profiles` WHERE (`profiles`.user_id = 1) LIMIT 1[0m
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.weight) on line #15 of app/views/homes/_progress.html.erb:
+12: 
+13: 
+14: <fieldset>
+15: Water and calaries - BMI: <%= @current_user.profile.bmi %>
+16: <table>
+17: <tr>
+18: <th>Water today</th>
+
+    app/models/profile.rb:7:in `bmi'
+    app/views/homes/_progress.html.erb:15
+    app/views/homes/show.html.erb:12
+    app/controllers/homes_controller.rb:46:in `show'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (46.5ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomesController#show (for 127.0.0.1 at 2009-07-27 19:18:36) [GET]
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-07-27 23:18:36', `last_request_at` = '2009-07-27 23:18:36' WHERE `id` = 1[0m
+  [4;35;1mSQL (10.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mHome Load (0.1ms)[0m   [0;1mSELECT * FROM `homes` WHERE (`homes`.user_id = 1) LIMIT 1[0m
+  [4;35;1mGoal Load (0.1ms)[0m   [0mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;36;1mGoal Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `goals`[0m
+  [4;35;1mQuickFact Load (0.1ms)[0m   [0mSELECT * FROM `quick_facts` [0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;35;1mQuickFact Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `quick_facts`[0m
+  [4;36;1mHome Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `homes`[0m
+  [4;35;1mQuickSupport Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `quick_supports`[0m
+  [4;36;1mWater Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `waters`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-20 19:18:36') AND (`waters`.user_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-27 19:18:36') AND (`waters`.user_id = 1) [0m
+  [4;35;1mFood Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `foods`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-20 19:18:36') AND (`foods`.user_id = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-27 19:18:36') AND (`foods`.user_id = 1) [0m
+  [4;36;1mWeight Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `weights`[0m
+  [4;35;1mMeasurement Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `measurements`[0m
+  [4;36;1mExercise Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `exercises`[0m
+  [4;35;1mBodyScan Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within layouts/member
+Rendering homes/show
+Rendered homes/_quick_form (14.8ms)
+  [4;36;1mProfile Load (0.1ms)[0m   [0;1mSELECT * FROM `profiles` WHERE (`profiles`.user_id = 1) LIMIT 1[0m
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.weight) on line #15 of app/views/homes/_progress.html.erb:
+12: 
+13: 
+14: <fieldset>
+15: Water and calaries - BMI: <%= @current_user.profile.bmi %>
+16: <table>
+17: <tr>
+18: <th>Water today</th>
+
+    app/models/profile.rb:7:in `bmi'
+    app/views/homes/_progress.html.erb:15
+    app/views/homes/show.html.erb:12
+    app/controllers/homes_controller.rb:46:in `show'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (44.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomesController#show (for 127.0.0.1 at 2009-07-27 19:18:38) [GET]
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-07-27 23:18:38', `last_request_at` = '2009-07-27 23:18:38' WHERE `id` = 1[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mHome Load (0.1ms)[0m   [0;1mSELECT * FROM `homes` WHERE (`homes`.user_id = 1) LIMIT 1[0m
+  [4;35;1mGoal Load (0.1ms)[0m   [0mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;36;1mGoal Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `goals`[0m
+  [4;35;1mQuickFact Load (0.1ms)[0m   [0mSELECT * FROM `quick_facts` [0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;35;1mQuickFact Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `quick_facts`[0m
+  [4;36;1mHome Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `homes`[0m
+  [4;35;1mQuickSupport Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `quick_supports`[0m
+  [4;36;1mWater Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `waters`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-20 19:18:38') AND (`waters`.user_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-27 19:18:38') AND (`waters`.user_id = 1) [0m
+  [4;35;1mFood Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `foods`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-20 19:18:38') AND (`foods`.user_id = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-27 19:18:38') AND (`foods`.user_id = 1) [0m
+  [4;36;1mWeight Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `weights`[0m
+  [4;35;1mMeasurement Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `measurements`[0m
+  [4;36;1mExercise Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `exercises`[0m
+  [4;35;1mBodyScan Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within layouts/member
+Rendering homes/show
+Rendered homes/_quick_form (77.9ms)
+  [4;36;1mProfile Load (0.1ms)[0m   [0;1mSELECT * FROM `profiles` WHERE (`profiles`.user_id = 1) LIMIT 1[0m
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.weight) on line #15 of app/views/homes/_progress.html.erb:
+12: 
+13: 
+14: <fieldset>
+15: Water and calaries - BMI: <%= @current_user.profile.bmi %>
+16: <table>
+17: <tr>
+18: <th>Water today</th>
+
+    app/models/profile.rb:7:in `bmi'
+    app/views/homes/_progress.html.erb:15
+    app/views/homes/show.html.erb:12
+    app/controllers/homes_controller.rb:46:in `show'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (45.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomesController#show (for 127.0.0.1 at 2009-07-27 19:19:23) [GET]
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-07-27 23:19:23', `last_request_at` = '2009-07-27 23:19:23' WHERE `id` = 1[0m
+  [4;35;1mSQL (2.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mHome Load (0.1ms)[0m   [0;1mSELECT * FROM `homes` WHERE (`homes`.user_id = 1) LIMIT 1[0m
+  [4;35;1mGoal Load (0.1ms)[0m   [0mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;36;1mGoal Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `goals`[0m
+  [4;35;1mQuickFact Load (0.1ms)[0m   [0mSELECT * FROM `quick_facts` [0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;35;1mQuickFact Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `quick_facts`[0m
+  [4;36;1mHome Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `homes`[0m
+  [4;35;1mQuickSupport Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `quick_supports`[0m
+  [4;36;1mWater Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `waters`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-20 19:19:23') AND (`waters`.user_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-27 19:19:23') AND (`waters`.user_id = 1) [0m
+  [4;35;1mFood Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `foods`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-20 19:19:23') AND (`foods`.user_id = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-27 19:19:23') AND (`foods`.user_id = 1) [0m
+  [4;36;1mWeight Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `weights`[0m
+  [4;35;1mMeasurement Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `measurements`[0m
+  [4;36;1mExercise Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `exercises`[0m
+  [4;35;1mBodyScan Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within layouts/member
+Rendering homes/show
+Rendered homes/_quick_form (12.2ms)
+  [4;36;1mProfile Load (0.1ms)[0m   [0;1mSELECT * FROM `profiles` WHERE (`profiles`.user_id = 1) LIMIT 1[0m
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.weight) on line #15 of app/views/homes/_progress.html.erb:
+12: 
+13: 
+14: <fieldset>
+15: Water and calaries - BMI: <%= @current_user.profile.bmi %>
+16: <table>
+17: <tr>
+18: <th>Water today</th>
+
+    app/models/profile.rb:7:in `bmi'
+    app/views/homes/_progress.html.erb:15
+    app/views/homes/show.html.erb:12
+    app/controllers/homes_controller.rb:46:in `show'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (46.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomesController#show (for 127.0.0.1 at 2009-07-27 19:19:25) [GET]
+  [4;35;1mUser Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-07-27 23:19:26', `last_request_at` = '2009-07-27 23:19:26' WHERE `id` = 1[0m
+  [4;35;1mSQL (7.4ms)[0m   [0mCOMMIT[0m
+  [4;36;1mHome Load (0.1ms)[0m   [0;1mSELECT * FROM `homes` WHERE (`homes`.user_id = 1) LIMIT 1[0m
+  [4;35;1mGoal Load (0.2ms)[0m   [0mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;36;1mGoal Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `goals`[0m
+  [4;35;1mQuickFact Load (0.1ms)[0m   [0mSELECT * FROM `quick_facts` [0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;35;1mQuickFact Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `quick_facts`[0m
+  [4;36;1mHome Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `homes`[0m
+  [4;35;1mQuickSupport Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `quick_supports`[0m
+  [4;36;1mWater Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `waters`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-20 19:19:26') AND (`waters`.user_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-27 19:19:26') AND (`waters`.user_id = 1) [0m
+  [4;35;1mFood Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `foods`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-20 19:19:26') AND (`foods`.user_id = 1) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-27 19:19:26') AND (`foods`.user_id = 1) [0m
+  [4;36;1mWeight Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `weights`[0m
+  [4;35;1mMeasurement Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `measurements`[0m
+  [4;36;1mExercise Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `exercises`[0m
+  [4;35;1mBodyScan Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within layouts/member
+Rendering homes/show
+Rendered homes/_quick_form (13.0ms)
+  [4;36;1mProfile Load (0.1ms)[0m   [0;1mSELECT * FROM `profiles` WHERE (`profiles`.user_id = 1) LIMIT 1[0m
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.weight) on line #15 of app/views/homes/_progress.html.erb:
+12: 
+13: 
+14: <fieldset>
+15: Water and calaries - BMI: <%= @current_user.profile.bmi %>
+16: <table>
+17: <tr>
+18: <th>Water today</th>
+
+    app/models/profile.rb:7:in `bmi'
+    app/views/homes/_progress.html.erb:15
+    app/views/homes/show.html.erb:12
+    app/controllers/homes_controller.rb:46:in `show'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (116.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomesController#show (for 127.0.0.1 at 2009-07-27 19:19:35) [GET]
+  [4;35;1mUser Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-07-27 23:19:35', `last_request_at` = '2009-07-27 23:19:35' WHERE `id` = 1[0m
+  [4;35;1mSQL (6.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mHome Load (0.1ms)[0m   [0;1mSELECT * FROM `homes` WHERE (`homes`.user_id = 1) LIMIT 1[0m
+  [4;35;1mGoal Load (0.1ms)[0m   [0mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;36;1mGoal Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `goals`[0m
+  [4;35;1mQuickFact Load (0.1ms)[0m   [0mSELECT * FROM `quick_facts` [0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;35;1mQuickFact Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `quick_facts`[0m
+  [4;36;1mHome Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `homes`[0m
+  [4;35;1mQuickSupport Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `quick_supports`[0m
+  [4;36;1mWater Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `waters`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-20 19:19:35') AND (`waters`.user_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-27 19:19:35') AND (`waters`.user_id = 1) [0m
+  [4;35;1mFood Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `foods`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-20 19:19:35') AND (`foods`.user_id = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-27 19:19:35') AND (`foods`.user_id = 1) [0m
+  [4;36;1mWeight Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `weights`[0m
+  [4;35;1mMeasurement Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `measurements`[0m
+  [4;36;1mExercise Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `exercises`[0m
+  [4;35;1mBodyScan Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within layouts/member
+Rendering homes/show
+Rendered homes/_quick_form (12.4ms)
+  [4;36;1mProfile Load (0.1ms)[0m   [0;1mSELECT * FROM `profiles` WHERE (`profiles`.user_id = 1) LIMIT 1[0m
+  [4;35;1mProfile Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `profiles`[0m
+
+ActionView::TemplateError (undefined local variable or method `current_user' for #<Profile:0x7fd48e5eedd0>) on line #15 of app/views/homes/_progress.html.erb:
+12: 
+13: 
+14: <fieldset>
+15: Water and calaries - BMI: <%= @current_user.profile.bmi %>
+16: <table>
+17: <tr>
+18: <th>Water today</th>
+
+    app/models/profile.rb:7:in `bmi'
+    app/views/homes/_progress.html.erb:15
+    app/views/homes/show.html.erb:12
+    app/controllers/homes_controller.rb:46:in `show'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (118.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomesController#show (for 127.0.0.1 at 2009-07-27 19:19:45) [GET]
+  [4;36;1mUser Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2009-07-27 23:19:46', `last_request_at` = '2009-07-27 23:19:46' WHERE `id` = 1[0m
+  [4;36;1mSQL (5.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mHome Load (0.1ms)[0m   [0mSELECT * FROM `homes` WHERE (`homes`.user_id = 1) LIMIT 1[0m
+  [4;36;1mGoal Load (0.1ms)[0m   [0;1mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;35;1mGoal Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `goals`[0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` [0m
+  [4;35;1mQuickFact Load (0.1ms)[0m   [0mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;36;1mQuickFact Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `quick_facts`[0m
+  [4;35;1mHome Columns (0.5ms)[0m   [0mSHOW FIELDS FROM `homes`[0m
+  [4;36;1mQuickSupport Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `quick_supports`[0m
+  [4;35;1mWater Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `waters`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-20 19:19:46') AND (`waters`.user_id = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-27 19:19:46') AND (`waters`.user_id = 1) [0m
+  [4;36;1mFood Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `foods`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-20 19:19:46') AND (`foods`.user_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-27 19:19:46') AND (`foods`.user_id = 1) [0m
+  [4;35;1mWeight Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `weights`[0m
+  [4;36;1mMeasurement Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `measurements`[0m
+  [4;35;1mExercise Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `exercises`[0m
+  [4;36;1mBodyScan Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within layouts/member
+Rendering homes/show
+Rendered homes/_quick_form (12.4ms)
+  [4;35;1mProfile Load (0.1ms)[0m   [0mSELECT * FROM `profiles` WHERE (`profiles`.user_id = 1) LIMIT 1[0m
+
+ActionView::TemplateError (undefined method `weight' for :current_user:Symbol) on line #15 of app/views/homes/_progress.html.erb:
+12: 
+13: 
+14: <fieldset>
+15: Water and calaries - BMI: <%= @current_user.profile.bmi %>
+16: <table>
+17: <tr>
+18: <th>Water today</th>
+
+    app/models/profile.rb:7:in `bmi'
+    app/views/homes/_progress.html.erb:15
+    app/views/homes/show.html.erb:12
+    app/controllers/homes_controller.rb:46:in `show'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (119.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomesController#show (for 127.0.0.1 at 2009-07-27 19:20:17) [GET]
+  [4;36;1mUser Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE `users` SET `updated_at` = '2009-07-27 23:20:17', `last_request_at` = '2009-07-27 23:20:17' WHERE `id` = 1[0m
+  [4;36;1mSQL (17.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mHome Load (0.1ms)[0m   [0mSELECT * FROM `homes` WHERE (`homes`.user_id = 1) LIMIT 1[0m
+  [4;36;1mGoal Load (0.1ms)[0m   [0;1mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;35;1mGoal Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `goals`[0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` [0m
+  [4;35;1mQuickFact Load (0.1ms)[0m   [0mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;36;1mQuickFact Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `quick_facts`[0m
+  [4;35;1mHome Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `homes`[0m
+  [4;36;1mQuickSupport Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `quick_supports`[0m
+  [4;35;1mWater Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `waters`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-20 19:20:17') AND (`waters`.user_id = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-27 19:20:17') AND (`waters`.user_id = 1) [0m
+  [4;36;1mFood Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `foods`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-20 19:20:17') AND (`foods`.user_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-27 19:20:17') AND (`foods`.user_id = 1) [0m
+  [4;35;1mWeight Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `weights`[0m
+  [4;36;1mMeasurement Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `measurements`[0m
+  [4;35;1mExercise Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `exercises`[0m
+  [4;36;1mBodyScan Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within layouts/member
+Rendering homes/show
+Rendered homes/_quick_form (13.5ms)
+  [4;35;1mProfile Load (0.1ms)[0m   [0mSELECT * FROM `profiles` WHERE (`profiles`.user_id = 1) LIMIT 1[0m
+
+ActionView::TemplateError (undefined method `weights' for :current_user:Symbol) on line #15 of app/views/homes/_progress.html.erb:
+12: 
+13: 
+14: <fieldset>
+15: Water and calaries - BMI: <%= @current_user.profile.bmi %>
+16: <table>
+17: <tr>
+18: <th>Water today</th>
+
+    app/models/profile.rb:7:in `bmi'
+    app/views/homes/_progress.html.erb:15
+    app/views/homes/show.html.erb:12
+    app/controllers/homes_controller.rb:46:in `show'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (44.1ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomesController#show (for 127.0.0.1 at 2009-07-27 19:21:04) [GET]
+  [4;36;1mUser Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE `users` SET `updated_at` = '2009-07-27 23:21:04', `last_request_at` = '2009-07-27 23:21:04' WHERE `id` = 1[0m
+  [4;36;1mSQL (7.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mHome Load (0.1ms)[0m   [0mSELECT * FROM `homes` WHERE (`homes`.user_id = 1) LIMIT 1[0m
+  [4;36;1mGoal Load (0.1ms)[0m   [0;1mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;35;1mGoal Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `goals`[0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` [0m
+  [4;35;1mQuickFact Load (0.1ms)[0m   [0mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;36;1mQuickFact Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `quick_facts`[0m
+  [4;35;1mHome Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `homes`[0m
+  [4;36;1mQuickSupport Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `quick_supports`[0m
+  [4;35;1mWater Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `waters`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-20 19:21:04') AND (`waters`.user_id = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-27 19:21:04') AND (`waters`.user_id = 1) [0m
+  [4;36;1mFood Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `foods`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-20 19:21:04') AND (`foods`.user_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-27 19:21:04') AND (`foods`.user_id = 1) [0m
+  [4;35;1mWeight Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `weights`[0m
+  [4;36;1mMeasurement Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `measurements`[0m
+  [4;35;1mExercise Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `exercises`[0m
+  [4;36;1mBodyScan Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within layouts/member
+Rendering homes/show
+Rendered homes/_quick_form (13.1ms)
+  [4;35;1mProfile Load (0.1ms)[0m   [0mSELECT * FROM `profiles` WHERE (`profiles`.user_id = 1) LIMIT 1[0m
+  [4;36;1mProfile Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `profiles`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mWeight Load (0.3ms)[0m   [0;1mSELECT * FROM `weights` WHERE (`weights`.user_id = 1) [0m
+
+ActionView::TemplateError (--- 
+- !ruby/object:Weight 
+  attributes: 
+    created_at: 2009-06-30 18:14:27
+    updated_at: 2009-06-30 18:14:27
+    weight: "112"
+    id: "1"
+    date: 2009-06-30 18:14:27
+    user_id: "1"
+  attributes_cache: {}
+
+- !ruby/object:Weight 
+  attributes: 
+    created_at: 2009-06-30 19:04:06
+    updated_at: 2009-06-30 19:04:06
+    weight: "174"
+    id: "2"
+    date: 2009-06-30 19:04:06
+    user_id: "1"
+  attributes_cache: {}
+
+) on line #15 of app/views/homes/_progress.html.erb:
+12: 
+13: 
+14: <fieldset>
+15: Water and calaries - BMI: <%= @current_user.profile.bmi %>
+16: <table>
+17: <tr>
+18: <th>Water today</th>
+
+    app/models/profile.rb:7:in `bmi'
+    app/views/homes/_progress.html.erb:15
+    app/views/homes/show.html.erb:12
+    app/controllers/homes_controller.rb:46:in `show'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (43.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.7ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomesController#show (for 127.0.0.1 at 2009-07-27 19:22:24) [GET]
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-07-27 23:22:24', `last_request_at` = '2009-07-27 23:22:24' WHERE `id` = 1[0m
+  [4;35;1mSQL (5.8ms)[0m   [0mCOMMIT[0m
+  [4;36;1mHome Load (0.1ms)[0m   [0;1mSELECT * FROM `homes` WHERE (`homes`.user_id = 1) LIMIT 1[0m
+  [4;35;1mGoal Load (0.1ms)[0m   [0mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;36;1mGoal Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `goals`[0m
+  [4;35;1mQuickFact Load (0.1ms)[0m   [0mSELECT * FROM `quick_facts` [0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;35;1mQuickFact Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `quick_facts`[0m
+  [4;36;1mHome Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `homes`[0m
+  [4;35;1mQuickSupport Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `quick_supports`[0m
+  [4;36;1mWater Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `waters`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-20 19:22:24') AND (`waters`.user_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-27 19:22:24') AND (`waters`.user_id = 1) [0m
+  [4;35;1mFood Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `foods`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-20 19:22:24') AND (`foods`.user_id = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-27 19:22:24') AND (`foods`.user_id = 1) [0m
+  [4;36;1mWeight Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `weights`[0m
+  [4;35;1mMeasurement Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `measurements`[0m
+  [4;36;1mExercise Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `exercises`[0m
+  [4;35;1mBodyScan Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within layouts/member
+Rendering homes/show
+Rendered homes/_quick_form (14.2ms)
+  [4;36;1mProfile Load (0.1ms)[0m   [0;1mSELECT * FROM `profiles` WHERE (`profiles`.user_id = 1) LIMIT 1[0m
+  [4;35;1mProfile Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `profiles`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mWeight Load (0.2ms)[0m   [0mSELECT * FROM `weights` WHERE (`weights`.user_id = 1) ORDER BY weights.id DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `weights` WHERE (`weights`.user_id = 1) ORDER BY weights.id DESC LIMIT 1[0m
+
+ActionView::TemplateError (undefined local variable or method `height_in_inches' for #<Profile:0x7fd48e6ec688>) on line #15 of app/views/homes/_progress.html.erb:
+12: 
+13: 
+14: <fieldset>
+15: Water and calaries - BMI: <%= @current_user.profile.bmi %>
+16: <table>
+17: <tr>
+18: <th>Water today</th>
+
+    app/models/profile.rb:10:in `bmi'
+    app/views/homes/_progress.html.erb:15
+    app/views/homes/show.html.erb:12
+    app/controllers/homes_controller.rb:46:in `show'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (43.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomesController#show (for 127.0.0.1 at 2009-07-27 19:22:47) [GET]
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-07-27 23:22:47', `last_request_at` = '2009-07-27 23:22:47' WHERE `id` = 1[0m
+  [4;35;1mSQL (3.7ms)[0m   [0mCOMMIT[0m
+  [4;36;1mHome Load (0.1ms)[0m   [0;1mSELECT * FROM `homes` WHERE (`homes`.user_id = 1) LIMIT 1[0m
+  [4;35;1mGoal Load (0.1ms)[0m   [0mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;36;1mGoal Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `goals`[0m
+  [4;35;1mQuickFact Load (0.1ms)[0m   [0mSELECT * FROM `quick_facts` [0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;35;1mQuickFact Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `quick_facts`[0m
+  [4;36;1mHome Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `homes`[0m
+  [4;35;1mQuickSupport Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `quick_supports`[0m
+  [4;36;1mWater Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `waters`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-20 19:22:47') AND (`waters`.user_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-27 19:22:47') AND (`waters`.user_id = 1) [0m
+  [4;35;1mFood Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `foods`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-20 19:22:47') AND (`foods`.user_id = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-27 19:22:47') AND (`foods`.user_id = 1) [0m
+  [4;36;1mWeight Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `weights`[0m
+  [4;35;1mMeasurement Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `measurements`[0m
+  [4;36;1mExercise Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `exercises`[0m
+  [4;35;1mBodyScan Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within layouts/member
+Rendering homes/show
+Rendered homes/_quick_form (13.6ms)
+  [4;36;1mProfile Load (0.1ms)[0m   [0;1mSELECT * FROM `profiles` WHERE (`profiles`.user_id = 1) LIMIT 1[0m
+  [4;35;1mProfile Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `profiles`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mWeight Load (0.1ms)[0m   [0mSELECT * FROM `weights` WHERE (`weights`.user_id = 1) ORDER BY weights.id DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `weights` WHERE (`weights`.user_id = 1) ORDER BY weights.id DESC LIMIT 1[0m
+
+ActionView::TemplateError (undefined method `height_in_inches' for #<Profile:0x7fd48e71b168>) on line #15 of app/views/homes/_progress.html.erb:
+12: 
+13: 
+14: <fieldset>
+15: Water and calaries - BMI: <%= @current_user.profile.bmi %>
+16: <table>
+17: <tr>
+18: <th>Water today</th>
+
+    app/models/profile.rb:10:in `bmi'
+    app/views/homes/_progress.html.erb:15
+    app/views/homes/show.html.erb:12
+    app/controllers/homes_controller.rb:46:in `show'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (43.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomesController#show (for 127.0.0.1 at 2009-07-27 19:23:03) [GET]
+  [4;35;1mUser Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-07-27 23:23:03', `last_request_at` = '2009-07-27 23:23:03' WHERE `id` = 1[0m
+  [4;35;1mSQL (6.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mHome Load (0.1ms)[0m   [0;1mSELECT * FROM `homes` WHERE (`homes`.user_id = 1) LIMIT 1[0m
+  [4;35;1mGoal Load (0.1ms)[0m   [0mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;36;1mGoal Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `goals`[0m
+  [4;35;1mQuickFact Load (0.1ms)[0m   [0mSELECT * FROM `quick_facts` [0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;35;1mQuickFact Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `quick_facts`[0m
+  [4;36;1mHome Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `homes`[0m
+  [4;35;1mQuickSupport Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `quick_supports`[0m
+  [4;36;1mWater Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `waters`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-20 19:23:03') AND (`waters`.user_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-27 19:23:03') AND (`waters`.user_id = 1) [0m
+  [4;35;1mFood Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `foods`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-20 19:23:03') AND (`foods`.user_id = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-27 19:23:03') AND (`foods`.user_id = 1) [0m
+  [4;36;1mWeight Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `weights`[0m
+  [4;35;1mMeasurement Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `measurements`[0m
+  [4;36;1mExercise Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `exercises`[0m
+  [4;35;1mBodyScan Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within layouts/member
+Rendering homes/show
+Rendered homes/_quick_form (14.4ms)
+  [4;36;1mProfile Load (0.1ms)[0m   [0;1mSELECT * FROM `profiles` WHERE (`profiles`.user_id = 1) LIMIT 1[0m
+  [4;35;1mProfile Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `profiles`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mWeight Load (0.1ms)[0m   [0mSELECT * FROM `weights` WHERE (`weights`.user_id = 1) ORDER BY weights.id DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `weights` WHERE (`weights`.user_id = 1) ORDER BY weights.id DESC LIMIT 1[0m
+
+ActionView::TemplateError (undefined method `/' for #<Weight:0x7fd48e787d40>) on line #15 of app/views/homes/_progress.html.erb:
+12: 
+13: 
+14: <fieldset>
+15: Water and calaries - BMI: <%= @current_user.profile.bmi %>
+16: <table>
+17: <tr>
+18: <th>Water today</th>
+
+    app/models/profile.rb:10:in `bmi'
+    app/views/homes/_progress.html.erb:15
+    app/views/homes/show.html.erb:12
+    app/controllers/homes_controller.rb:46:in `show'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (44.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomesController#show (for 127.0.0.1 at 2009-07-27 19:27:03) [GET]
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-07-27 23:27:03', `last_request_at` = '2009-07-27 23:27:03' WHERE `id` = 1[0m
+  [4;35;1mSQL (11.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mHome Load (0.1ms)[0m   [0;1mSELECT * FROM `homes` WHERE (`homes`.user_id = 1) LIMIT 1[0m
+  [4;35;1mGoal Load (0.1ms)[0m   [0mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;36;1mGoal Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `goals`[0m
+  [4;35;1mQuickFact Load (0.1ms)[0m   [0mSELECT * FROM `quick_facts` [0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;35;1mQuickFact Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `quick_facts`[0m
+  [4;36;1mHome Columns (0.5ms)[0m   [0;1mSHOW FIELDS FROM `homes`[0m
+  [4;35;1mQuickSupport Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `quick_supports`[0m
+  [4;36;1mWater Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `waters`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-20 19:27:03') AND (`waters`.user_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-27 19:27:03') AND (`waters`.user_id = 1) [0m
+  [4;35;1mFood Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `foods`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-20 19:27:03') AND (`foods`.user_id = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-27 19:27:03') AND (`foods`.user_id = 1) [0m
+  [4;36;1mWeight Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `weights`[0m
+  [4;35;1mMeasurement Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `measurements`[0m
+  [4;36;1mExercise Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `exercises`[0m
+  [4;35;1mBodyScan Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within layouts/member
+Rendering homes/show
+Rendered homes/_quick_form (21.4ms)
+  [4;36;1mProfile Load (0.1ms)[0m   [0;1mSELECT * FROM `profiles` WHERE (`profiles`.user_id = 1) LIMIT 1[0m
+  [4;35;1mProfile Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `profiles`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mWeight Load (0.1ms)[0m   [0mSELECT * FROM `weights` WHERE (`weights`.user_id = 1) ORDER BY weights.id DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `weights` WHERE (`weights`.user_id = 1) ORDER BY weights.id DESC LIMIT 1[0m
+Rendered homes/_progress (13.1ms)
+Rendered homes/_goals (2.1ms)
+  [4;35;1mWater Load (0.1ms)[0m   [0mSELECT * FROM `waters` WHERE (`waters`.user_id = 1) ORDER BY date asc[0m
+  [4;36;1mFood Load (0.1ms)[0m   [0;1mSELECT * FROM `foods` WHERE (`foods`.user_id = 1) ORDER BY date asc[0m
+  [4;35;1mExercise Load (0.1ms)[0m   [0mSELECT * FROM `exercises` WHERE (`exercises`.user_id = 1) ORDER BY date asc[0m
+  [4;36;1mMeasurement Load (0.1ms)[0m   [0;1mSELECT * FROM `measurements` WHERE (`measurements`.user_id = 1) ORDER BY date asc[0m
+  [4;35;1mWeight Load (0.1ms)[0m   [0mSELECT * FROM `weights` WHERE (`weights`.user_id = 1) ORDER BY date asc[0m
+Rendered homes/_charts (25.5ms)
+Rendered homes/_quick_fact (0.1ms)
+Rendered homes/_support (2.6ms)
+Completed in 222ms (View: 123, DB: 24) | 200 OK [http://localhost/home]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomesController#show (for 127.0.0.1 at 2009-07-27 19:27:28) [GET]
+  [4;36;1mUser Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE `users` SET `updated_at` = '2009-07-27 23:27:28', `last_request_at` = '2009-07-27 23:27:28' WHERE `id` = 1[0m
+  [4;36;1mSQL (11.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mHome Load (0.1ms)[0m   [0mSELECT * FROM `homes` WHERE (`homes`.user_id = 1) LIMIT 1[0m
+  [4;36;1mGoal Load (0.2ms)[0m   [0;1mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;35;1mGoal Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `goals`[0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` [0m
+  [4;35;1mQuickFact Load (0.1ms)[0m   [0mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;36;1mQuickFact Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `quick_facts`[0m
+  [4;35;1mHome Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `homes`[0m
+  [4;36;1mQuickSupport Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `quick_supports`[0m
+  [4;35;1mWater Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `waters`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-20 19:27:28') AND (`waters`.user_id = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-27 19:27:28') AND (`waters`.user_id = 1) [0m
+  [4;36;1mFood Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `foods`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-20 19:27:28') AND (`foods`.user_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-27 19:27:28') AND (`foods`.user_id = 1) [0m
+  [4;35;1mWeight Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `weights`[0m
+  [4;36;1mMeasurement Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `measurements`[0m
+  [4;35;1mExercise Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `exercises`[0m
+  [4;36;1mBodyScan Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within layouts/member
+Rendering homes/show
+Rendered homes/_quick_form (12.1ms)
+  [4;35;1mProfile Load (0.1ms)[0m   [0mSELECT * FROM `profiles` WHERE (`profiles`.user_id = 1) LIMIT 1[0m
+  [4;36;1mProfile Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `profiles`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mWeight Load (0.1ms)[0m   [0;1mSELECT * FROM `weights` WHERE (`weights`.user_id = 1) ORDER BY weights.id DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `weights` WHERE (`weights`.user_id = 1) ORDER BY weights.id DESC LIMIT 1[0m
+Rendered homes/_progress (77.2ms)
+Rendered homes/_goals (1.5ms)
+  [4;36;1mWater Load (0.5ms)[0m   [0;1mSELECT * FROM `waters` WHERE (`waters`.user_id = 1) ORDER BY date asc[0m
+  [4;35;1mFood Load (0.1ms)[0m   [0mSELECT * FROM `foods` WHERE (`foods`.user_id = 1) ORDER BY date asc[0m
+  [4;36;1mExercise Load (0.1ms)[0m   [0;1mSELECT * FROM `exercises` WHERE (`exercises`.user_id = 1) ORDER BY date asc[0m
+  [4;35;1mMeasurement Load (0.1ms)[0m   [0mSELECT * FROM `measurements` WHERE (`measurements`.user_id = 1) ORDER BY date asc[0m
+  [4;36;1mWeight Load (0.1ms)[0m   [0;1mSELECT * FROM `weights` WHERE (`weights`.user_id = 1) ORDER BY date asc[0m
+Rendered homes/_charts (28.6ms)
+Rendered homes/_quick_fact (0.2ms)
+Rendered homes/_support (2.6ms)
+Completed in 223ms (View: 124, DB: 24) | 200 OK [http://localhost/home]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomesController#create (for 127.0.0.1 at 2009-07-27 19:28:18) [POST]
+  Parameters: {"commit"=>"Record", "water"=>{"ounces"=>""}, "Meal"=>"Shake w/ milk", "authenticity_token"=>"gAnqbdhL+lQy6LvaS/PEfUPd0eInX/293KmngrQm3oA=", "weight"=>{"weight"=>"100"}, "exersize"=>{"title"=>"", "length"=>"", "calories"=>""}, "measurement"=>{"belly_upper"=>"", "chest"=>"", "thigh"=>"", "hips"=>"", "belly_lower"=>"", "arm"=>""}, "body_scan"=>{"metabolism"=>"", "fat"=>"", "water"=>"", "visc"=>"", "muscle"=>""}, "food"=>{"name"=>"", "protein"=>"", "calories"=>""}}
+  [4;35;1mUser Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-07-27 23:28:19', `last_request_at` = '2009-07-27 23:28:19' WHERE `id` = 1[0m
+  [4;35;1mSQL (5.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mWeight Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `weights`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mWeight Create (0.3ms)[0m   [0;1mINSERT INTO `weights` (`created_at`, `updated_at`, `weight`, `date`, `user_id`) VALUES('2009-07-27 23:28:19', '2009-07-27 23:28:19', 100, '2009-07-27 23:28:19', 1)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/home
+Completed in 172ms (DB: 10) | 302 Found [http://localhost/home]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomesController#show (for 127.0.0.1 at 2009-07-27 19:28:19) [GET]
+  [4;36;1mUser Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE `users` SET `updated_at` = '2009-07-27 23:28:19', `last_request_at` = '2009-07-27 23:28:19' WHERE `id` = 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mHome Load (0.1ms)[0m   [0mSELECT * FROM `homes` WHERE (`homes`.user_id = 1) LIMIT 1[0m
+  [4;36;1mGoal Load (0.1ms)[0m   [0;1mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;35;1mGoal Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `goals`[0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` [0m
+  [4;35;1mQuickFact Load (0.1ms)[0m   [0mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;36;1mQuickFact Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `quick_facts`[0m
+  [4;35;1mHome Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `homes`[0m
+  [4;36;1mQuickSupport Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `quick_supports`[0m
+  [4;35;1mWater Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `waters`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-20 19:28:19') AND (`waters`.user_id = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-27 19:28:19') AND (`waters`.user_id = 1) [0m
+  [4;36;1mFood Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `foods`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-20 19:28:19') AND (`foods`.user_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-27 19:28:19') AND (`foods`.user_id = 1) [0m
+  [4;35;1mWeight Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `weights`[0m
+  [4;36;1mMeasurement Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `measurements`[0m
+  [4;35;1mExercise Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `exercises`[0m
+  [4;36;1mBodyScan Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within layouts/member
+Rendering homes/show
+Rendered homes/_quick_form (13.1ms)
+  [4;35;1mProfile Load (0.1ms)[0m   [0mSELECT * FROM `profiles` WHERE (`profiles`.user_id = 1) LIMIT 1[0m
+  [4;36;1mProfile Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `profiles`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mWeight Load (0.2ms)[0m   [0;1mSELECT * FROM `weights` WHERE (`weights`.user_id = 1) ORDER BY weights.id DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `weights` WHERE (`weights`.user_id = 1) ORDER BY weights.id DESC LIMIT 1[0m
+Rendered homes/_progress (12.1ms)
+Rendered homes/_goals (1.2ms)
+  [4;36;1mWater Load (0.1ms)[0m   [0;1mSELECT * FROM `waters` WHERE (`waters`.user_id = 1) ORDER BY date asc[0m
+  [4;35;1mFood Load (0.1ms)[0m   [0mSELECT * FROM `foods` WHERE (`foods`.user_id = 1) ORDER BY date asc[0m
+  [4;36;1mExercise Load (0.1ms)[0m   [0;1mSELECT * FROM `exercises` WHERE (`exercises`.user_id = 1) ORDER BY date asc[0m
+  [4;35;1mMeasurement Load (0.1ms)[0m   [0mSELECT * FROM `measurements` WHERE (`measurements`.user_id = 1) ORDER BY date asc[0m
+  [4;36;1mWeight Load (0.3ms)[0m   [0;1mSELECT * FROM `weights` WHERE (`weights`.user_id = 1) ORDER BY date asc[0m
+Rendered homes/_charts (25.2ms)
+Rendered homes/_quick_fact (0.1ms)
+Rendered homes/_support (2.4ms)
+Completed in 221ms (View: 55, DB: 13) | 200 OK [http://localhost/home]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomesController#create (for 127.0.0.1 at 2009-07-27 19:28:37) [POST]
+  Parameters: {"goal"=>{"water"=>"64", "weight"=>"120", "daily_calories"=>"1250", "steps_daily"=>"3000"}, "commit"=>"New Goal", "authenticity_token"=>"gAnqbdhL+lQy6LvaS/PEfUPd0eInX/293KmngrQm3oA="}
+  [4;35;1mUser Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2009-07-27 23:28:37', `last_request_at` = '2009-07-27 23:28:37' WHERE `id` = 1[0m
+  [4;35;1mSQL (2.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mGoal Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `goals`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mGoal Create (0.2ms)[0m   [0;1mINSERT INTO `goals` (`created_at`, `chest`, `belly_upper`, `water`, `updated_at`, `weight`, `belly_lower`, `hips`, `thigh`, `steps_daily`, `daily_calories`, `date`, `user_id`, `arm`) VALUES('2009-07-27 23:28:37', 0, 0, 64, '2009-07-27 23:28:37', 120, 0, 0, 0, 3000, 1250, '2009-06-28 00:00:00', 1, 0)[0m
+  [4;35;1mSQL (15.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/home
+Completed in 60ms (DB: 21) | 302 Found [http://localhost/home]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomesController#show (for 127.0.0.1 at 2009-07-27 19:28:38) [GET]
+  [4;36;1mUser Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = '1') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE `users` SET `updated_at` = '2009-07-27 23:28:38', `last_request_at` = '2009-07-27 23:28:38' WHERE `id` = 1[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mHome Load (0.1ms)[0m   [0mSELECT * FROM `homes` WHERE (`homes`.user_id = 1) LIMIT 1[0m
+  [4;36;1mGoal Load (0.3ms)[0m   [0;1mSELECT * FROM `goals` WHERE (`goals`.user_id = 1) ORDER BY goals.id DESC LIMIT 1[0m
+  [4;35;1mQuickFact Load (0.1ms)[0m   [0mSELECT * FROM `quick_facts` [0m
+  [4;36;1mQuickFact Load (0.1ms)[0m   [0;1mSELECT * FROM `quick_facts` LIMIT 0, 1[0m
+  [4;35;1mQuickFact Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `quick_facts`[0m
+  [4;36;1mHome Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `homes`[0m
+  [4;35;1mQuickSupport Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `quick_supports`[0m
+  [4;36;1mWater Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `waters`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-20 19:28:38') AND (`waters`.user_id = 1) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT sum(`waters`.ounces) AS sum_ounces FROM `waters` WHERE (date >= '2009-07-27 19:28:38') AND (`waters`.user_id = 1) [0m
+  [4;35;1mFood Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `foods`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-20 19:28:38') AND (`foods`.user_id = 1) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT sum(`foods`.calories) AS sum_calories FROM `foods` WHERE (date >= '2009-07-27 19:28:38') AND (`foods`.user_id = 1) [0m
+  [4;36;1mGoal Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `goals`[0m
+  [4;35;1mWeight Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `weights`[0m
+  [4;36;1mMeasurement Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `measurements`[0m
+  [4;35;1mExercise Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `exercises`[0m
+  [4;36;1mBodyScan Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `body_scans`[0m
+Rendering template within layouts/member
+Rendering homes/show
+Rendered homes/_quick_form (14.0ms)
+  [4;35;1mProfile Load (0.1ms)[0m   [0mSELECT * FROM `profiles` WHERE (`profiles`.user_id = 1) LIMIT 1[0m
+  [4;36;1mProfile Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `profiles`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mWeight Load (0.1ms)[0m   [0;1mSELECT * FROM `weights` WHERE (`weights`.user_id = 1) ORDER BY weights.id DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `weights` WHERE (`weights`.user_id = 1) ORDER BY weights.id DESC LIMIT 1[0m
+Rendered homes/_progress (12.1ms)
+Rendered homes/_goals (1.3ms)
+  [4;36;1mWater Load (0.1ms)[0m   [0;1mSELECT * FROM `waters` WHERE (`waters`.user_id = 1) ORDER BY date asc[0m
+  [4;35;1mFood Load (0.1ms)[0m   [0mSELECT * FROM `foods` WHERE (`foods`.user_id = 1) ORDER BY date asc[0m
+  [4;36;1mExercise Load (0.1ms)[0m   [0;1mSELECT * FROM `exercises` WHERE (`exercises`.user_id = 1) ORDER BY date asc[0m
+  [4;35;1mMeasurement Load (0.1ms)[0m   [0mSELECT * FROM `measurements` WHERE (`measurements`.user_id = 1) ORDER BY date asc[0m
+  [4;36;1mWeight Load (0.1ms)[0m   [0;1mSELECT * FROM `weights` WHERE (`weights`.user_id = 1) ORDER BY date asc[0m
+Rendered homes/_charts (25.1ms)
+Rendered homes/_quick_fact (0.2ms)
+Rendered homes/_support (2.5ms)
+Completed in 221ms (View: 56, DB: 16) | 200 OK [http://localhost/home]
