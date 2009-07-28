@@ -82,6 +82,38 @@
 
   <% end %>
   
+  
+  <fieldset>
+<legend>Take a Moment to set some goals</legend>
+
+<% fields_for :goal do |f| %>
+<table><tr>
+<th>Weight</th><th>Daily<br/>Water</th><th>Daily<br/> Steps</th><th>Daily<br/>Calories</th></tr>
+<tr>
+  <td><%= f.text_field :weight , :size=>3 %></td>
+  <td><%= f.text_field :water, :size=>3 %></td>
+  <td><%= f.text_field :steps_daily, :size=>3 %></td>
+  <td><%= f.text_field :daily_calories, :size=>4 %></td>
+  </tr></table>
+  <% end %>
+  <br/>
+ * Daily Calorie goal should not be more then 500 less then your resting metabolism.  Women tend to pick 1200 to 1700.  Ask your coach if you have any questions.<br/>
+ * Daily Water goal should be 1/2 your body weight with a 64oz minimum.  Ie, you are 180lb, then your target water consumption should be 90 ounces.<br/>
+</fieldset>
+  
+  <fieldset>
+  <legend>Weight</legend>
+ 
+  <% fields_for   :weight do |w| %>
+  
+    <%= w.label :weight %>
+    <%= w.text_field :weight  , :size => 4 %>
+
+   
+  <% end %>
+  </fieldset>
+
+  
 <div class="center last" >
   
     <%= f.submit 'Create' %>

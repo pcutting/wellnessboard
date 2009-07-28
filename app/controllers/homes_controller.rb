@@ -3,7 +3,11 @@ class HomesController  < BaseController
   # GET /homes
   def show
   
-    #raise "called the right action".inspect
+    @profile = @current_user.profile
+    
+    
+    #raise @current_user.inspect
+    
     @home = @current_user.home
     @recent_goal = @current_user.goals.last
     if @recent_goal.nil? then @recent_goal =  Goal.new end
@@ -16,7 +20,11 @@ class HomesController  < BaseController
       @fact.summary = "Please submit interesting facts"
     end
     
-    @chart_type = @home.chart_type
+    if @home.nil? then
+      @chart_type = 'all'
+    else
+      @chart_type = @home.chart_type 
+    end
     
     @quick_support = QuickSupport.new
     

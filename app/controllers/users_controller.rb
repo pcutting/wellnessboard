@@ -19,6 +19,7 @@ class UsersController < ApplicationController
 
   # GET /users/new
   def new
+    if @user_session then @user_session.destroy end
     @user = User.new
     @profile = Profile.new
     respond_to do |format|
@@ -34,10 +35,12 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.xml
   def create
+    #Logout first if there is a previous session open.
+    if @user_session then @user_session.destroy end
+    
     @user = User.new(params[:user])
     @profile = Profile.new(params[:profile])
-    @home = Home.new
-    @home.chart_type = 'all'
+
     
     
     if (!(@profile.hight_feet.nil? && @profile.hight_inches.nil? )  && !@profile.dob.nil?) then
@@ -50,7 +53,29 @@ class UsersController < ApplicationController
     if (success) then
       success = @profile.save
       @user.profile = @profile
-      @user.home = @home
+      @user.profile.save
+      
+        
+       
+      @home = Home.new
+      @home.chart_type = 'all'
+      @user.home = @home 
+      @user.home.save
+      
+      
+      
+      
+      
+      aWeight = @user.weights.new(params[:weight])
+      success = aWeight.save
+      
+      #raise aWeight.to_yaml
+      
+      
+      goal = @user.goals.new(params[:goal])
+      success = goal.save
+      
+      
     end
 
     respond_to do |format|
