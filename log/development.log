@@ -37212,3 +37212,35 @@ Processing UsersController#new (for 127.0.0.1 at 2009-07-27 23:45:18) [GET]
 Rendering template within layouts/application
 Rendering users/new
 Completed in 50ms (View: 21, DB: 3) | 200 OK [http://localhost/user/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-07-27 23:57:13) [GET]
+  [4;35;1mUser Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mTestimony Load (0.1ms)[0m   [0;1mSELECT * FROM `testimonies` [0m
+  [4;35;1mTestimony Load (0.1ms)[0m   [0mSELECT * FROM `testimonies` LIMIT 2, 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered user_sessions/_login (2.3ms)
+Rendered user_sessions/_mission (0.1ms)
+  [4;36;1mTestimony Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `testimonies`[0m
+Rendered user_sessions/_testimony_bottom (0.1ms)
+Rendered user_sessions/_welcome_audio (0.1ms)
+Completed in 41ms (View: 10, DB: 2) | 200 OK [http://localhost/login]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2009-07-27 23:57:43) [GET]
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mTestimony Load (0.1ms)[0m   [0;1mSELECT * FROM `testimonies` [0m
+  [4;35;1mTestimony Load (0.1ms)[0m   [0mSELECT * FROM `testimonies` LIMIT 1, 1[0m
+Rendering template within layouts/application
+Rendering user_sessions/new
+Rendered user_sessions/_login (2.7ms)
+Rendered user_sessions/_mission (0.1ms)
+  [4;36;1mTestimony Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `testimonies`[0m
+Rendered user_sessions/_testimony_bottom (0.2ms)
+Rendered user_sessions/_welcome_audio (0.1ms)
+Completed in 46ms (View: 15, DB: 3) | 200 OK [http://localhost/login]
