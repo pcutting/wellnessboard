@@ -33,9 +33,9 @@
      <% fields_for :profile do |w| %>
    
 
-<div class="center last" >
+<div  class=" center last" >
 <fieldset><legend>Profile</legend>
-<table class="profile_format"><tr>
+<table ><tr>
   <tr><th>
     <%= w.label "First" %></th><th>
     <%= w.label "M.I." %></th><th>
@@ -88,13 +88,9 @@
 
 <% fields_for :goal do |f| %>
 <table><tr>
-<th>Weight</th><th>Daily<br/>Water</th><th>Daily<br/> Steps</th><th>Daily<br/>Calories</th></tr>
-<tr>
-  <td><%= f.text_field :weight , :size=>3 %></td>
-  <td><%= f.text_field :water, :size=>3 %></td>
-  <td><%= f.text_field :steps_daily, :size=>3 %></td>
-  <td><%= f.text_field :daily_calories, :size=>4 %></td>
-  </tr></table>
+<th>Weight Goal <%= f.text_field :weight , :size=>3 %></th><th>Daily Water <%= f.text_field :water, :size=>3 %></th></tr>
+<tr><th>Daily Steps <%= f.text_field :steps_daily, :size=>3 %></th><th>Daily Calories <%= f.text_field :daily_calories, :size=>4 %></th></tr>
+</table>
   <% end %>
   <br/>
  * Daily Calorie goal should not be more then 500 less then your resting metabolism.  Women tend to pick 1200 to 1700.  Ask your coach if you have any questions.<br/>
@@ -106,7 +102,7 @@
  
   <% fields_for   :weight do |w| %>
   
-    <%= w.label :weight %>
+    <%= w.label "What is your current Weight?" %>
     <%= w.text_field :weight  , :size => 4 %>
 
    
